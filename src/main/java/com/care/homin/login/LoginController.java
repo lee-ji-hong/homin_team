@@ -57,7 +57,7 @@ public class LoginController {
 		
 		session.setAttribute("id", mb.getId());
 		session.setAttribute("nickname", mb.getNickname());
-		return "index";
+		return "forward:index?formpath=home";
 	}
 	
 	@Autowired KakaoConfig kakao;
@@ -79,7 +79,7 @@ public class LoginController {
 		kakao.logout(access_Token);
 		
 		req.getSession().invalidate();
-		return "index";
+		return "forward:index?formpath=home";
 	}
 	
 	
