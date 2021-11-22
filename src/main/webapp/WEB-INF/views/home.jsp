@@ -55,7 +55,7 @@
 		
 			<div class="lent_option_box">
 				<div><a href = "#"><img src = "${root }resources/image/1.png"></a></div>
-				<div>세탁기</div>
+				<div>세탁기ss</div>
 			</div>
 			<div class="lent_option_box">
 				<div><a href = "#"><img src = "${root }resources/image/2.png"></a></div>
