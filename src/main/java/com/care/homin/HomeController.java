@@ -53,5 +53,10 @@ public class HomeController {
 	public String mypage() {
 		return "mypage/mypageForm";
 	}
+	@RequestMapping(value = "/rental")
+	public String rental(Model model,@RequestParam String category) {
+		model.addAttribute("category", category);
+		return "/rental/rentalForm";
+	}
 	
 }

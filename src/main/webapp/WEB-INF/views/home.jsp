@@ -54,27 +54,27 @@
 		<div class="lent_option-wrap">
 		
 			<div class="lent_option_box">
-				<div><a href = "#"><img src = "${root }resources/image/1.png"></a></div>
-				<div>세탁기</div>
+				<div><a href = "${root }index?formpath=rental&category=dryer"><img src = "${root }resources/image/1.png"></a></div>
+				<div>건조기</div>
 			</div>
 			<div class="lent_option_box">
-				<div><a href = "#"><img src = "${root }resources/image/2.png"></a></div>
+				<div><a href = "${root }index?formpath=rental&category=waterpurifier"><img src = "${root }resources/image/2.png"></a></div>
 				<div>정수기</div>
 			</div>
 			<div class="lent_option_box">
-				<div><a href = "#"><img src = "${root }resources/image/3.png"></a></div>
+				<div><a href = "${root }index?formpath=rental&category=aircleaner"><img src = "${root }resources/image/3.png"></a></div>
 				<div>공기청정기</div>
 			</div>
 			<div class="lent_option_box">
-				<div><a href = "#"><img src = "${root }resources/image/4.png"></a></div>
+				<div><a href = "${root }index?formpath=rental&category=washmachine"><img src = "${root }resources/image/4.png"></a></div>
 				<div>식기세척기</div>
 			</div>
 			<div class="lent_option_box">
-				<div><a href = "#"><img src = "${root }resources/image/5.png"></a></div>
+				<div><a href = "${root }index?formpath=rental&category=microwave"><img src = "${root }resources/image/5.png"></a></div>
 				<div>전기레인지</div>
 			</div>
 			<div class="lent_option_box">
-				<div><a href = "#"><img src = "${root }resources/image/6.png"></a></div>
+				<div><a href = "${root }index?formpath=rental&category=refrigerator"><img src = "${root }resources/image/6.png"></a></div>
 				<div>얼음정수기<br>냉장고</div>
 			</div>
 		
