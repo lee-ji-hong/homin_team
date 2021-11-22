@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.homin.mypage.repository.IMypageDAO">
+	<resultMap type="com.care.homin.login.dto.LoginDTO" id="loginDto">
+		<result property="id" column="id"/>
+		<result property="pw" column="pw"/>
+	</resultMap>
+	<select resultMap="loginDto" id="infoLogin" parameterType="String">
+		SELECT * FROM login_homin WHERE id = #{id}
+	</select>
+	
+	<resultMap type="com.care.homin.membership.dto.MemberDTO" id="memberDto">
+		<result property="no" column="no"/>
+		<result property="id" column="id"/>
+		<result property="nickname" column="nickname"/>
+		<result property="phone" column="phone"/>
+		<result property="email" column="email"/>
+	</resultMap>
+	<select resultMap="memberDto" id="infoMember" parameterType="String">
+		SELECT * FROM member_homin WHERE id = #{id}
+	</select>
+	<resultMap type="com.care.homin.membership.dto.MemberDTO" id="mbDto">
+		<result property="no" column="no"/>
+		<result property="id" column="id"/>
+		<result property="nickname" column="nickname"/>
+		<result property="phone" column="phone"/>
+		<result property="email" column="email"/>
+	</resultMap>
+	<select resultMap="mbDto" id="infoMemberByNo" parameterType="int">
+		SELECT * FROM member_homin WHERE no = #{no}
+	</select>
+	
+	
+	<resultMap type="com.care.homin.membership.dto.MemberDTO" id="memberDtoList">
+		<result property="no" column="no"/>
+		<result property="id" column="id"/>
+		<result property="nickname" column="nickname"/>
+		<result property="phone" column="phone"/>
+		<result property="email" column="email"/>
+	</resultMap>
+	<select resultMap="memberDtoList" id="infoList">
+		SELECT * FROM member_homin
+	</select>
+	
+	<delete id="deleteProc" parameterType="String">
+		DELETE FROM login_homin WHERE id=#{id}
+	</delete>
+</mapper>

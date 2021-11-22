@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.homin.servicecenter.dao.ServicecenterDAO">
+
+	<resultMap type="com.care.homin.servicecenter.dto.NoticeDTO" id="notice">
+		<result column="division" property="division" />
+		<result column="title" property="title" />
+		<result column="writedate" property="writedate" />
+		<result column="no" property="no" />
+		<result column="content" property="content" />
+	</resultMap>
+	
+	<select id = "allNotice"  resultMap="notice">
+		SELECT * FROM notice
+	</select>
+	<select id = "selectNotice"   resultMap="notice" parameterType="int">
+		SELECT * FROM notice WHERE no=#{no}
+	</select>
+</mapper>

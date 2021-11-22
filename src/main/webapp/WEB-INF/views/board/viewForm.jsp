@@ -1,0 +1,166 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/faq.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/view.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
+<c:url var="root" value="/" />
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	function commentProc(){
+		var commentWrite = $('#comment').val();
+		
+		var loginCheck = '${sessionScope.id}';
+		if(loginCheck == ''){
+			alert('로그인 후 이용가능합니다.');
+			document.getElementById('comment').value="";
+			return;
+		}
+		
+		if(commentWrite == ''){
+			 $('#comment').focus();
+				return;
+			}
+		var co = document.getElementById('comment').value;
+		var c = {comment:co}
+		$.ajax({
+			url : "comment?num=${view.no}",
+			type : "POST",
+			data : JSON.stringify(c),
+			contentType : "application/json; charset=utf-8",
+			success : function(){
+				document.getElementById('comment').value="";
+				window.location.reload();
+			},
+			error : function(){
+				alert("문제")
+			}
+		})
+	}
+	
+	function commentDelete(num){
+		 if (confirm("정말 삭제하시겠습니까?") == true){ 
+			$.ajax({
+			url : "commentDelete?comment_no="+num,
+			type : "POST",
+			contentType : "application/json; charset=utf-8",
+			success : function(){
+				window.location.reload();
+			},
+			error : function(){
+				alert("문제")
+			}
+		})
+		 }else{   
+		     return false;
+		 }
+	}
+</script>
+
+<center>
+<section class="content_section">
+ 	<form action="" method="post">
+	 <input type="hidden" name="no" value="${view.no }" />
+
+ <div class="board_wrap">
+        <div class="board_title">
+        <strong>review</strong> 
+        <hr style="width : 50px;">
+        <p>상품 사용 후기입니다.</p>
+      </div>
+      
+      
+        <div class="board_view_wrap">
+        
+            <div class="board_view">
+            
+            <div class="board_view_sub">
+                <div class="title">
+                    <h2>${view.title }</h2>
+                </div>
+                
+                
+                <div class="info">
+                
+                    <dl>
+                        <dt>글쓴이</dt>
+                        <dd>${view.id }</dd>
+                    </dl>
+                    
+                    <dl>
+                        <dt>작성일</dt>
+                        <dd>${view.writeTime }</dd>
+                    </dl>
+                    <dl>
+                        <dt>조회</dt>
+                        <dd>${view.hit }</dd>
+                    </dl>
+                </div>
+                </div>
+                	<c:forEach var="file" items="${fileName }"> 
+		<div> 
+			<img src = "/img/${file }" style="width: 500px; height: 500px;"> 
+			</div>
+ 	</c:forEach>
+                
+                <div class="cont">
+                    ${view.content }
+                </div>
+            </div>
+            
+         
+            
+          
+            
+            <div class="bt_wrap">
+             <div>
+             <input type=button style="width: 60px; " value='후기작성' onclick="location.href='${root}index?formpath=write'"/> 
+			<c:if test = "${sessionScope.id eq view.id }">
+				<button formaction="${root }index?formpath=boardModifyCheck" style="width: 60px; ">수정</button>
+				<button formaction="${root }index?formpath=boardDelete" style="width: 60px; ">삭제</button>
+			</c:if>
+			</div>
+			<div>
+			<input type=button style="width: 60px; " value='목록' onclick="location.href='${root}boardProc'"/>
+            
+            </div>
+        </div>
+    </div>
+           </form>
+    
+ 
+ 
+	
+<br><br>
+		<div>
+			<div>
+				
+				<textarea id="comment" name="comment" cols="50" rows="2" placeholder = "댓글을 입력하세요."></textarea>
+				<input type="button" value="등록" id = "commentWrite" onclick = "commentProc()">
+			</div>
+		</div>
+		<br>
+		<br>
+		<div id="comment" style="width: 800px; height: 300px; overflow: auto;">
+			<table>
+				<tbody>
+				<c:forEach var="com" items="${comment }">
+					<tr>
+						<td>${com.id }</td>
+						<td style="padding-left: 50px; padding-bottom: 10px;">${com.writetime }</td>
+						<c:if test = "${sessionScope.id eq com.id}">
+							<td style="padding-left: 20px;" onclick = "commentDelete(${com.comment_no})">삭제</td>
+						</c:if>
+					</tr>
+					<tr>
+						<td style="font-size: 15px; width: 400px;">${com.comment_content }
+				<hr style="border: 1px solid #878787; display: block !important; width: 100% !important;">
+						</td>
+					</tr>
+				</c:forEach>
+				</tbody>
+				<tr>
+			</table>
+			<hr style="border: 1px solid #878787; display: block !important; width: 80% !important;">
+		</div>
+</center>
