@@ -79,7 +79,6 @@
 			</div>
 		
 		</div>
-		<!-- fdfdf -->
 		
 		<br><br>
 		<div><strong>지금 가장 핫한 상품.</strong></div>
