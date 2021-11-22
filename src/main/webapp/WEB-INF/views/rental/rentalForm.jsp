@@ -4,19 +4,19 @@
 <c:url var="root" value="/" />
 
 <c:choose>
-	<c:when test="${category eq dryer }">
+	<c:when test="${category eq 'dryer' }">
 		<div>건조기</div>
 	</c:when>
-	<c:when test="${category eq waterpurifier }">
+	<c:when test="${category eq 'waterpurifier' }">
 		<div>정수기</div>
 	</c:when>
-	<c:when test="${category eq aircleaner }">
+	<c:when test="${category eq 'aircleaner' }">
 		<div>공기청정기</div>
 	</c:when>
-	<c:when test="${category eq washmachine }">
+	<c:when test="${category eq 'washmachine' }">
 		<div>식기세척기</div>
 	</c:when>
-	<c:when test="${category eq microwave }">
+	<c:when test="${category eq 'microwave' }">
 		<div>전기레인지</div>
 	</c:when>
 	<c:otherwise>

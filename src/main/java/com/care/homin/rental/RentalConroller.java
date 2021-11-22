@@ -1,11 +1,16 @@
 package com.care.homin.rental;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.care.homin.rental.dto.RentalDTO;
+import com.care.homin.rental.service.RentalService;
 
 @Controller
 public class RentalConroller {
+	@Autowired RentalService service;
+	
 	@RequestMapping(value = "/dryer")
 	public String dryer() {
 		return "rental/category/dryerForm";
@@ -27,7 +32,7 @@ public class RentalConroller {
 		return "rental/category/washmachineForm";
 	}
 	@RequestMapping(value = "/waterpurifier")
-	public String waterpurifier() {
+	public String waterpurifier(String category) {
 		return "rental/category/waterpurifierForm";
 	}
 }
