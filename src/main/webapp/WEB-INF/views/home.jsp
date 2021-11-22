@@ -82,7 +82,7 @@
 		<!--  -->
 		
 		<br><br>
-		<div><strong>지금 가장 핫한 상품. ss</strong></div>
+		<div><strong>지금 가장 핫한 상품. </strong></div>
 		<div>
 			<ul>
 				<li>
