@@ -4,4 +4,8 @@
 	<select id="selectCategory" parameterType="String" resultType="com.care.homin.rental.dto.RentalDTO">
 		SELECT * FROM homin_product WHERE classification=#{category}
 	</select>
+	
+	<select id="selectProduct" parameterType="String" resultType="com.care.homin.rental.dto.RentalDTO">
+		SELECT * FROM homin_product WHERE product_no=#{prodNo}
+	</select>
 </mapper>

@@ -11,10 +11,12 @@ import com.care.homin.rental.dto.RentalDTO;
 @Service
 public class RentalService {
 	@Autowired RentalDAO dao;
-
+	
 	public ArrayList<RentalDTO> selectCategory(String category) {
-		
 		return dao.selectCategory(category);
 	}
-	
+
+	public RentalDTO selectProduct(String prodNo) {
+		return dao.selectProduct(prodNo);
+	}
 }
