@@ -97,7 +97,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
       <div class="lent_option_box">
         <div>
           <a href="#"><img src="${root }resources/image/6.png" /></a>
-        </div>
+        </div>	
         <div>얼음정수기<br />냉장고</div>
       </div>
     </div>

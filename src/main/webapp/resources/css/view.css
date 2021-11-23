@@ -41,8 +41,7 @@ a {
 }
 
 .bt_wrap {
-  margin-top: 30px;
-  margin-bottom: 100px;
+  margin: 30px 10px 100px 10px;
   text-align: center;
   font-size: 0;
   display: flex;
@@ -76,6 +75,9 @@ a {
   background: #000;
   border: 1px solid #000;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .board_list {
@@ -312,4 +314,51 @@ a {
   box-sizing: border-box;
   border: 0;
   resize: vertical;
+}
+
+.board-comment-wrap {
+	border-top: 1px solid #ddd;
+	padding-top: 50px;
+	margin: 50 60 50 60px;
+}	
+
+.board-comment-wrap p {
+	text-align: left;
+    font-size: 28px;
+    FONT-WEIGHT: 548;
+}
+
+
+.board-comment-text-in{
+	height: 200px;
+	margin: 30 0 50 0;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.board-comment-text textarea{
+	border: none;
+	margin: 0px;
+    width: 1120px;
+    height: 199px;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 12px;
+	
+}
+.board-comment-text-in input {
+	margin: 20;
+    padding: 10 20 10;
+    border: none;
+    background-color: lightgrey;
+    font-size: 20px;
+    color: white;
+    border-radius: 12px;
+}
+
+.board-comment-review{
+	width: 1000px;
+	overflow: auto;
 }
