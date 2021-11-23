@@ -130,23 +130,26 @@
 					<div>
 						<c:forEach var="com" items="${comment }">
 						<div class="comment-log_review">
-							<div>${com.id }</div>
-							<div style="padding-left: 50px; padding-bottom: 10px;">${com.writetime }</div>
-							<c:if test = "${sessionScope.id eq com.id}">
-								<div style="padding-left: 20px;" onclick = "commentDelete(${com.comment_no})">삭제</div>
-							</c:if>
-						</div>
-						<div>
-							<div style="font-size: 15px; width: 400px;">${com.comment_content }
-					<hr style="border: 1px solid #878787; display: block !important; width: 100% !important;">
+							<div class="comment-log_review_ch1">${com.id }</div>
+							<div class="comment-log_review_ch2">
+								<div>${com.comment_content }</div>
 							</div>
-						</div>
+						<div class="comment-log_review_bottom_wrap">
+							<div>${com.writetime }</div>
+							
+						<c:if test = "${sessionScope.id eq com.id}">
+							<div  onclick = "commentDelete(${com.comment_no})">삭제</div>
+
+						</c:if>
+						</div>		
+					    </div>
+						
 						</c:forEach>
 					</div>
 					
 						
 				</div>
-				<hr style="border: 1px solid #878787; display: block !important; width: 80% !important;">
+				
 				</div>
 		</div>    
                 

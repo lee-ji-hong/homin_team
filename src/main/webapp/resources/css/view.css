@@ -362,3 +362,33 @@ a {
 	width: 1000px;
 	overflow: auto;
 }
+
+.comment-log_review{
+	display: flex;
+	flex-direction: column;
+	border-top: 1px solid lightgray;
+    position: relative;
+    padding: 12px 23px 10px 23;
+}
+.comment-log_review_ch1{
+	text-align: left;
+	font-size: 20px;
+}
+
+.comment-log_review_ch2{
+	border:none;
+    min-height: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 13px;
+}
+.comment-log_review_bottom_wrap{
+	display: flex;
+	align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+;
+}
