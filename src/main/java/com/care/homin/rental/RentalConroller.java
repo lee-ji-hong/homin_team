@@ -13,4 +13,8 @@ import com.care.homin.rental.service.RentalService;
 @Controller
 public class RentalConroller {
 	
+	@RequestMapping(value = "/productOrder")
+	public String productOrder() {
+		return "rental/productOrderForm";
+	}
 }
