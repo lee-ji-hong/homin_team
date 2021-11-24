@@ -49,9 +49,8 @@ public class HomeController {
 	public String modify() {
 		return "board/boardModifyForm";
 	}
-	@RequestMapping(value = "/mypage")
+	@RequestMapping("/mypage")
 	public String mypage() {
 		return "mypage/mypageForm";
 	}
-	
 }

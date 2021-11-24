@@ -5,4 +5,5 @@ import com.care.homin.membership.dto.MemberDTO;
 
 public interface ILoginService {
 	public MemberDTO loginProc(LoginDTO loginDto);
+
 }
