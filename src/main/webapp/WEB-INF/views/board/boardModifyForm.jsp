@@ -164,27 +164,25 @@
 			<div>
 				<div class="preview_wrap">
 					<div id="preview"></div>
-					<c:forEach var="file" items="${fileName }" varStatus="status">
-						<div id = "img${status.index}">
-							<div  style = "padding:10px">
-								<input type = "hidden" name = "img" value = "${file }">
-								<div ><img src = "/img/${file }"style="width: 100px; height: 100px;"></div><input type = "button" onclick = "rmv(${status.index})" value = "x">
-							</div>
-						</div>
-					</c:forEach>
 				</div>
 			</div>
 			
-			
 			<div class="write_button_wrap">
-				
-				
 				<div>
 					<div class="write_filebtn">
 					파일선택
 						<input style="display:none;" type="file" name="uploadFile" id="uploadFile" multiple> 
 					</div>
 				</div>
+				<c:forEach var="file" items="${fileName }" varStatus="status">
+					<div id = "img${status.index}">
+						<div  style = "width: 150px; height: 150px;">
+							<input type = "hidden" name = "img" value = "${file }">
+							<div ><img src = "/img/${file }"style="width: 100px; height: 100px;"></div><input type = "button" onclick = "rmv(${status.index})" value = "x">
+						</div>
+					</div>
+				</c:forEach>
+				
 				<div>
 					<div>
 						<input type=submit value='수정' />
