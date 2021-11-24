@@ -4,7 +4,7 @@
 <head>
 <link rel="stylesheet" href="${root }resources/swiper/swiper.min.css">  
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/index.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
 
 <style>

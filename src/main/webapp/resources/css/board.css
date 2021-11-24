@@ -484,7 +484,7 @@
 @media all and (min-width: 960px) {
   /* 기본 CSS */
   #wrap {
-    position: relative;
+    	
     width: 90%;
   }
 
