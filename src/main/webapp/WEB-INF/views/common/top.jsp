@@ -7,50 +7,40 @@
     />
 <c:url var="root" value="/" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board2.css" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />
 <div id="wrap">
-<div id="header-wrap">
 	<section class="info_section">
-		<div>
-	        <ul class="info_list">
-	          
+        <ul class="info_list">
+          <li>
+            <a href=""><img src="${pageContext.request.contextPath}/resources/image/cart2.png" />  </a>
+          </li>
+          
+          <c:choose>
+			<c:when test="${empty sessionScope.id }">
 	          <li>
-	            <a href="${root}index?formpath=servicecenter&list=faq">고객센터</a>
+	            <a  href="${root}index?formpath=login "> 로그인 </a>
 	          </li>
-	          <li>
-	            <a href=""> | </a>
-	          </li>
-	          <c:choose>
-				<c:when test="${empty sessionScope.id }">
-		          <li>
-		            <a  href="${root}index?formpath=login "> 로그인 </a>
-		          </li>
-	          	</c:when>
-				<c:otherwise>
-					<li>
-						<a  href="${root}logout ">로그아웃</a>
-					</li>		
-				</c:otherwise>
-			  </c:choose>
-	
-	          
-	        </ul>
-	   </div>  
-	   <div>
-	        <ul class="info_list" >
-	        	<li>
-		            <a href="">
-		              <img src="${pageContext.request.contextPath}/resources/image/search2.png" />
-		            </a>
-	            </li>
-	            <li>
-		           	<a href="">
-		           		<img src="${pageContext.request.contextPath}/resources/image/cart2.png" />  
-		           	</a>
-	            </li>
-	        </ul>
-        </div>
+          </c:when>
+			<c:otherwise>
+				<li>
+				<a  href="${root}logout ">로그아웃</a>
+				</li>
+			</c:otherwise>
+		</c:choose>
+		
+          <li>
+            <a href=""> | </a>
+          </li>
+          <li>
+            <a href="${root}index?formpath=servicecenter&list=faq">고객센터</a>
+          </li>
+          <li>
+            <a href="">
+              <img src="${pageContext.request.contextPath}/resources/image/search2.png" />
+            </a>
+          </li>
+        </ul>
       </section>
       
       
@@ -63,9 +53,30 @@
 			 
 		  </a>
         </h1>
-
+       
+       
+        <nav class="nav">
+          <ul class="gnb">
+            <li>
+              <a href="index.html">인테리어</a
+              ><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span>
+            </li>
+            <li>
+              <a href="introudce.html">렌탈/케어</a
+              ><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span>
+            </li>
+            <li>
+              <a href="gallery.html">생활용품</a
+              ><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span>
+            </li>
+            <li>
+              <a href="board.html">문의사항</a
+              ><span class="sub_menu_toggle_btn">하위 메뉴 토글 버튼</span>
+            </li>
+          </ul>
+        </nav>
+        <span class="menu_toggle_btn">전체 메뉴 토글 버튼</span>
       </header>
-</div>      
 </div>
 <hr>
 <!--  <table width=900>
