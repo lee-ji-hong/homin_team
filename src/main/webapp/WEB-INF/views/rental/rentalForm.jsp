@@ -34,7 +34,7 @@
 			<div>${pr.product_name }</div>
 			<div>
 				<div>
-					<span>월</span> <span>가격</span> <span>원</span>
+					<span>월</span> <span>가격</span> <span>${pr.price }원</span>
 				</div>
 			</div>
 		</div>

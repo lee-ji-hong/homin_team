@@ -26,4 +26,8 @@
 		INSERT INTO postcode_homin VALUES(#{id}, #{zipcode}, #{addr1}, #{addr2})
 	</insert>
 	
+	<select resultType="com.care.homin.membership.dto.PostcodeDTO" id="selectPost" parameterType="String">
+		SELECT * FROM postcode_homin WHERE id = #{id}
+	</select>
+	
 </mapper>
