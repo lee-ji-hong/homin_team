@@ -1,22 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/faq.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/view.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
+
+
 <c:url var="root" value="/" />
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<style type="text/css">
-  .star_rating {font-size:0; letter-spacing:-4px;}
-  .star_rating a {
-      font-size:22px;
-      letter-spacing:0;
-      display:inline-block;
-      margin-left:5px;
-      color:#ccc;
-      text-decoration:none;
-  }
-  .star_rating a:first-child {margin-left:0;}
-  .star_rating a.on {color:#777;}
-</style>
+
 
 
 

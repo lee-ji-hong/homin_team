@@ -1,23 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/faq.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/view.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
+
+
+
 <c:url var="root" value="/" />
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-<style type="text/css">
-  .star_rating {font-size:0; letter-spacing:-4px;}
-  .star_rating a {
-      font-size:22px;
-      letter-spacing:0;
-      display:inline-block;
-      margin-left:5px;
-      color:#ccc;
-      text-decoration:none;
-  }
-  .star_rating a:first-child {margin-left:0;}
-  .star_rating a.on {color:#777;}
-</style>
+
 
 
 <script type="text/javascript">
@@ -118,47 +113,106 @@
 </script>
 
 <center>
+<section class="write_wrap">
 <form action="${root }writeProc" method="post" enctype="multipart/form-data" id = "f">
-<table style="width: 650px; ">
-	<tr>
-		<td style="width: 570px; height:40px;">
-			<input type=text name='title' id = "title" style="width: 500px; " placeholder = "제목을 입력하세요."/> 
-			<span style="display: none;" id = "msg1">필수 사항입니다.</span>
-		</td>
-	</tr>
-	<tr>
-		<td colspan=2 align="right"><textarea name="content" id = "content" style="width: 650px; height: 300px" placeholder = "내용을 입력하세요."></textarea>
-		<span style="display: none;" id = "msg2">필수 사항입니다.</span>
-		</td>
-	</tr>
-	<tr>
-		<td align='right' height=40 colspan=2>
-			<input type="file" name="uploadFile" id="uploadFile" multiple> 
-		</td>
-	</tr>
-	<tr>
-		<td><div id="preview"></div></td>
-	</tr>
-	<tr>
-		<td align='center' height=40 colspan=2>
-			<input type="button" value='글쓰기' style="width: 120px;" id = "writeBtn" />
-			<input type=reset value='취소' style="width: 120px; "/>	 
-		</td>
-	</tr>
-	<tr>
-		<td>별점</td>
-	</tr>
-	<tr>
-	  	<td class="star_rating">
-	     	<a href="#" class="on" id="1">★</a>
-			<a href="#" class="on" id="2">★</a>
-			<a href="#" class="on" id="3">★</a>
-			<a href="#" id="4">★</a>
-			<a href="#" id="5">★</a>
-	   		<input type="hidden" id="review_star" name="review_star" value="3">
-		</td>
-	</tr>
-</table>
+
+<div class="write_wrap_bottom">
+
+	<div class="write_wrap_bottom_ch1">
+		<div class="write_wrap_bottom_ch1_top">
+			<div>
+				<img src="${pageContext.request.contextPath}/resources/image/board_write.png">
+			</div>
+			<div class="write_wrap_bottom_ch1_text">
+				후기게시판 글 작성 가이드 
+			</div>
+		</div>
+		<div class="write_wrap_bottom_ch1_bottom" style= "overflow:hidden;" >
+			<div class="open_expanded"  role="region">
+				<ul class="open_expand_text">
+					<li>- 참고가 되는 사진을 같이 공유해주시면 더 좋은 답변을 얻을 수 있습니다.</li>
+					<li>- 비슷한 어려움을 겪는 유저를 위해 답변자에게 포인트를 지급하며, 답변이 달린 질문글은 삭제할 수 없습니다.</li>
+					<li>- 인테리어와 관련 없는 질문은 숨김 및 삭제될 수 있습니다.</li>
+					<li>- 상품/배송 등 쇼핑 관련 문의는 불가능합니다.</li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="star_score">
+		<div class="star_score_inside">
+
+			<div>
+			  	<div class="star_rating">
+			     	<a href="#" class="on" id="1">★</a>
+					<a href="#" class="on" id="2">★</a>
+					<a href="#" class="on" id="3">★</a>
+					<a href="#" class="om" id="4">★</a>
+					<a href="#" class="om" id="5">★</a>
+			   		<input type="hidden" id="review_star" name="review_star" value="3">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="editor-title-input">
+		<div >
+			<input  type=text name='title' id = "title"  placeholder = "제목을 입력해주세요."/> 
+			<div id="test_cnt" class="editor-title-input__limit">0/30</div>
+			<div class="editor__title-error">	
+				<span style="display: none;" id = "msg1">필수 사항입니다.</span>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+	$(document).ready(function() {
+	    $('#title').on('keyup', function() {
+	        $('#test_cnt').html("("+$(this).val().length+" / 30)");
+	 
+	        if($(this).val().length > 100) {
+	            $(this).val($(this).val().substring(0, 100));
+	            $('#test_cnt').html("(100 / 100)");
+	        }
+	    });
+	});
+	</script>
+	
+	<div class="write_wrap_bottom_ch2">
+		<div>
+			<textarea name="content" id = "content" style="width: 650px; height: 300px" placeholder = "내용을 입력해주세요."></textarea>
+		<div class="editor__title-error">	
+			<span style="display: none;" id = "msg2">필수 사항입니다.</span>
+		</div>
+		</div>
+	</div>
+	
+	<div class="write_wrap_bottom_ch3">	
+		<!-- 사진 미리보기 -->
+		<div>
+			<div class="preview_wrap">
+				<div id="preview"></div>
+			</div>
+		</div>
+		<div class="write_button_wrap">
+			<div>
+				<div class="write_filebtn">
+				파일선택
+					<input style="display:none;" type="file" name="uploadFile" id="uploadFile" multiple> 
+				</div>
+			</div>
+			
+			<div>
+				<div>
+					<input type="button" value='글쓰기' id = "writeBtn" />
+					<input type=reset value='취소' />	 
+				</div>
+			</div>
+		</div>
+	</div>	
+	
+</div>
 </form>
+</section>
 </center>
 
