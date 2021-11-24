@@ -598,7 +598,7 @@ td a:link {
     background: #f7f8fa;
     border-radius: 4px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .write_button_wrap{
