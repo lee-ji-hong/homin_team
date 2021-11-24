@@ -85,54 +85,116 @@
 </script>
 
 <center>
-<form action="${root }boardModifyProc" method="post" enctype="multipart/form-data">
-<input type="hidden" name="no" value="${view.no }"/>
-<table style="width: 650px; ">
-	<tr>
-		<td style="width: 570px; height:40px;">
-			<input type=text name='title' style="width: 500px; " value="${view.title }"/> 
-		</td>
-	</tr>
-	<tr>
-		<td colspan=2 align="right">
-			<textarea name="content" style="width: 650px; height: 300px">${view.content }</textarea>
-		</td>
-	</tr>
-	<tr>
-		<td align='right' height=40 colspan=2>
-			<input type="file" name="uploadFile" id="uploadFile" multiple> 
-		</td>
-	</tr>
-	<c:forEach var="file" items="${fileName }" varStatus="status">
-		<tr id = "img${status.index}">
-			<td colspan = 2 style = "width: 150px; height: 150px;" valign="top" id = >
-				<input type = "hidden" name = "img" value = "${file }">
-				<div ><img src = "/img/${file }"style="width: 100px; height: 100px;"></div><input type = "button" onclick = "rmv(${status.index})" value = "x">
-			</td>
-		</tr>
-	</c:forEach>
-	<tr>
-		<td><div id="preview"></div></td>
-	</tr>
-	<tr>
-		<td align='center' height=40 colspan=2>
-			<input type=submit value='수정' style="width: 120px; "/>
-			<input type=button value='취소' onclick = "location.href='${root}boardProc'" style="width: 120px; "/>	 
-		</td>
-	</tr>
-	<tr>
-		<td>별점</td>
-	</tr>
-	<tr>
-	  	<td class="star_rating">
-	     	<a href="#" class="on" id="1">★</a>
-			<a href="#" class="on" id="2">★</a>
-			<a href="#" class="on" id="3">★</a>
-			<a href="#" id="4">★</a>
-			<a href="#" id="5">★</a>
-	   		<input type="hidden" id="review_star" name="review_star" value="3">
-		</td>
-	</tr>
-</table>
-</form> 
+<section class="write_wrap">
+	<form action="${root }boardModifyProc" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="no" value="${view.no }"/>
+	
+	<div class="write_wrap_bottom" >
+		
+		<div class="write_wrap_bottom_ch1">
+			<div class="write_wrap_bottom_ch1_top">
+				<div>
+					<img src="${pageContext.request.contextPath}/resources/image/board_write.png">
+				</div>
+				<div class="write_wrap_bottom_ch1_text">
+					후기게시판 글 작성 가이드 
+				</div>
+			</div>
+			<div class="write_wrap_bottom_ch1_bottom" style= "overflow:hidden;" >
+				<div class="open_expanded"  role="region">
+					<ul class="open_expand_text">
+						<li>- 참고가 되는 사진을 같이 공유해주시면 더 좋은 답변을 얻을 수 있습니다.</li>
+						<li>- 비슷한 어려움을 겪는 유저를 위해 답변자에게 포인트를 지급하며, 답변이 달린 질문글은 삭제할 수 없습니다.</li>
+						<li>- 인테리어와 관련 없는 질문은 숨김 및 삭제될 수 있습니다.</li>
+						<li>- 상품/배송 등 쇼핑 관련 문의는 불가능합니다.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div class="star_score">
+			<div class="star_score_inside">
+	
+				<div>
+				  	<div class="star_rating">
+				     	<a href="#" class="on" id="1">★</a>
+						<a href="#" class="on" id="2">★</a>
+						<a href="#" class="on" id="3">★</a>
+						<a href="#" class="om" id="4">★</a>
+						<a href="#" class="om" id="5">★</a>
+				   		<input type="hidden" id="review_star" name="review_star" value="3">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="editor-title-input">
+			<div >
+				<input  type=text name='title' id = "title"  value="${view.title }"/> 
+				<div id="test_cnt" class="editor-title-input__limit">0/30</div>
+				<div class="editor__title-error">	
+					<span style="display: none;" id = "msg1">필수 사항입니다.</span>
+				</div>
+			</div>
+		</div>
+		<script>
+		$(document).ready(function() {
+		    $('#title').on('keyup', function() {
+		        $('#test_cnt').html("("+$(this).val().length+" / 30)");
+		 
+		        if($(this).val().length > 100) {
+		            $(this).val($(this).val().substring(0, 100));
+		            $('#test_cnt').html("(100 / 100)");
+		        }
+		    });
+		});
+		</script>
+		
+		<div class="write_wrap_bottom_ch2">
+			<div>
+				<textarea name="content" id = "content" style="width: 650px; height: 300px" >${view.content }</textarea>
+			<div class="editor__title-error">	
+				<span style="display: none;" id = "msg2">필수 사항입니다.</span>
+			</div>
+			</div>
+		</div>
+		
+		<div class="write_wrap_bottom_ch3">	
+			<!-- 사진 미리보기 -->
+			<div>
+				<div class="preview_wrap">
+					<div id="preview"></div>
+				</div>
+			</div>
+			
+			<div class="write_button_wrap">
+				<div>
+					<div class="write_filebtn">
+					파일선택
+						<input style="display:none;" type="file" name="uploadFile" id="uploadFile" multiple> 
+					</div>
+				</div>
+				<c:forEach var="file" items="${fileName }" varStatus="status">
+					<div id = "img${status.index}">
+						<div  style = "width: 150px; height: 150px;">
+							<input type = "hidden" name = "img" value = "${file }">
+							<div ><img src = "/img/${file }"style="width: 100px; height: 100px;"></div><input type = "button" onclick = "rmv(${status.index})" value = "x">
+						</div>
+					</div>
+				</c:forEach>
+				
+				<div>
+					<div>
+						<input type=submit value='수정' />
+						<input type=button value='취소' onclick = "location.href='${root}boardProc'" />	 
+					</div>
+				</div>
+			</div>
+			
+		</div>	
+
+
+	</div>
+	</form> 
+</section>
 </center>

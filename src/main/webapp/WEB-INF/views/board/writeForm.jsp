@@ -137,7 +137,6 @@
 				</ul>
 			</div>
 		</div>
-		
 	</div>
 	
 	<div class="star_score">
