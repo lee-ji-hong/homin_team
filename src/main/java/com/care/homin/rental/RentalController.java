@@ -1,12 +1,15 @@
 package com.care.homin.rental;
 
 
+import static org.junit.Assert.assertNull;
+
 import java.io.IOException;
 import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +23,7 @@ import com.care.homin.rental.dto.orderDTO;
 import com.care.homin.rental.service.RentalService;
 import com.siot.IamportRestClient.IamportClient;
 import com.siot.IamportRestClient.exception.IamportResponseException;
+import com.siot.IamportRestClient.request.CancelData;
 import com.siot.IamportRestClient.response.IamportResponse;
 import com.siot.IamportRestClient.response.Payment;
 
@@ -72,5 +76,36 @@ public class RentalController {
 		String id = (String)session.getAttribute("id");
 		service.info(model, id, prodNo);
 		return "rental/orderForm";
+	}
+	
+	@Test
+	@RequestMapping(value = "/cancle")
+	public void testCancelPaymentAlreadyCancelledImpUid() {
+		String test_already_cancelled_imp_uid = "imp_166086036421";
+		CancelData cancel_data = new CancelData(test_already_cancelled_imp_uid, true); //imp_uid를 통한 전액취소
+		
+		try {
+			IamportResponse<Payment> payment_response = api.cancelPaymentByImpUid(cancel_data);
+			
+		} catch (IamportResponseException e) {
+			System.out.println(e.getMessage());
+			
+			switch(e.getHttpStatusCode()) {
+			case 401 :
+				//TODO
+				break;
+			case 500 :
+				//TODO
+				break;
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@RequestMapping(value = "/cancleProc")
+	public String String() {
+		return "rental/ordercancleForm";
 	}
 }
