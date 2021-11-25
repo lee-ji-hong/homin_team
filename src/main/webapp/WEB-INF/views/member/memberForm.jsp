@@ -1,7 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script
-	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
+</script>
 <script>
 	function ajaxIsExist() {
 		var i = document.getElementById('id').value;
@@ -70,6 +71,7 @@
 			}
 		})
 	}
+	
 	function daumPost() {
 		new daum.Postcode({
 			onComplete : function(data) {

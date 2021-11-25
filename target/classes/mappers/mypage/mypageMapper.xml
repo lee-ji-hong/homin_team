@@ -30,19 +30,35 @@
 		SELECT * FROM member_homin WHERE no = #{no}
 	</select>
 	
-	
-	<resultMap type="com.care.homin.membership.dto.MemberDTO" id="memberDtoList">
-		<result property="no" column="no"/>
+	<resultMap type="com.care.homin.membership.dto.PostcodeDTO" id="postcodeDto">
 		<result property="id" column="id"/>
-		<result property="nickname" column="nickname"/>
-		<result property="phone" column="phone"/>
-		<result property="email" column="email"/>
+		<result property="zipcode" column="zipcode"/>
+		<result property="addr1" column="addr1"/>
+		<result property="addr2" column="addr2"/>
 	</resultMap>
-	<select resultMap="memberDtoList" id="infoList">
-		SELECT * FROM member_homin
+	<select resultMap="postcodeDto" id="infoAddr" parameterType="String">
+		SELECT * FROM postcode_homin WHERE id = #{id}
 	</select>
 	
 	<delete id="deleteProc" parameterType="String">
 		DELETE FROM login_homin WHERE id=#{id}
 	</delete>
+	<delete id="deleteProcAddr" parameterType="String">
+		DELETE FROM postcode_homin WHERE id=#{id}
+	</delete>
+	
+	<update id="updateLogin" parameterType="com.care.homin.membership.dto.MemberDTO">
+		UPDATE login_homin SET pw=#{pw} WHERE id=#{id}	
+	</update>
+	<update id="updateMember" parameterType="com.care.homin.membership.dto.MemberDTO">
+		UPDATE member_homin SET nickname=#{nickname}, phone=#{phone}, email=#{email} WHERE id=#{id}	
+	</update>
+	<update id="updateAddrProc" parameterType="com.care.homin.membership.dto.PostcodeDTO">
+		UPDATE postcode_homin SET zipcode=#{zipcode}, addr1=#{addr1}, addr2=#{addr2} WHERE id=#{id}	
+	</update>
+	
+	<insert id="registerAdProc" parameterType="com.care.homin.membership.dto.PostcodeDTO">
+		INSERT INTO postcode_homin VALUES(#{id}, #{zipcode}, #{addr1}, #{addr2})
+	</insert>
+	
 </mapper>

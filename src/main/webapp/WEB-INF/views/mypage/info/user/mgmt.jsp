@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:url var="root" value="/" />
+<c:if test="${not empty msg }">
+	<script>alert('${msg}')</script>
+</c:if>
 <style>
 table {
 	width: 400; height: 200;
@@ -38,8 +42,8 @@ table {
 				</tr>
 				<tr>
 					<td colspan="2" align="right">
-						<input type="button" value="수정">
-						<input type="button" value="회원탈퇴" onclick="location.href='/homin/mypage/info/confirmPw'">
+						<input type="button" value="수정" onclick="location.href='${root}index?formpath=mgmt/confirmPwForUdMb'">
+						<input type="button" value="회원탈퇴" onclick="location.href='${root}index?formpath=mgmt/confirmPw'">
 					</td>
 				</tr>
 				

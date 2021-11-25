@@ -41,10 +41,6 @@
 
 <center>
 <div>
-	<a href="/homin"><img style="width: 100;" alt="" src="https://static.mylgid.com/userweb/1.0.28/images/logo_bi_SVC0000026.png"></a>
-</div>
-<hr>
-<div>
     	<h1>
     		<img style="width: 150" src="https://static.mylgid.com/userweb/1.0.28/images/logo.svg" alt="MY LG ID" />
     	</h1>

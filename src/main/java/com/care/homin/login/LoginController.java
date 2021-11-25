@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -48,7 +49,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping("loginProc")
-	public String loginProc(LoginDTO loginDto, HttpSession session) {
+	public String loginProc(LoginDTO loginDto, HttpSession session, Model model) {
 //		logger.warn("id : "+loginDto.getId());
 //		logger.warn("pw : "+loginDto.getPw());
 		MemberDTO mb = loginSvc.loginProc(loginDto);
@@ -57,7 +58,8 @@ public class LoginController {
 		
 		session.setAttribute("id", mb.getId());
 		session.setAttribute("nickname", mb.getNickname());
-		return "forward:index?formpath=home";
+		model.addAttribute("formpath", "home");
+		return "index";
 	}
 	
 	@Autowired KakaoConfig kakao;
@@ -74,12 +76,13 @@ public class LoginController {
 	}
 	
 	@RequestMapping("logout")
-	public String logout(HttpServletRequest req) {
+	public String logout(HttpServletRequest req, Model model) {
 		String access_Token = (String) req.getSession().getAttribute("access_Token");
 		kakao.logout(access_Token);
 		
 		req.getSession().invalidate();
-		return "forward:index?formpath=home";
+		model.addAttribute("formpath", "home");
+		return "index";
 	}
 	
 	
