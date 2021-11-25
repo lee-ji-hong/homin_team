@@ -17,38 +17,41 @@
 	<div>계약기간</div>
 	<div>방문주기</div>
 	<div>
-		<input type = "button" id = "orderBtn" value = "신청하기">
+		<input type = "button" id = "orderBtn" onclick = "iamport()" value = "신청하기">
 	</div>
 </div>
 
 <script>
-	$("#orderBtn").click(function() {
-		var IMP = window.IMP; // 생략가능
-		IMP.init('imp15192515');		// 가맹점 식별코드
-		IMP.request_pay({
-			pg : 'inicis',				// PG사 선택
-			pay_method : 'card',		// 결제 유형
-			merchant_uid : 'merchant_' + new Date().getTime(),	// 가맹점에서 구별할 수 있는 고유한id
-			name : '${productInfo.product_name}',			// 결제창에서 보여질 이름
-			amount : /* ${productInfo.price} */100,					// 가격 
-			buyer_email : '${memberInfo.email}',// 구매자 이메일
-			buyer_name : '${memberInfo.nickname}',			// 구매자 이릅
-			buyer_tel : '${memberInfo.phone}',	// 구매자 번호
-			buyer_addr : '${memberPostcode.addr1}'+'${memberPostcode.addr2}',				// 구매자 주소
-			buyer_postcode : '${memberPostcode.zipcode}',		
-		}, function(rsp) {
-			console.log(rsp);
-			if (rsp.success) {
-				var msg = '결제가 완료되었습니다.';
-				msg += '고유ID : ' + rsp.imp_uid;
-				msg += '상점 거래ID : ' + rsp.merchant_uid;
-				msg += '결제 금액 : ' + rsp.paid_amount;
-				msg += '카드 승인번호 : ' + rsp.apply_num;
-			} else {
-				var msg = '결제에 실패하였습니다.';
-				msg += '에러내용 : ' + rsp.error_msg;
-			}
-			alert(msg);
-		});
+function iamport(){
+	//가맹점 식별코드
+	IMP.init('imp15192515');
+	IMP.request_pay({
+	    pg : 'inicis',
+	    pay_method : 'card',
+	    merchant_uid : 'merchant_' + new Date().getTime(),
+	    name : '${productInfo.product_name }' , 		// 결제창에서 보여질 이름
+	    amount : 100, 									// 실제 결제되는 가격
+	    buyer_email : '${memberInfo.email}',			// 구매자 이메일
+	    buyer_name : '${memberInfo.nickname}',			// 구매자 이름
+	    buyer_tel : '${memberInfo.phone}',				// 구매자 번호
+	    buyer_addr : '${memberPostcode.addr1}',			// 구매자 주소
+	    buyer_postcode : '${memberPostcode.zipcode}'	// 구매자 우편번호
+	}, function(rsp) {		// 콜백
+		console.log(rsp);
+		// 결제검증
+		$.ajax({
+        	type : "POST",
+        	url : "${root}check/" + rsp.imp_uid 
+        }).done(function(data) {
+        	console.log(data);
+        	// 위의 rsp.paid_amount 와 data.response.amount를 비교한후 로직 실행 (import 서버검증)
+        	if(rsp.paid_amount == data.response.amount){
+	        	alert("결제 및 결제검증완료");
+	        	//location.href='${root}index?formpath=home';
+        	} else {
+        		alert("결제 실패");
+        	}
+        });
 	});
+}
 </script>
