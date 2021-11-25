@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="${root }resources/swiper/swiper.min.css">  
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 
 
 <style>
@@ -23,18 +23,17 @@
 	display: none;
 }
 </style>
-<div>
-	<span>${product.product_no }</span>
-	<h2>
-		<span>${product.product_name }</span>
-	</h2>
-	<p>대충 여기에 제품 설명.</p>
-	<div>
-		<span>#연관 태그</span>
-	</div>
-</div>
-<div style="width: 300px;">
-			<div class="swiper-container" style="width: 100%;">
+	<div style="display: flex;flex-direction: row;s">
+		<div>
+			<span>${product.product_no }</span>
+			<h2>
+				<span>${product.product_name }</span>
+			</h2>
+			<p>대충 여기에 제품 설명.</p>
+			<div>
+				<span>#연관 태그</span>
+			</div>
+			<div class="swiper-container" style="width: 300px;">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<img src="${root }resources/image/${product.classification }/${product.product_filename}" style="width: 100%;">
@@ -46,45 +45,22 @@
 			<div class="swiper-pagination" style="width: 300px;"></div>
 			<script src="${root }resources/swiper/swiper.min.js"></script>
 		</div>
-
-	<p>결제 테스트</p>
-	<button id="check_module" type="button">결제</button>
-
-<script>
-	$("#check_module").click(function() {
-		var IMP = window.IMP; // 생략가능
-		IMP.init('imp15192515');		// 가맹점 식별코드
-		IMP.request_pay({
-			pg : 'inicis',				// PG사 선택
-			pay_method : 'card',		// 결제 유형
-			merchant_uid : 'merchant_' + new Date().getTime(),	// 가맹점에서 구별할 수 있는 고유한id
-			name : '주문명:결제테스트',			// 결제창에서 보여질 이름
-			amount : 1000,					// 가격 
-			buyer_email : 'iamport@siot.do',// 구매자 이메일
-			buyer_name : '테스트',			// 구매자 이릅
-			buyer_tel : '010-1234-5678',	// 구매자 번호
-			buyer_addr : '서울',				// 구매자 주소
-			buyer_postcode : '123-456',		
-			m_redirect_url : 'https://www.yourdomain.com/payments/complete'	// 결제후 돌아갈 url
-		
-		}, function(rsp) {
-			console.log(rsp);
-			if (rsp.success) {
-				var msg = '결제가 완료되었습니다.';
-				msg += '고유ID : ' + rsp.imp_uid;
-				msg += '상점 거래ID : ' + rsp.merchant_uid;
-				msg += '결제 금액 : ' + rsp.paid_amount;
-				msg += '카드 승인번호 : ' + rsp.apply_num;
-			} else {
-				var msg = '결제에 실패하였습니다.';
-				msg += '에러내용 : ' + rsp.error_msg;
-			}
-			alert(msg);
-		});
-	});
-</script>
-
-
+		<div>
+			<div>
+				<span>계약 기간</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>2년</span>
+			</div>
+			<div>
+				<span>방문 주기</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>6개월마다 1회</span>
+			</div>
+			<div>
+				<span>월 이용 요금</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span>${product.price }</span>
+			</div>
+			<div>
+				<button id="check_module" type="button" onclick = "location.href='${root}index?formpath=productOrder&prodNo=${product.product_no }'">이용 신청</button>
+				<button type="button">장바구니 담기</button>
+			</div>
+		</div>
+	</div>
 
 <script>
 	var mySwiper = new Swiper('.swiper-container', {

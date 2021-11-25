@@ -5,6 +5,14 @@ public class RentalDTO {
 	private String product_name;
 	private String product_filename;
 	private String classification;
+	private String price;
+	
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
 	public String getProduct_no() {
 		return product_no;
 	}
