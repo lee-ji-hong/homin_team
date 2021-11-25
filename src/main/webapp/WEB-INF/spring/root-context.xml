@@ -29,5 +29,7 @@
 	<mybatis-spring:scan base-package="com.care.homin.login.dao"/>
 	<mybatis-spring:scan base-package="com.care.homin.membership.dao"/>
 	<mybatis-spring:scan base-package="com.care.homin.mypage.repository"/>
+	<mybatis-spring:scan base-package="com.care.homin.rental.dao"/>
+	<mybatis-spring:scan base-package="com.care.homin.mypageAdmin.repository"/>
 	
 </beans>
