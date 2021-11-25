@@ -39,48 +39,53 @@
 	}
 </script>
 
-<center>
-<div>
+<center style="margin: 50 0px;">
+<div style="margin: 10 0px;">
     	<h1>
     		<img style="width: 150" src="https://static.mylgid.com/userweb/1.0.28/images/logo.svg" alt="MY LG ID" />
     	</h1>
+    	<br>
 	    <p id="testAlert">하나의 ID로 LG의 다양한 서비스를 이용해보세요.</p>
-        <p>홈인 서비스는 MY LG ID로 이용하실 수 있습니다.</p>        
+        <p>홈인 서비스는 MY LG ID로 이용하실 수 있습니다.</p>
+        
 </div>
-<form action="/homin/loginProc" id="f" method="post">
+<form action="/homin/loginProc" id="f"  method="post">
 	<table>
 		<tr>
-			<td><label class="form-title">MY LG ID (이메일)</label></td>
+			<td><label class="form-title"><br>MY LG ID (이메일)</label></td>
 		</tr>
 		<tr>
-			<td><input style="width: 350" type=text id="id" name='id' placeholder="MY LG ID (이메일)"/></td>
+			<td><input style="width: 350; height: 30; font-size: 15;" type=text id="id" name='id' placeholder="MY LG ID (이메일)"/></td>
+		</tr>
+		
+		<tr>
+			<td><br>비밀번호</td>
 		</tr>
 		<tr>
-			<td>비밀번호</td>
-		</tr>
-		<tr>
-			<td><input style="width: 350" type=password id="pw" name='pw' placeholder="비밀번호"/></td>
+			<td><input style="width: 350; height: 30; font-size: 15; " type=password id="pw" name='pw' placeholder="비밀번호"/></td>
 		</tr>
 		<tr>
 			<td><label id="msg" style="color:red;"></label></td>
 		</tr>
 		<tr>
-			<td colspan=2 align='center'>
-				<input type="button" value='로그인' style="width: 86px;" onclick="idPwCheck()"/>
-				<input type=reset value='취소' style="width: 86px; "/> 
+		
+			<td colspan=2 align='center'><br>
+				<input type="button" value='로그인' style="color:#FFFFFF; background-color:#B71256; 
+						font-size:15; width: 150px; height: 30px; border-radius: 10px; " onclick="idPwCheck()"/>
+				
 			</td>
 		</tr>
 		<c:set var="redirectUri" value="http://localhost:8085/homin/kakaoLogin"/>
 		<c:set var="restKey" value="6b699a51ed025c4bd6a42e5026901e43"/>
 		<tr>
-			<td colspan="2" align="center">
+			<td colspan="2" align="center"><br>
 				<a href="https://kauth.kakao.com/oauth/authorize?client_id=${restKey }&redirect_uri=${redirectUri }&response_type=code"> 
 					<img src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" width="180"/>
 				</a>
 			</td>
 		</tr>
 		<tr>
-			<td colspan=2 align='center'>
+			<td colspan=2 align='center'><br>
 				<a href="/homin/member">회원가입</a> |
 				<a href="">아이디 찾기</a> |
 				<a href="">비밀번호 찾기</a>

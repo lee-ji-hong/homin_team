@@ -55,20 +55,22 @@ div#wrapper {
 					<td><label>MY LG ID (이메일)</label></td>
 				</tr>
 				<tr>
-					<td><input style="width: 350" type=text id="id" name='id' value="${sessionScope.id }" readonly="readonly"/></td>
+					<td><input style="width: 350; height: 30; font-size: 15;" type=text id="id" name='id' value="${sessionScope.id }" readonly="readonly"/></td>
 				</tr>
 				<tr>
-					<td>비밀번호</td>
+					<td><br>비밀번호</td>
 				</tr>
 				<tr>
-					<td><input style="width: 350" type=password id="pw" name='pw' placeholder="비밀번호"/></td>
+					<td><input style="width: 350; height: 30; font-size: 15;" type=password id="pw" name='pw' placeholder="비밀번호"/></td>
+					
 				</tr>
 				<tr>
 					<td><label id="msg" style="color:red;"></label></td>
 				</tr>
 				<tr>
-					<td colspan=2 align='center'>
-						<input type="button" value='확인' style="width: 86px;" onclick="pwCheck()"/>
+					<td colspan=2 align='center'><br>
+						<input type="button" style="color:#FFFFFF; background-color:#B71256; 
+						font-size:15; width: 150px; height: 30px; border-radius: 10px;" value='확인' style="width: 86px;" onclick="pwCheck()"/>
 					</td>
 				</tr>
 			</table>
