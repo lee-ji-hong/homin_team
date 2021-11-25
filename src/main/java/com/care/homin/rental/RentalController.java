@@ -3,6 +3,7 @@ package com.care.homin.rental;
 
 import java.io.IOException;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,10 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.care.homin.rental.dto.orderDTO;
 import com.care.homin.rental.service.RentalService;
 import com.siot.IamportRestClient.IamportClient;
 import com.siot.IamportRestClient.exception.IamportResponseException;
@@ -41,6 +44,21 @@ public class RentalController {
 			, @PathVariable(value= "imp_uid") String imp_uid) throws IamportResponseException, IOException
 	{	
 			return api.paymentByImpUid(imp_uid);
+	}
+	
+	@RequestMapping(value="/orderDB")
+	public void orderDB(@RequestBody Map<String,String> d) {
+		orderDTO dto = new orderDTO();
+		dto.setUid(d.get("uid"));
+		dto.setEmail(d.get("email"));
+		dto.setAddr(d.get("addr"));
+		dto.setPostcode(d.get("buyerpostcode"));
+		dto.setName(d.get("buyername"));
+		dto.setTell(d.get("tell"));
+		dto.setAmount(d.get("amount"));
+		dto.setProductName(d.get("name"));
+		
+		service.orderHistory(dto);
 	}
 	
 	@RequestMapping(value = "/productOrder")
