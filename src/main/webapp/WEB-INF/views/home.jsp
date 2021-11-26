@@ -6,7 +6,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/index.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
-
 <style>
 	.swiper-pagination-bullet {
 		width: 12px;
