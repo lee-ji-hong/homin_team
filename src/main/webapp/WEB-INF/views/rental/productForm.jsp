@@ -69,7 +69,7 @@
 					<button id="check_module" type="button" onclick = "location.href='${root}index?formpath=productOrder&prodNo=${product.product_no }'">이용 신청</button>
 					<button type="button">장바구니 담기</button>
 				</div>
-			
+		</div>	
 	</div>
 	
 	<div class="product_detailpg_contents">
