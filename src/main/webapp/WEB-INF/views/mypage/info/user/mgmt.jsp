@@ -7,8 +7,15 @@
 </c:if>
 <style>
 table {
-	width: 400; height: 200;
+	width: 600; height: 200;
+	align:"center"
 }
+
+
+h3 {
+	font-size: 24;
+	margin: 0 0 20 0px;
+	}
 </style>
 <div>
 	<c:import url="mypage/mypageNav.jsp"></c:import>
@@ -41,13 +48,31 @@ table {
 					<td>이메일</td><td>${allDto.email }</td>
 				</tr>
 				<tr>
-					<td colspan="2" align="right">
-						<input type="button" value="수정" onclick="location.href='${root}index?formpath=mgmt/confirmPwForUdMb'">
-						<input type="button" value="회원탈퇴" onclick="location.href='${root}index?formpath=mgmt/confirmPw'">
+					<td colspan="2" align="center">
+						<input type="button" style="width: 75; height: 30; font-size: 15; border-radius:10px; color:#FFFFFF; background-color:#B71256;"
+								value="수정" onclick="location.href='${root}index?formpath=mgmt/confirmPwForUdMb'">
 					</td>
 				</tr>
+				</table>
 				
-			</table>
+				<table>
+				<tr><td>회원 탈퇴는 본인 확인 절차 후, 진행됩니다.<br></td></tr>
+				<tr><td>회원 탈퇴 후에도 MY LG ID 회원은 유지되며, 계속 이용할 수 있습니다.<br></td></tr>
+				<tr><td>회원 탈퇴 시, 홈인에서 받은 각종 할인 쿠폰 및 이벤트 혜택 등은 자동으로 소멸합니다.<br></td></tr>
+				<tr><td>다음에서 회원 탈퇴 처리는 유보될 수 있습니다.<br></td></tr>
+				<tr><td>1. 회원이 상품 주문 또는, 서비스를 신청 중인 경우.<br></td></tr>
+				<tr><td>- 회원이 직접 주문/신청 내역을 전부 삭제할 때까지, 탈퇴 처리는 유보될 수 있습니다.<br></td></tr>
+				<tr><td>2. 제휴사가 서비스를 진행 예정 또는, 진행 중인 경우.<br></td></tr>
+				<tr><td>- 회원과 제휴사 간에 진행 취소가 결정될 때까지, 탈퇴 처리는 유보될 수 있습니다.<br></td></tr>
+				
+				
+					<tr>
+					<td colspan="2" align="center">
+					<input type="button" style="width: 75; height: 30; font-size: 15; border-radius:10px;" 
+								value="회원탈퇴" onclick="location.href='${root}index?formpath=mgmt/confirmPw'">
+					</td>
+					</tr>
+				</table>
 		</section>
 	</div>
 </div>

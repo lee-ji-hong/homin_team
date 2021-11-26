@@ -72,7 +72,7 @@
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 	
 	<div>
-		<h1>회원정보 수정</h1>
+		<h1>회원정보 수정</h1><br>
 		<h3><font color="red" id="msg">${msg }</font></h3>
 	
 		<form action="mgmt/updateProc" id="f" method="post">
