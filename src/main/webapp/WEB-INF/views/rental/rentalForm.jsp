@@ -68,6 +68,7 @@
 
 <section class="container-home-section">
 <c:forEach var="pr" items="${product }">
+<<<<<<< HEAD
 
 	<div  class="main-product-list" onclick="location.href='${root}index?formpath=product&prodNo=${pr.product_no }'">
 		<div class="main-product-list-in">
@@ -89,6 +90,20 @@
 					</div>	
 				</li>	
 			</ul>
+=======
+	<div style="width: 250px; height: 500px;" onclick="location.href='${root}index?formpath=product&prodNo=${pr.product_no }'">
+		<div>
+			<img src="${root }resources/image/${pr.classification }/${pr.product_filename}" style="width: 200px; height: 300px;">
+		</div>
+		<div>
+			<div>${pr.product_no }</div>
+			<div>${pr.product_name }</div>
+			<div>
+				<div>
+					<span>월</span> <span>가격</span> <span>${pr.price }원</span>
+				</div>
+			</div>
+>>>>>>> main
 		</div>
 	</div>
 

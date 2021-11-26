@@ -28,6 +28,7 @@
 	            </c:when>
 	            <c:otherwise>
 	              <li>
+	              	<a href="${root }index?formpath=mypage">${sessionScope.nickname }님의 마이 | </a>
 	                <a href="${root}logout ">로그아웃</a>
 	              </li>
 	            </c:otherwise>
