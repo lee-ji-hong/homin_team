@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/*rentalform 페이지*/
 .rental-header{
 	font-size: 30px;
     color: #000;
@@ -30,3 +31,98 @@
     transform: translateX(-50%);
 }
 
+/*productform상세페이지*/
+
+.product_detailpg_wrap {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	display: flex;
+    justify-content: space-between;
+}
+
+.product_selling{
+	padding-right: 10px;
+    padding-left: 10px;
+	display: flex;
+	flex-direction: row;
+}
+.swiper-container {
+	width: 600px;
+    height: 600px;
+    position: relative;
+    border: 5px solid #ffe1b2;
+    border-radius: 10px;
+}
+
+.swiper-slide{
+	width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img {
+	width: 100%;
+    top: 0;
+    left: 0;
+}
+.product_selling_text{
+	margin-left: 30px;
+}
+.product_selling_text_header {
+	font-weight: inherit;
+}
+
+.product_selling_text_header p {
+	margin: -4px 0 4px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 19px;
+    color: #757575;
+    display: block;
+}
+
+.product_selling_text_header h2{
+	font-size: 30px;
+    line-height: 30px;
+    min-height: 43px;
+    margin: 0 92px 0 0;
+}
+
+.product_selling_text_body{
+	margin-top: 8px;
+    font-size: 22px;
+    line-height: 20px;
+    color: #444;
+    font-weight: 700;
+}
+
+.product_selling_text_body_ch1{
+	margin: 10px 0 0;
+
+}
+.product_selling_text_body_ch1 span{
+	width: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-right: 12px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #222;
+    background: none;
+    border: 0;
+    cursor: default;
+}
+.product_selling_text_comment{
+	margin-top: 20px;
+    line-height: 30px;
+}
+.selling_text_comment_1 {
+	display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.selling_text_comment_1 p{
+	margin-right: 100px;
+}
