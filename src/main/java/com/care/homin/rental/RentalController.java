@@ -78,9 +78,10 @@ public class RentalController {
 		return "rental/orderForm";
 	}
 	
+	@Test
 	@RequestMapping(value = "/cancle")
 	public void testCancelPaymentAlreadyCancelledImpUid() {
-		String test_already_cancelled_imp_uid = "imp_082067839091";
+		String test_already_cancelled_imp_uid = "imp_166086036421";
 		CancelData cancel_data = new CancelData(test_already_cancelled_imp_uid, true); //imp_uid를 통한 전액취소
 		
 		try {
