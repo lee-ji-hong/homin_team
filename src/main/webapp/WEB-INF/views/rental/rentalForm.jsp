@@ -35,6 +35,7 @@
 <c:forEach var="pr" items="${product }">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	<div  class="main-product-list" onclick="location.href='${root}index?formpath=product&prodNo=${pr.product_no }'">
 		<div class="main-product-list-in">
@@ -59,6 +60,8 @@
 =======
 =======
 >>>>>>> parent of 7f20390 (렌탈페이지 수정)
+=======
+>>>>>>> parent of 7f20390 (렌탈페이지 수정)
 	<div style="width: 250px; height: 500px;" onclick="location.href='${root}index?formpath=product&prodNo=${pr.product_no }'">
 		<div>
 			<img src="${root }resources/image/${pr.classification }/${pr.product_filename}" style="width: 200px; height: 300px;">
@@ -69,10 +72,16 @@
 			<div>
 				<div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<span>월</span> <span>가격</span> <span>${pr.price }원</span>
 				</div>
 			</div>
 >>>>>>> main
+=======
+					<span>월</span> <span>가격</span> <span>원</span>
+				</div>
+			</div>
+>>>>>>> parent of 7f20390 (렌탈페이지 수정)
 =======
 					<span>월</span> <span>가격</span> <span>원</span>
 				</div>
