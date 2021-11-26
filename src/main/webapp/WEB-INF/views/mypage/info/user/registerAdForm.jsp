@@ -29,7 +29,7 @@
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 	
 	<div>
-		<h3>주소지 등록</h3>
+		<h3 style="font-size:24px;">주소지 등록</h3>
 		<form action="registerAddrProc" method="post">
 			<table>
 				<tr>

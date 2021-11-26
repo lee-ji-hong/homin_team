@@ -5,9 +5,10 @@
 <div>
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 	
-	<div>
+	<div style="width: 1200">
 		<div>
 			<h3>안녕하세요. ${sessionScope.nickname }님</h3>
+			<h3>좌측 배너에서 원하시는 서비스를 골라주세요.</h3>
 		</div>
 	</div>
 </div>

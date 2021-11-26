@@ -5,24 +5,13 @@
 <c:if test="${not empty msg }">
 	<script>alert('${msg}')</script>
 </c:if>
-<style>
-table {
-	width: 600; height: 200;
-	align:"center"
-}
 
-
-h3 {
-	font-size: 24;
-	margin: 0 0 20 0px;
-	}
-</style>
 <div>
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 		
-	<div>
+	<div style="width: 1200">
 		<div>
-			<h3>회원 관리 정보</h3>
+			<h3 style="font-size:24px;">회원 관리 정보</h3>
 		</div>
 		<section>
 			<div>
@@ -31,7 +20,7 @@ h3 {
 			<div>
 				<p>MY LG ID 홈페이지에서 회원 정보를 변경할 수 있습니다.</p>
 			</div>
-			<table>
+			<table style="margin: 0 0 0 350px;">
 				<tr>
 					<td>아이디</td><td>${allDto.id }</td>
 				</tr>
@@ -42,7 +31,7 @@ h3 {
 					<td>이름</td><td>${allDto.nickname }</td>
 				</tr>
 				<tr>
-					<td>휴대폰번호</td><td>${allDto.phone }</td>
+					<td>휴대폰번호&nbsp</td><td>${allDto.phone }</td>
 				</tr>
 				<tr>
 					<td>이메일</td><td>${allDto.email }</td>
@@ -54,8 +43,8 @@ h3 {
 					</td>
 				</tr>
 				</table>
-				
-				<table>
+				<br>
+				<table style="margin:0 0 0 190px;">
 				<tr><td>회원 탈퇴는 본인 확인 절차 후, 진행됩니다.<br></td></tr>
 				<tr><td>회원 탈퇴 후에도 MY LG ID 회원은 유지되며, 계속 이용할 수 있습니다.<br></td></tr>
 				<tr><td>회원 탈퇴 시, 홈인에서 받은 각종 할인 쿠폰 및 이벤트 혜택 등은 자동으로 소멸합니다.<br></td></tr>

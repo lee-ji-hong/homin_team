@@ -15,9 +15,10 @@ table {
 		
 	<div>
 		<div>
-			<h3>회원 목록</h3>
+			<h3 style="font-size: 24px;">회원 목록</h3>
 		</div>
 		<section>
+			<br>
 			<table>
 				<thead>
 					<tr>

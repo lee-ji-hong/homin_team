@@ -36,16 +36,20 @@
 <table>
 	<tr>
 		<td>패스워드 </td>
-		<td><input type=password name='pw' id = "pw" placeholder='PW 입력'/></td>
+		<td><input type=password style="width: 175; height:30; vertical-align:middle; margin:5;"
+		name='pw' id = "pw" placeholder='PW 입력'/></td>
 	</tr>
 	<tr>
 		<td>패스워드 확인</td>
-		<td><input type=password name='pwOk'  id = "pwOk" placeholder='PW 입력'/></td>
+		<td><input type=password style="width: 175; height:30; vertical-align:middle; margin:5;"
+		name='pwOk' id = "pwOk" placeholder='PW 입력'/></td>
 	</tr>
 	<tr>
 		<td colspan=2 align='center'>
-			<input type=button value='확인' style="width: 86px; " id = "submitCheck"/>
-			<input type=reset value='취소' onclick = "javascript:history.back()" style="width: 86px; "/> 
+			<input type=button value='확인' style="width: 75; height: 30; font-size: 15; border-radius:10px; color:#FFFFFF; background-color:#B71256;"
+					 id = "submitCheck"/>
+			<input type=reset value='취소' style="width: 75; height: 30; font-size: 15; border-radius:10px;"
+			onclick = "javascript:history.back()"/> 
 		</td>
 	</tr>
 </table>

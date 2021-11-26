@@ -43,11 +43,11 @@ div#wrapper {
 	}
 </script>
 
-<center>
+
 <div>
 	<c:import url="mypage/mypageNav.jsp"></c:import>
-	<div>
-	   	<h3>비밀번호 확인</h3>
+	<div style="width: 1200">
+	   	<h3 style="font-size:24px;">비밀번호 확인</h3>
 	    <p>개인 정보를 안전하게 보호하기 위해 비밀번호를 한번 더 입력해 주세요.</p>
 		<form action="mgmt/updateForm" id="f" method="post">
 			<table>
@@ -55,13 +55,13 @@ div#wrapper {
 					<td><label>MY LG ID (이메일)</label></td>
 				</tr>
 				<tr>
-					<td><input style="width: 350; height: 30; font-size: 15;" type=text id="id" name='id' value="${sessionScope.id }" readonly="readonly"/></td>
+					<td><input style="width: 225; height: 30; font-size: 15;" type=text id="id" name='id' value="${sessionScope.id }" readonly="readonly"/></td>
 				</tr>
 				<tr>
 					<td><br>비밀번호</td>
 				</tr>
 				<tr>
-					<td><input style="width: 350; height: 30; font-size: 15;" type=password id="pw" name='pw' placeholder="비밀번호"/></td>
+					<td><input style="width: 225; height: 30; font-size: 15;" type=password id="pw" name='pw' placeholder="비밀번호"/></td>
 					
 				</tr>
 				<tr>
@@ -78,4 +78,4 @@ div#wrapper {
 	            
 	</div>
 </div>
-</center>
+

@@ -93,5 +93,4 @@
 		</tr>
 	</table>
 </form>
-</h3>
 </center>

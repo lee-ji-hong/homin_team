@@ -9,15 +9,16 @@
 table {
 	width: 400; height: 200;
 }
+
 </style>
-<div>
+<div style="width: 1200">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 	
 	<c:choose>
 		<c:when test="${postCode eq null }">
 			<div>
 				<div>
-					<h3>주소지 등록하기</h3>
+					<h3 style="font-size:24px;">주소지 등록하기</h3>
 					<input type="button" value="주소 등록" onclick="location.href='${root}index?formpath=addr/registerAdForm'">
 				</div>
 			</div>
@@ -25,7 +26,7 @@ table {
 		<c:otherwise>
 			<div>
 				<div>
-					<h3>주소지 관리</h3>
+					<h3 style="font-size:24px;">주소지 관리</h3>
 				</div>
 				<section>
 					<table>
@@ -35,8 +36,10 @@ table {
 						<tr><td>상세주소</td><td>${postCode.addr2 }</td></tr>
 						<tr>
 							<td colspan="2" align="right">
-								<input type="button" value="수정" onclick="location.href='${root}index?formpath=addr/updateAdForm'">
-								<input type="button" value="주소삭제" onclick="location.href='${root}index?formpath=addr/confirmPw'">
+								<input type="button" value="수정" style="color:#FFFFFF; background-color:#B71256; 
+										font-size:15; width: 100px; height: 30px; border-radius: 10px; " onclick="location.href='${root}index?formpath=addr/updateAdForm'">
+								<input type="button" value="주소삭제" style= "font-size:15; width: 100px; height: 30px; border-radius: 10px; "
+										 onclick="location.href='${root}index?formpath=addr/confirmPw'">
 							</td>
 						</tr>
 					</table>

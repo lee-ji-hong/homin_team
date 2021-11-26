@@ -25,10 +25,11 @@ table {
 		
 	<div>
 		<div>
-			<h3>주소지 목록</h3>
+			<h3 style="font-size:24px;">주소지 목록</h3>
 		</div>
 		<section>
 			<form action="" id="f" method="post">
+				<br>
 				<table>
 					<thead>
 						<tr>
@@ -42,8 +43,10 @@ table {
 								<td>${pDto.zipcode }</td>
 								<td>${pDto.addr1 }</td>
 								<td>${pDto.addr2 }</td>
-								<td><input type="button" value="수정"></td>
-								<td><input type="button" value="삭제" onclick="deleteChk()"></td>
+								<td><input type="button" style="height:30px; width:40px; vertical-align:middle; margin:2; border-radius:10px;"
+											value="수정"></td>
+								<td><input type="button" style="height:30px; width:40px; vertical-align:middle; margin:2; background-color:lightpink; border-radius:10px;"
+										value="삭제" onclick="deleteChk()"></td>
 							</tr>
 						</c:forEach>
 					</tbody>

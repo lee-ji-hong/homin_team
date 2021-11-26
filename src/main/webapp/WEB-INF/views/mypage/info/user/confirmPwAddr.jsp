@@ -42,11 +42,11 @@ div#wrapper {
 	}
 </script>
 
-<center>
-<div>
+
+<div style="width: 1200">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 	<div>
-	   	<h3>비밀번호 확인</h3>
+	   	<h3 style="font-size:24px;">비밀번호 확인</h3>
 	    <p>개인 정보를 안전하게 보호하기 위해 비밀번호를 한번 더 입력해 주세요.</p>
 		<form action="addr/deleteProc" id="f" method="post">
 			<table>
@@ -54,20 +54,21 @@ div#wrapper {
 					<td><label>MY LG ID (이메일)</label></td>
 				</tr>
 				<tr>
-					<td><input style="width: 350" type=text id="id" name='id' value="${sessionScope.id }" readonly="readonly"/></td>
+					<td><input style="width: 225; height:30;" type=text id="id" name='id' value="${sessionScope.id }" readonly="readonly"/></td>
 				</tr>
 				<tr>
-					<td>비밀번호</td>
+					<td><br>비밀번호</td>
 				</tr>
 				<tr>
-					<td><input style="width: 350" type=password id="pw" name='pw' placeholder="비밀번호"/></td>
+					<td><input style="width: 225; height:30;" type=password id="pw" name='pw' placeholder="비밀번호"/></td>
 				</tr>
 				<tr>
 					<td><label id="msg" style="color:red;"></label></td>
 				</tr>
 				<tr>
-					<td colspan=2 align='center'>
-						<input type="button" value='확인' style="width: 86px;" onclick="pwCheck()"/>
+					<td colspan=2 align='center'><br>
+						<input type="button" style="width: 75; height: 30; font-size: 15; border-radius:10px; color:#FFFFFF; background-color:#B71256;"
+						 value='확인' style="width: 86px;" onclick="pwCheck()"/>
 					</td>
 				</tr>
 			</table>
@@ -75,4 +76,4 @@ div#wrapper {
 	            
 	</div>
 </div>
-</center>
+

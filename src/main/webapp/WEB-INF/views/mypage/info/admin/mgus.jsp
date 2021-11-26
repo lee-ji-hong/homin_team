@@ -21,9 +21,10 @@ table {
 		
 	<div>
 		<div>
-			<h3>회원 관리</h3>
+			<h3 style="font-size:24px;">회원 관리</h3>
 		</div>
 		<section>
+			<br>
 			<table>
 				<thead>
 					<tr>
@@ -51,9 +52,12 @@ table {
 					</tr>
 					<tr>
 						<td colspan="2" align="right">
-							<input type="button" value="수정">
-							<input type="button" value="삭제" onclick="deleteUser();">
-							<input type="button" value="목록" onclick="location.href='${root}index?formpath=info/manage';">
+							<input type="button" value="수정"
+							style="height:30px; width:40px; vertical-align:middle; margin:2; border-radius:10px;">
+							<input type="button" value="삭제" onclick="deleteUser();"
+							style="height:30px; width:40px; vertical-align:middle; margin:2; background-color:lightpink; border-radius:10px;">
+							<input type="button" value="목록" onclick="location.href='${root}index?formpath=info/manage';"
+							style="height:30px; width:40px; vertical-align:middle; border-radius:10px;">
 						</td>
 					</tr>
 				</tbody>

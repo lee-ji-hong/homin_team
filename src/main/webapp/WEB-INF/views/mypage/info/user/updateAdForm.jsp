@@ -24,31 +24,32 @@
 		}).open();
 	}
 </script>
-
-<div>
+<div style="width: 1200">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 	
 	<div>
-		<h3>주소지 수정</h3>
+		<h3 style="font-size:24px;">주소지 수정</h3><br>
 		<form action="addr/updateProc" method="post">
 			<table>
 				<tr>
 					<td align='right'>우편번호</td>
-					<td><input type=text name='zipcode' id="zipcode"	readonly="readonly" /></td>
-					<td colspan="2"><input type="button" value="우편번호 검색"		onclick="daumPost()"></td>
+					<td><input type=text name='zipcode'  style="width: 75; height:30; vertical-align:middle; margin:5;"  id="zipcode"	readonly="readonly" /></td>
+					<td colspan="2"><input type="button"  style="height:30; vertical-align:middle; margin:5;"  value="우편번호 검색"		onclick="daumPost()"></td>
 				</tr>
 				<tr>
 					<td align='right'>주소</td>
-					<td colspan="3"><input type=text name='addr1' id="addr1" readonly="readonly" style="width: 475px;" /></td>
+					<td colspan="3"><input type=text  style="height:30; width: 275px; vertical-align:middle; margin:5;"  name='addr1' id="addr1" readonly="readonly"/></td>
 				</tr>
 				<tr>
 					<td align='right'>상세주소</td>
-					<td colspan="3"><input type=text name='addr2' id="addr2" style="width: 475px;" /></td>
+					<td colspan="3"><input type=text  style="height:30; width: 275px; vertical-align:middle; margin:5;"  name='addr2' id="addr2"/></td>
 				</tr>
 				<tr>
 					<td align='center' height=40 colspan=4>
-					<input type=submit		value='수정' style="width: 120px;" /> 
-					<input type=reset value='취소'	style="width: 120px;" /></td>
+					<input type=submit	style="width: 75; height: 30; font-size: 15; border-radius:10px; color:#FFFFFF; background-color:#B71256;"
+					value='수정' style="width: 120px;" /> 
+					<input type=reset  style="width: 75; height: 30; font-size: 15; border-radius:10px;"
+					value='취소'	style="width: 120px;" /></td>
 				</tr>
 			</table>
 		</form>
