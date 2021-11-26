@@ -10,7 +10,10 @@
 	.all_check{border: 1px solid #BDBDBD; border-radius: 5px; margin-bottom: 35px;}
 	.terms_{padding-bottom: 15px;}
 	.m_btn{float: right;}
-	.agr{clear:both; margin: 0px auto; border-radius: 150px; width: 300px; height: 65px;}
+	.agr{background:purple; clear:both; margin: 0px auto; border:0; border-radius: 150px; width: 300px; height: 65px; color: white;}
+	#modal1,#modal2,#modal3{background-color:transparent; border: 0;}
+	#modal1,#modal2,#modal3:hover {cursor: pointer;}
+	.agr:disabled {background:#8C8C8C;}
 </style>
     <script>
 	    function allCheck() {
