@@ -28,8 +28,8 @@
 </style>
 </head>
 <body>
-	<div>
-		<div style="width: 1200px; margin-top: 50px;">
+	<div margin-top: 50px;>
+		<div style="width: 1200px; margin: 0 50px;">
 			<div class="swiper-container" style="width: 100%;">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
