@@ -9,53 +9,62 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board2.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />
-<div id="wrap">
+
+<div id="wrap" style="width:1200px">
 	<section class="info_section">
-        <ul class="info_list">
-          <li>
-            <a href=""><img src="${pageContext.request.contextPath}/resources/image/cart2.png" />  </a>
-          </li>
-          
-          <c:choose>
-			<c:when test="${empty sessionScope.id }">
+        <div>
+	        <ul class="info_list">
 	          <li>
-	            <a  href="${root}index?formpath=login "> 로그인 </a>
+	            <a href="${root}index?formpath=servicecenter&list=faq">고객센터</a>
 	          </li>
-          </c:when>
-			<c:otherwise>
-				<li>
-				<a  href="${root}logout ">로그아웃</a>
-				</li>
-			</c:otherwise>
-		</c:choose>
-		
-          <li>
-            <a href=""> | </a>
-          </li>
-          <li>
-            <a href="${root}index?formpath=servicecenter&list=faq">고객센터</a>
-          </li>
-          <li>
-            <a href="">
-              <img src="${pageContext.request.contextPath}/resources/image/search2.png" />
-            </a>
-          </li>
-        </ul>
+	          <li>
+	            <a href=""> | </a>
+	          </li>
+	          <c:choose>
+	            <c:when test="${empty sessionScope.id }">
+	              <li>
+	                <a href="${root}index?formpath=login "> 로그인 </a>
+	              </li>
+	            </c:when>
+	            <c:otherwise>
+	              <li>
+	              	<a href="${root }index?formpath=mypage">${sessionScope.nickname }님의 마이 | </a>
+	                <a href="${root}logout ">로그아웃</a>
+	              </li>
+	            </c:otherwise>
+	          </c:choose>
+	        </ul>
+	      </div>
+	      <div>
+	        <ul class="info_list">
+	          <li>
+	            <a href="">
+	              <img
+	                src="${pageContext.request.contextPath}/resources/image/search2.png"
+	              />
+	            </a>
+	          </li>
+	          <li>
+	            <a href="">
+	              <img
+	                src="${pageContext.request.contextPath}/resources/image/cart2.png"
+	              />
+	            </a>
+	          </li>
+	        </ul>	
+	      </div> 
       </section>
-      
-      
-      
-      <header class="header">
+  	<header class="header" >
       
         <h1 class="logo">
           <a href="${root}index?formpath=home ">
-			<img src="https://lghomin.com/_resources/ea91048d/client/img/icon_logo_main.6f114ba.svg" />
+			<img src="${pageContext.request.contextPath}/resources/image/logo2.png" style="height: 100px;"/>
 			 
 		  </a>
         </h1>
        
        
-        <nav class="nav">
+        <nav class="nav" style="display:none">
           <ul class="gnb">
             <li>
               <a href="index.html">인테리어</a
@@ -77,31 +86,14 @@
         </nav>
         <span class="menu_toggle_btn">전체 메뉴 토글 버튼</span>
       </header>
-</div>
-<hr>
-<!--  <table width=900>
+      
 	
-	<tr align="right">
-		<td width=600></td>
-		<td><a href="${root}index?formpath=home ">홈</a></td>
+    
+      
+      
+      
+</div>
 
-		<c:choose>
-			<c:when test="${empty sessionScope.id }">
-				<td><a class= "out_thing" href="${root}index?formpath=login ">로그인</a></td>
-			</c:when>
-			<c:otherwise>
-				<td><a class= "out_thing" href="${root}logout ">로그아웃</a></td>
-			</c:otherwise>
-		</c:choose>
 
-		<td><a class= "out_thing" href="${root}index?formpath=member ">회원가입</a></td>
-		<td><a class= "out_thing" href="${root}memberListProc">회원목록</a></td>
-		<td><a class= "out_thing" href="${root}index?formpath=servicecenter&list=faq">고객센터</a></td>
-		<td  ><a class= "out_thing" href="${root}boardProc">게시판</a></td>
-	</tr>
-	<tr>
-		<td align="center" colspan=5><hr /></td>
-	</tr>
-</table>-->
 
 
