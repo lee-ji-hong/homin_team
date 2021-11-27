@@ -3,6 +3,7 @@ package com.care.homin.rental;
 
 import java.io.IOException;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,13 +11,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.care.homin.rental.dto.orderDTO;
 import com.care.homin.rental.service.RentalService;
 import com.siot.IamportRestClient.IamportClient;
 import com.siot.IamportRestClient.exception.IamportResponseException;
+import com.siot.IamportRestClient.request.CancelData;
 import com.siot.IamportRestClient.response.IamportResponse;
 import com.siot.IamportRestClient.response.Payment;
 
@@ -43,6 +47,21 @@ public class RentalController {
 			return api.paymentByImpUid(imp_uid);
 	}
 	
+	@RequestMapping(value="/orderDB")
+	public void orderDB(@RequestBody Map<String,String> d) {
+		orderDTO dto = new orderDTO();
+		dto.setUid(d.get("uid"));
+		dto.setEmail(d.get("email"));
+		dto.setAddr(d.get("addr"));
+		dto.setPostcode(d.get("buyerpostcode"));
+		dto.setName(d.get("buyername"));
+		dto.setTell(d.get("tell"));
+		dto.setAmount(d.get("amount"));
+		dto.setProductName(d.get("name"));
+		
+		service.orderHistory(dto);
+	}
+	
 	@RequestMapping(value = "/productOrder")
 	public String productOrder(Model model, @RequestParam String prodNo) {
 		String id = (String)session.getAttribute("id");
@@ -54,5 +73,35 @@ public class RentalController {
 		String id = (String)session.getAttribute("id");
 		service.info(model, id, prodNo);
 		return "rental/orderForm";
+	}
+	
+	@RequestMapping(value = "/cancle")
+	public void testCancelPaymentAlreadyCancelledImpUid() {
+		String test_already_cancelled_imp_uid = "imp_073219792073";
+		CancelData cancel_data = new CancelData(test_already_cancelled_imp_uid, true); //imp_uid를 통한 전액취소
+		
+		try {
+			IamportResponse<Payment> payment_response = api.cancelPaymentByImpUid(cancel_data);
+			
+		} catch (IamportResponseException e) {
+			System.out.println(e.getMessage());
+			
+			switch(e.getHttpStatusCode()) {
+			case 401 :
+				//TODO
+				break;
+			case 500 :
+				//TODO
+				break;
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@RequestMapping(value = "/cancleProc")
+	public String cancleProc() {
+		return "rental/ordercancleForm";
 	}
 }
