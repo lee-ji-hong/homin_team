@@ -1,15 +1,15 @@
 @charset "utf-8";
 
 .rental-header{
-	font-size: 30px;
+	font-size: 20px;
     color: #000;
     font-weight: 700;
     margin: 20 0;
-/*     background-color: #f99; */
+    background-color: #f99;
     padding: 10 5px;
 }
 .rental-header-text{
-	margin-top: 30px;
+	margin-bottom: 10px;
 }
 
 .top_img_banner{
