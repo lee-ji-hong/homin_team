@@ -14,12 +14,6 @@
 	<section class="info_section">
         <div>
 	        <ul class="info_list">
-	          <li>
-	            <a href="${root}index?formpath=servicecenter&list=faq">고객센터</a>
-	          </li>
-	          <li>
-	            <a href=""> | </a>
-	          </li>
 	          <c:choose>
 	            <c:when test="${empty sessionScope.id }">
 	              <li>
@@ -28,15 +22,28 @@
 	            </c:when>
 	            <c:otherwise>
 	              <li>
-	              	<a href="${root }index?formpath=mypage">${sessionScope.nickname }님의 마이 | </a>
+	              	
 	                <a href="${root}logout ">로그아웃</a>
 	              </li>
 	            </c:otherwise>
 	          </c:choose>
+	          <li>| </li>
+	          <li>
+	            <a href="${root}index?formpath=servicecenter&list=faq">고객센터</a>
+	          </li>
+	          <li> | </li>
+
 	        </ul>
 	      </div>
 	      <div>
 	        <ul class="info_list">
+	        <li>
+	            <a href="${root }index?formpath=mypage">${sessionScope.nickname }님
+	                <img
+	                src="${pageContext.request.contextPath}/resources/image/account_circle.png"
+	              />
+				 </a>
+	          </li>
 	          <li>
 	            <a href="">
 	              <img

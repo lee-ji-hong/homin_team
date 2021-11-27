@@ -9,7 +9,9 @@
 <body>
 <div align="center">
 	<table style="width:800px;">
+	
 		<tr>
+		
 			<td style="height:100px;"><%@ include file="common/top.jsp" %></td>
 		</tr>
 		<tr>
