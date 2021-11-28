@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:url var="root" value="/" />
 <style>
 aside {
 	float: left;
@@ -27,6 +28,7 @@ nav ul {
 					</c:otherwise>
 				</c:choose>
 				<li><a href="">주소지 관리</a></li>
+				<li><a href="${root}index?formpath=basket">장바구니</a></li>
 				<li><a href="">간편결제 설정</a></li>
 			</ul>
 		</nav>

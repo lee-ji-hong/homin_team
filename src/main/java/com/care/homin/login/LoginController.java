@@ -23,7 +23,7 @@ public class LoginController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 	@Autowired private LoginServiceImpl loginSvc;
 	
-	@RequestMapping("login")
+	@RequestMapping("/login")
 	public String login(){
 		return "login/loginForm";
 	}

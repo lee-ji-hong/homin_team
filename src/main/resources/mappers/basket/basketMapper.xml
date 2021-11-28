@@ -8,4 +8,17 @@
 	<insert id="putProduct" parameterType="com.care.homin.basket.dto.BasketDTO">
 		INSERT INTO homin_basket VALUES(#{product_no}, #{product_name}, #{classification}, #{price}, #{id} )
 	</insert>
+	
+	<select id="getBasket" parameterType="String" resultType="com.care.homin.basket.dto.BasketDTO">
+		SELECT * FROM homin_basket WHERE id=#{id}
+	</select>
+	
+	<select id="isExisted" parameterType="map" resultType="com.care.homin.basket.dto.BasketDTO">
+		SELECT * FROM homin_basket WHERE product_no=#{no} AND id=#{id}
+	</select>
+	
+	<delete id="deleteBasket" parameterType="map">
+		DELETE FROM homin_basket WHERE product_no=#{no} AND id=#{id}
+	</delete>
+	
 </mapper>

@@ -5,8 +5,9 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 	function basketProduct(no) {
-		var d = {no : no}
+		checkLogin();
 		
+		var d = {noTemp : no}
 		$.ajax({
 			url : "basketProduct",
 			type : "POST",
@@ -17,9 +18,20 @@
 				alert(result.msg);
 			},
 			error : function() {
-				alert(result.msg);
+				alert("장바구니 추가 오류");
 			}
 		})
+	}
+	
+	function checkLogin() {
+		var id = '${sessionScope.id}';
+		if (id == "") {
+			alert('먼저 로그인해주세요');
+			location.href='${root}index?formpath=login';
+		} else {
+			return;
+		}
+		
 	}
 	
 	function deleteProduct() {
