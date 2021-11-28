@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/rental.css" />
 <c:url var="root" value="/" />
-<div class="rental-header">
-<c:choose>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 		<!-- 배너 -->
 		<c:choose>
@@ -50,25 +48,28 @@
 		<div class="rental-header-text">건조기</div>
 >>>>>>> parent of 11ee8c1 (렌탈 되돌려서 수정 + main페이지까지 전체 수정)
 		
+=======
+<c:choose>
+	<c:when test="${category eq 'dryer' }">
+		<div>건조기</div>
+>>>>>>> parent of 87670af (Merge branch 'main' into hawon)
 	</c:when>
 	<c:when test="${category eq 'waterpurifier' }">
-		<div class="rental-header-text">정수기</div>
+		<div>정수기</div>
 	</c:when>
 	<c:when test="${category eq 'aircleaner' }">
-		<div class="rental-header-text">공기청정기</div>
+		<div>공기청정기</div>
 	</c:when>
 	<c:when test="${category eq 'washmachine' }">
-		<div class="rental-header-text">식기세척기</div>
+		<div>식기세척기</div>
 	</c:when>
 	<c:when test="${category eq 'microwave' }">
-		<div class="rental-header-text">전기레인지</div>
+		<div>전기레인지</div>
 	</c:when>
 	<c:otherwise>
-		<div class="rental-header-text">얼음정수기 냉장고</div>
+		<div>얼음정수기 냉장고</div>
 	</c:otherwise>
-
 </c:choose>
-</div>
 <%-- <c:import url="/${category }" /> --%>
 <c:forEach var="pr" items="${product }">
 

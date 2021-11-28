@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 .lent_option-wrap{
-	padding: 50 0px;
 	display: flex;
     justify-content: space-around;
     align-items: center;
@@ -10,9 +9,9 @@
 }
 
 .lent_option_box {
-	padding: 30 35 30 35;
+	padding: 40 200 40 200;
     margin: 4px;
-/*     border: 10px solid #ffe1b2; */
+    border: 5px solid darkgray;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -25,6 +24,7 @@
 	height: 80px;
 }
 
+<<<<<<< HEAD
 .lent_option_box p{
 	font: inherit;
     font-size: 20px;
@@ -148,3 +148,5 @@
     
     
     
+=======
+>>>>>>> parent of 87670af (Merge branch 'main' into hawon)

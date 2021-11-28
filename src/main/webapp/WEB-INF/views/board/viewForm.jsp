@@ -96,64 +96,16 @@
                         <dd>${view.hit }</dd>
                     </dl>
                 </div>
-            </div>
-            
-            <!-- 이미지 사진  -->
-            
-            <c:forEach var="file" items="${fileName }"> 
-				<div> 
-				<img src = "/img/${file }" style="width: 500px; height: 500px;"> 
-				</div>
- 			</c:forEach>
-            
-            <!-- 글자  -->    
+                </div>
+                	<c:forEach var="file" items="${fileName }"> 
+		<div> 
+			<img src = "/img/${file }" style="width: 500px; height: 500px;"> 
+			</div>
+ 	</c:forEach>
+                
                 <div class="cont">
                     ${view.content }
                 </div>
-                
-                
-            <div class="board-comment-wrap">
-            	<p>댓글</p>
-			<div class= "board-comment-text">
-			
-				<div>
-					<div class="board-comment-text-in">
-					<textarea id="comment" name="comment" cols="50" rows="2" placeholder = "댓글을 입력하세요."></textarea>
-					<input type="button" value="등록" id = "commentWrite" onclick = "commentProc()">
-					</div>
-					
-				</div>
-			</div>
-			
-			<div id="comment" class=".board-comment-review">
-				<div>
-					<div>
-						<c:forEach var="com" items="${comment }">
-						<div class="comment-log_review">
-							<div class="comment-log_review_ch1">${com.id }</div>
-							<div class="comment-log_review_ch2">
-								<div>${com.comment_content }</div>
-							</div>
-						<div class="comment-log_review_bottom_wrap">
-							<div>${com.writetime }</div>
-							
-						<c:if test = "${sessionScope.id eq com.id}">
-							<div  onclick = "commentDelete(${com.comment_no})">삭제</div>
-
-						</c:if>
-						</div>		
-					    </div>
-						
-						</c:forEach>
-					</div>
-					
-						
-				</div>
-				
-				</div>
-		</div>    
-                
-                
             </div>
             
          
@@ -174,10 +126,41 @@
             </div>
         </div>
     </div>
-</div>    
            </form>
     
-		
-		
-	</section>
+ 
+ 
+	
+<br><br>
+		<div>
+			<div>
+				
+				<textarea id="comment" name="comment" cols="50" rows="2" placeholder = "댓글을 입력하세요."></textarea>
+				<input type="button" value="등록" id = "commentWrite" onclick = "commentProc()">
+			</div>
+		</div>
+		<br>
+		<br>
+		<div id="comment" style="width: 800px; height: 300px; overflow: auto;">
+			<table>
+				<tbody>
+				<c:forEach var="com" items="${comment }">
+					<tr>
+						<td>${com.id }</td>
+						<td style="padding-left: 50px; padding-bottom: 10px;">${com.writetime }</td>
+						<c:if test = "${sessionScope.id eq com.id}">
+							<td style="padding-left: 20px;" onclick = "commentDelete(${com.comment_no})">삭제</td>
+						</c:if>
+					</tr>
+					<tr>
+						<td style="font-size: 15px; width: 400px;">${com.comment_content }
+				<hr style="border: 1px solid #878787; display: block !important; width: 100% !important;">
+						</td>
+					</tr>
+				</c:forEach>
+				</tbody>
+				<tr>
+			</table>
+			<hr style="border: 1px solid #878787; display: block !important; width: 80% !important;">
+		</div>
 </center>

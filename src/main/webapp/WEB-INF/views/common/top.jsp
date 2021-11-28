@@ -9,9 +9,9 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board2.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />
-
-<div id="wrap" style="width:1200px">
+<div id="wrap">
 	<section class="info_section">
+<<<<<<< HEAD
         <div>
 	        <ul class="info_list">
 	          <c:choose>
@@ -51,27 +51,53 @@
 	              />
 	            </a>
 	          </li>
+=======
+        <ul class="info_list">
+          <li>
+            <a href=""><img src="${pageContext.request.contextPath}/resources/image/cart2.png" />  </a>
+          </li>
+          
+          <c:choose>
+			<c:when test="${empty sessionScope.id }">
+>>>>>>> parent of 87670af (Merge branch 'main' into hawon)
 	          <li>
-	            <a href="">
-	              <img
-	                src="${pageContext.request.contextPath}/resources/image/cart2.png"
-	              />
-	            </a>
+	            <a  href="${root}index?formpath=login "> 로그인 </a>
 	          </li>
-	        </ul>	
-	      </div> 
+          </c:when>
+			<c:otherwise>
+				<li>
+				<a  href="${root}logout ">로그아웃</a>
+				</li>
+			</c:otherwise>
+		</c:choose>
+		
+          <li>
+            <a href=""> | </a>
+          </li>
+          <li>
+            <a href="${root}index?formpath=servicecenter&list=faq">고객센터</a>
+          </li>
+          <li>
+            <a href="">
+              <img src="${pageContext.request.contextPath}/resources/image/search2.png" />
+            </a>
+          </li>
+        </ul>
       </section>
-  	<header class="header" >
+      
+      
+      
+      <header class="header">
       
         <h1 class="logo">
           <a href="${root}index?formpath=home ">
-			<img src="${pageContext.request.contextPath}/resources/image/logo2.png" style="height: 100px;"/>
+			<img src="https://lghomin.com/_resources/ea91048d/client/img/icon_logo_main.6f114ba.svg" />
 			 
 		  </a>
         </h1>
        
        
-        <nav class="nav" style="display:none">
+        <nav class="nav">
           <ul class="gnb">
             <li>
               <a href="index.html">인테리어</a
@@ -93,14 +119,31 @@
         </nav>
         <span class="menu_toggle_btn">전체 메뉴 토글 버튼</span>
       </header>
-      
-	
-    
-      
-      
-      
 </div>
+<hr>
+<!--  <table width=900>
+	
+	<tr align="right">
+		<td width=600></td>
+		<td><a href="${root}index?formpath=home ">홈</a></td>
 
+		<c:choose>
+			<c:when test="${empty sessionScope.id }">
+				<td><a class= "out_thing" href="${root}index?formpath=login ">로그인</a></td>
+			</c:when>
+			<c:otherwise>
+				<td><a class= "out_thing" href="${root}logout ">로그아웃</a></td>
+			</c:otherwise>
+		</c:choose>
 
+		<td><a class= "out_thing" href="${root}index?formpath=member ">회원가입</a></td>
+		<td><a class= "out_thing" href="${root}memberListProc">회원목록</a></td>
+		<td><a class= "out_thing" href="${root}index?formpath=servicecenter&list=faq">고객센터</a></td>
+		<td  ><a class= "out_thing" href="${root}boardProc">게시판</a></td>
+	</tr>
+	<tr>
+		<td align="center" colspan=5><hr /></td>
+	</tr>
+</table>-->
 
 
