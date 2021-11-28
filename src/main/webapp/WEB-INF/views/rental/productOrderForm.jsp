@@ -10,7 +10,7 @@
 	.all_check{border: 1px solid #BDBDBD; border-radius: 5px; margin-bottom: 35px; width: 100%; height: 50px; line-height:50px;}
 	.terms_{padding-bottom: 15px;}
 	.m_btn{float: right;}
-	.agr{background:purple; clear:both; margin: 0px auto; border:0; border-radius: 150px; width: 300px; height: 65px; color: white;}
+	.agr{background:purple; clear:both; margin: 30px auto; border:0; border-radius: 150px; width: 300px; height: 65px; color: white;}
 	#modal1,#modal2,#modal3{background-color:transparent; border: 0;}
 	#modal1,#modal2,#modal3:hover {cursor: pointer;}
 	.agr:disabled {background:#8C8C8C;}
