@@ -104,4 +104,10 @@ public class RentalController {
 	public String cancleProc() {
 		return "rental/ordercancleForm";
 	}
+	
+	@RequestMapping(value = "/orderfinish")
+	public String orderFinish(Model model, String no) {
+		service.selectOrderHistory(no, model);
+		return "rental/orderfinishForm";
+	}
 }

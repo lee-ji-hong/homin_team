@@ -34,4 +34,11 @@ public class RentalService {
 	public void orderHistory(orderDTO dto) {
 		dao.orderHistoryProc(dto);
 	}
+
+	public void selectOrderHistory(String no, Model model) {
+		orderDTO dto = dao.selectOrderHistory(no);
+		model.addAttribute("orderHistory",dto);
+		model.addAttribute("productImg",dao.selectProductImg(dto.getProductName()));
+		model.addAttribute("classification", dao.selectClassification(dto.getProductName()));
+	}
 }

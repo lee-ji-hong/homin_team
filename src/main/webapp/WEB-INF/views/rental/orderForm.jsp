@@ -63,6 +63,7 @@ function iamport(){
 	    			contentType : "application/json; charset=utf-8",
 	            	data : JSON.stringify(d),
 	        	}); 
+	        	location.href = "${root}index?formpath=orderfinish&no="+data.response.impUid;
         	} else {
         		alert("결제 실패");
         	}

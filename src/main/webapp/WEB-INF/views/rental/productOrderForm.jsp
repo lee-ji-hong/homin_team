@@ -7,13 +7,14 @@
 <style>
 	input{appearance:auto;}
 	.info_name{padding-top: 20px; padding-bottom: 20px;}
-	.all_check{border: 1px solid #BDBDBD; border-radius: 5px; margin-bottom: 35px;}
+	.all_check{border: 1px solid #BDBDBD; border-radius: 5px; margin-bottom: 35px; width: 100%; height: 50px; line-height:50px;}
 	.terms_{padding-bottom: 15px;}
 	.m_btn{float: right;}
 	.agr{background:purple; clear:both; margin: 0px auto; border:0; border-radius: 150px; width: 300px; height: 65px; color: white;}
 	#modal1,#modal2,#modal3{background-color:transparent; border: 0;}
 	#modal1,#modal2,#modal3:hover {cursor: pointer;}
 	.agr:disabled {background:#8C8C8C;}
+	#all,#box1,#box2,#box3{vertical-align: -1px;margin-right: 5px; margin-left: 10px;}
 </style>
     <script>
 	    function allCheck() {
@@ -56,14 +57,18 @@
 	<div class = "terms">
 		<div>
 			<h1>약관동의</h1>
+			<br>
 			<hr/>
 		</div>
+		<br>
 		<div class = "all_check">
 			<input type = "checkbox" id = "all" onclick = "allCheck()">전체 동의
 		</div>
 		<div>
 			<div class = "terms_">
-				<input type = "checkbox" name = "box" id = "box1" onclick = "check()"><span>[LG전자] 개인정보 수집 및 이용 동의 (필수)</span><button id = "modal1" class = "m_btn"><span>약관보기</span></button>
+				<input type = "checkbox" name = "box" id = "box1" onclick = "check()">
+				<label for="box1" class="check-label"></label>
+				<span>[LG전자] 개인정보 수집 및 이용 동의 (필수)</span><button id = "modal1" class = "m_btn"><span>약관보기</span></button>
 			</div>
 			<div class = "terms_">
 				<input type = "checkbox" name = "box" id = "box2" onclick = "check()"><span>[LG전자] 개인정보 제 3자 제공 동의 (필수)</span><button id = "modal2" class = "m_btn"><span>약관보기</span></button>
