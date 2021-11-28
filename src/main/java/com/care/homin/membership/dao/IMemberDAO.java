@@ -36,4 +36,7 @@ public interface IMemberDAO {
 	public void insertLogin(LoginDTO login);
 	public void insertMember(MemberDTO member);
 	public void insertPost(PostcodeDTO post);
+
+	PostcodeDTO selectPost(String id);
+
 }

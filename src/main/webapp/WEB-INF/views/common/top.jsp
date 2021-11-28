@@ -9,23 +9,33 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board2.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />
+<script>
+	function loginForm() {
+		alert('먼저 로그인해주세요');
+		location.href='${root}index?formpath=login';
+	}
+</script>
 <div id="wrap">
 	<section class="info_section">
         <ul class="info_list">
-          <li>
-            <a href=""><img src="${pageContext.request.contextPath}/resources/image/cart2.png" />  </a>
-          </li>
-          
           <c:choose>
 			<c:when test="${empty sessionScope.id }">
-	          <li>
-	            <a  href="${root}index?formpath=login "> 로그인 </a>
-	          </li>
+				<li>
+            		<img src="${pageContext.request.contextPath}/resources/image/cart2.png" onclick="loginForm()"/>
+          		</li>
+	       		<li>
+	            	<a  href="${root}index?formpath=login "> 로그인 </a>
+	          	</li>
           	</c:when>
 			<c:otherwise>
 				<li>
-				<a href="${root }index?formpath=mypage">${sessionScope.nickname }님의 마이 | </a>
-				<a  href="${root}logout ">로그아웃</a>
+					<a href="${root }index?formpath=mypage">${sessionScope.nickname }님의 마이 | </a>
+				</li>
+				<li>
+            		<a href="${root}index?formpath=basket"><img src="${pageContext.request.contextPath}/resources/image/cart2.png" />  </a>
+          		</li>
+				<li>
+					<a  href="${root}logout ">로그아웃</a>
 				</li>
 			</c:otherwise>
 		</c:choose>
