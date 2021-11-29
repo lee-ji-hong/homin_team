@@ -34,21 +34,27 @@
 			<table>
 				<tr>
 					<td align='right'>우편번호</td>
-					<td><input type=text name='zipcode' id="zipcode"	readonly="readonly" /></td>
-					<td colspan="2"><input type="button" value="우편번호 검색"		onclick="daumPost()"></td>
+					<td><input type=text name='zipcode' style="border-radius: 5px; width: 75; height:30; vertical-align:middle; margin:5;"
+											id="zipcode"	readonly="readonly" /></td>
+					<td colspan="2"><input type="button" style="border-radius: 5px; height:30; vertical-align:middle; margin:5;"
+					value="우편번호 검색"		onclick="daumPost()"></td>
 				</tr>
 				<tr>
 					<td align='right'>주소</td>
-					<td colspan="3"><input type=text name='addr1' id="addr1" readonly="readonly" style="width: 475px;" /></td>
+					<td colspan="3"><input type=text style="border-radius: 5px; width: 275; height:30; vertical-align:middle; margin:5;"
+										name='addr1' id="addr1" readonly="readonly" style="width: 475px;" /></td>
 				</tr>
 				<tr>
 					<td align='right'>상세주소</td>
-					<td colspan="3"><input type=text name='addr2' id="addr2" style="width: 475px;" /></td>
+					<td colspan="3"><input type=text style="border-radius: 5px; width: 275; height:30; vertical-align:middle; margin:5;"
+										name='addr2' id="addr2" style="width: 475px;" /></td>
 				</tr>
 				<tr>
 					<td align='center' height=40 colspan=4>
-					<input type=submit		value='등록' style="width: 120px;" /> 
-					<input type=reset value='취소'	style="width: 120px;" /></td>
+					<input type=submit	style="width: 75; height: 30; font-size: 15; border-radius:5px; color:#FFFFFF; background-color:#B71256;"
+						value='등록' style="width: 120px;" /> 
+					<input type=reset style="width: 75; height: 30; font-size: 15; border-radius:5px;"
+					value='취소'	style="width: 120px;" /></td>
 				</tr>
 			</table>
 		</form>

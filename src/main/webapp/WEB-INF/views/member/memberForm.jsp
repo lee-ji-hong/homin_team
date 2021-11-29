@@ -104,7 +104,7 @@
 <br>
 	<h3 style="font-size: 24px;">회원가입 정보 입력</h3>
 	<p>MY LG ID 가입을 위해 정보를 입력해주세요.</p>
-	<p>모두 필수 항목 입니다.</p>
+	<p>전 항목 모두 필수 기입 항목 입니다.</p>
 	<h3>
 		<font color="red" id="msg">${msg }</font>
 	</h3>
@@ -112,68 +112,68 @@
 		<table>
 			<tr>
 				<td align='right' height=40>아이디</td>
-				<td><input type=text name='id' id="id" style="width: 325px;height: 30px;
+				<td><input type=text name='id' id="id" style="width: 325px;height: 30px; border-radius: 5px;
 							font-size:15px; vertical-align:middle; margin:5;" placeholder='이메일주소를 입력해주세요'
 							required data-valid="false" /></td>
-				<td colspan="2"><input type="button" style="height:30px; vertical-align:middle; margin:5;"
+				<td colspan="2"><input type="button" style="height:30px; border-radius: 5px; vertical-align:middle; margin:5;"
 									 value="중복 확인" onclick="ajaxIsExist()"></td>
 			</tr>
 			<tr>
 				<td align='right' width=120>이름</td>
 				<td colspan="3"><input type=text name='nickname' style="width: 100px;height: 30px;
-							font-size:15px; vertical-align:middle; margin:5;" />
+							font-size:15px; vertical-align:middle; margin:5; border-radius: 5px;" />
 			</tr>
 			<tr>
 				<td align='right' height=40>패스워드</td>
-				<td><input type="password" name='pw' style="width: 200px;height: 30px;
+				<td><input type="password" name='pw' style="width: 200px; height: 30px; border-radius: 5px;
 							font-size:15px; vertical-align:middle; margin:5;" placeholder='pw 입력' /></td>
 			</tr>
 			<tr>
 				<td align='right'>패스워드 확인</td>
-				<td><input type="password" name='pwOk' style="width: 200px;height: 30px;
+				<td><input type="password" name='pwOk' style="width: 200px;height: 30px; border-radius: 5px;
 							font-size:15px; vertical-align:middle; margin:5;" placeholder='pw 입력' /></td>
 			</tr>
 			<tr>
 				<td align='right' height=40>E-Mail</td>
-				<td><input type=text name='email' id="email" style="width: 250px;height: 30px;
+				<td><input type=text name='email' id="email" style="width: 250px;height: 30px; border-radius: 5px;
 							font-size:15px; vertical-align:middle; margin:5;" placeholder='E-Mail 입력' /></td>
-				<td colspan="2"><input type="button" style="height:30px; vertical-align:middle; margin:5;"
+				<td colspan="2"><input type="button" style="height:30px; vertical-align:middle; margin:5; border-radius: 5px;"
 								 value="인증번호 전송"	onclick="sendAuth()"></td>
 			</tr>
 			<tr>
 				<td align='right'>인증번호</td>
-				<td><input type=text name='authNum' id="inputAuthNum" style="width: 150px;height: 30px;
+				<td><input type=text name='authNum' id="inputAuthNum" style="width: 150px;height: 30px; border-radius: 5px;
 							font-size:15px; vertical-align:middle; margin:5;" placeholder='인증번호 입력' /></td>
-				<td colspan="2"><input type="button" style="height:30px; vertical-align:middle; margin:5;"
+				<td colspan="2"><input type="button" style="height:30px; vertical-align:middle; margin:5; border-radius: 5px;"
 							 value="인증번호 확인"	onclick="sendAuthConfirm()"></td>
 			</tr>
 			<tr>
 				<td align='right'>우편번호</td>
-				<td><input type=text name='zipcode' id="zipcode" style="width: 75px;height: 30px;
+				<td><input type=text name='zipcode' id="zipcode" style="width: 75px;height: 30px; border-radius: 5px;
 							font-size:15px; vertical-align:middle; margin:5;" readonly="readonly" /></td>
-				<td colspan="2"><input type="button" style="height:30px; vertical-align:middle; margin:5;" 
+				<td colspan="2"><input type="button" style="height:30px; vertical-align:middle; margin:5; border-radius: 5px;" 
 							value="우편번호 검색"		onclick="daumPost()"></td>
 			</tr>
 			<tr>
 				<td align='right'>주소</td>
 				<td colspan="3"><input type=text name='addr1' id="addr1" readonly="readonly"
-							 style="width: 275px; height: 30px; font-size:20px;
+							 style="width: 275px; height: 30px; font-size:20px; border-radius: 5px;
 							 vertical-align:middle; margin:5;" /></td>
 			</tr>
 			<tr>
 				<td align='right'>상세주소</td>
 				<td colspan="3"><input type=text name='addr2' id="addr2"
-							 style="width: 275px; height: 30px; font-size:15px;
+							 style="width: 275px; height: 30px; font-size:15px; border-radius: 5px;
 								vertical-align:middle; margin:5;" /></td>
 			</tr>
 			<tr>
 				<td align='right'>휴대폰번호</td>
 				<td colspan='3'><input type=text name='phone' style="width: 175px; height: 30px; font-size:15px;
-										vertical-align:middle; margin:5;" placeholder='-는 생략하고 입력' />
+										vertical-align:middle; margin:5; border-radius: 5px;" placeholder='-는 생략하고 입력' />
 			</tr>
 			<tr>
 				<td align='center' height=40 colspan=4>
-				<input type=submit	value='가입하기' style="border-radius:10px; color:#FFFFFF; width: 120px; height: 40px; background-color:#B71256" /> 
+				<input type=submit	value='가입하기' style="border-radius:5px; color:#FFFFFF; width: 120px; height: 40px; background-color:#B71256" /> 
 			</td>
 			</tr>
 			

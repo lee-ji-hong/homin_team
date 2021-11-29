@@ -78,37 +78,37 @@
 		<table>
 			<tr>
 				<td height=40 >아이디</td>
-				<td><input type=text style="width: 175; height:30; vertical-align:middle; margin:5;" name='id' id="id" value="${userInfo.id }" readonly="readonly"/></td>
+				<td><input type=text style="border-radius: 5px; width: 175; height:30; vertical-align:middle; margin:5;" name='id' id="id" value="${userInfo.id }" readonly="readonly"/></td>
 			</tr>
 			<tr> 
 				<td height=40>패스워드</td>
-				<td><input type="password" style="height:30; vertical-align:middle; margin:5;" name='pw' id="pw" placeholder='pw 입력' /></td>
+				<td><input type="password" style="border-radius: 5px; height:30; vertical-align:middle; margin:5;" name='pw' id="pw" placeholder='pw 입력' /></td>
 				<td>패스워드 확인</td>
-				<td><input type="password" style="height:30; vertical-align:middle; margin:5;" name='pwOk' id="pwOk" placeholder='pw 입력' /></td>
+				<td><input type="password" style="border-radius: 5px; height:30; vertical-align:middle; margin:5;" name='pwOk' id="pwOk" placeholder='pw 입력' /></td>
 			</tr>
 			<tr>
 				<td width=120>이름</td>
-				<td colspan="3"><input type=text style="height:30; vertical-align:middle; margin:5;" name='nickname' value="${userInfo.nickname }"/>
+				<td colspan="3"><input type=text style="border-radius: 5px; height:30; vertical-align:middle; margin:5;" name='nickname' value="${userInfo.nickname }"/>
 			</tr>
 			<tr>
 				<td height=40>E-Mail</td>
-				<td><input type=text name='email' style="width: 175; height:30; vertical-align:middle; margin:5;" id="email" value="${userInfo.email }" /></td>
-				<td colspan="2"><input type="button" style="height:30; vertical-align:middle; margin:5;" value="인증번호 전송"	onclick="sendAuth()"></td>
+				<td><input type=text name='email' style="border-radius: 5px; width: 175; height:30; vertical-align:middle; margin:5;" id="email" value="${userInfo.email }" /></td>
+				<td colspan="2"><input type="button" style="border-radius: 5px; height:30; vertical-align:middle; margin:5;" value="인증번호 전송"	onclick="sendAuth()"></td>
 			</tr>
 			<tr>
 				<td>인증번호</td>
-				<td><input type=text name='authNum'  style="height:30; vertical-align:middle; margin:5;" id="inputAuthNum"	placeholder='인증번호 입력' /></td>
-				<td colspan="2"><input type="button"  style="height:30; vertical-align:middle; margin:5;" value="인증번호 확인"	onclick="sendAuthConfirm()"></td>
+				<td><input type=text name='authNum'  style="border-radius: 5px; height:30; vertical-align:middle; margin:5;" id="inputAuthNum"	placeholder='인증번호 입력' /></td>
+				<td colspan="2"><input type="button"  style="border-radius: 5px; height:30; vertical-align:middle; margin:5;" value="인증번호 확인"	onclick="sendAuthConfirm()"></td>
 			</tr>
 			<tr>
 				<td>휴대폰번호</td>
-				<td colspan='3'><input type=text style="height:30; vertical-align:middle; margin:5;" name='phone' value="${userInfo.phone }"/>
+				<td colspan='3'><input type=text style="border-radius: 5px; height:30; vertical-align:middle; margin:5;" name='phone' value="${userInfo.phone }"/>
 			</tr>
 			<tr>
 				<td align='center' height=40 colspan=4><br>
-					<input type="button" style="width: 75; height: 30; font-size: 15; border-radius:10px; color:#FFFFFF; background-color:#B71256;"
+					<input type="button" style="width: 75; height: 30; font-size: 15; border-radius:5px; color:#FFFFFF; background-color:#B71256;"
 					value='수정' style="width: 120px;" onclick="check()"/> 
-					<input type=reset style="width: 75; height: 30; font-size: 15; border-radius:10px; "
+					<input type=reset style="width: 75; height: 30; font-size: 15; border-radius:5px; "
 					value='취소'	style="width: 120px;" />
 				</td>
 			</tr>

@@ -19,7 +19,9 @@ table {
 			<div>
 				<div>
 					<h3 style="font-size:24px;">주소지 등록하기</h3>
-					<input type="button" value="주소 등록" onclick="location.href='${root}index?formpath=addr/registerAdForm'">
+					<input type="button" style="color:#FFFFFF; background-color:#B71256; 
+							font-size:15; width: 100px; height: 30px; border-radius: 5px;"
+					value="주소 등록" onclick="location.href='${root}index?formpath=addr/registerAdForm'">
 				</div>
 			</div>
 		</c:when>
@@ -37,8 +39,8 @@ table {
 						<tr>
 							<td colspan="2" align="right">
 								<input type="button" value="수정" style="color:#FFFFFF; background-color:#B71256; 
-										font-size:15; width: 100px; height: 30px; border-radius: 10px; " onclick="location.href='${root}index?formpath=addr/updateAdForm'">
-								<input type="button" value="주소삭제" style= "font-size:15; width: 100px; height: 30px; border-radius: 10px; "
+										font-size:15; width: 100px; height: 30px; border-radius: 5px; " onclick="location.href='${root}index?formpath=addr/updateAdForm'">
+								<input type="button" value="주소삭제" style= "font-size:15; width: 100px; height: 30px; border-radius: 5px; "
 										 onclick="location.href='${root}index?formpath=addr/confirmPw'">
 							</td>
 						</tr>

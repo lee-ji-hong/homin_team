@@ -42,7 +42,7 @@
 <center style="margin: 50 0px;">
 <div style="margin: 10 0px;">
     	<h1>
-    		<img style="width: 150" src="https://static.mylgid.com/userweb/1.0.28/images/logo.svg" alt="MY LG ID" />
+   		<img style="width: 150" src="https://static.mylgid.com/userweb/1.0.32/images/logo.svg" alt="MY LG ID" />
     	</h1>
     	<br>
 	    <p id="testAlert">하나의 ID로 LG의 다양한 서비스를 이용해보세요.</p>
@@ -55,14 +55,14 @@
 			<td><label class="form-title"><br>MY LG ID (이메일)</label></td>
 		</tr>
 		<tr>
-			<td><input style="width: 350; height: 30; font-size: 15;" type=text id="id" name='id' placeholder="MY LG ID (이메일)"/></td>
+			<td><input style="width: 350; height: 30; font-size: 15; border-radius: 5px;" type=text id="id" name='id' placeholder="MY LG ID (이메일)"/></td>
 		</tr>
 		
 		<tr>
 			<td><br>비밀번호</td>
 		</tr>
 		<tr>
-			<td><input style="width: 350; height: 30; font-size: 15; " type=password id="pw" name='pw' placeholder="비밀번호"/></td>
+			<td><input style="width: 350; height: 30; font-size: 15; border-radius: 5px; " type=password id="pw" name='pw' placeholder="비밀번호"/></td>
 		</tr>
 		<tr>
 			<td><label id="msg" style="color:red;"></label></td>
@@ -71,7 +71,7 @@
 		
 			<td colspan=2 align='center'><br>
 				<input type="button" value='로그인' style="color:#FFFFFF; background-color:#B71256; 
-						font-size:15; width: 150px; height: 30px; border-radius: 10px; " onclick="idPwCheck()"/>
+						font-size:15; width: 150px; height: 30px; border-radius: 5px; " onclick="idPwCheck()"/>
 				
 			</td>
 		</tr>

@@ -38,7 +38,7 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="center">
-						<input type="button" style="width: 75; height: 30; font-size: 15; border-radius:10px; color:#FFFFFF; background-color:#B71256;"
+						<input type="button" style="width: 75; height: 30; font-size: 15; border-radius:5px; color:#FFFFFF; background-color:#B71256;"
 								value="수정" onclick="location.href='${root}index?formpath=mgmt/confirmPwForUdMb'">
 					</td>
 				</tr>
@@ -57,7 +57,7 @@
 				
 					<tr>
 					<td colspan="2" align="center">
-					<input type="button" style="width: 75; height: 30; font-size: 15; border-radius:10px;" 
+					<input type="button" style="width: 75; height: 30; font-size: 15; border-radius:5px;" 
 								value="회원탈퇴" onclick="location.href='${root}index?formpath=mgmt/confirmPw'">
 					</td>
 					</tr>

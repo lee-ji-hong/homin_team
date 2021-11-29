@@ -53,11 +53,11 @@ table {
 					<tr>
 						<td colspan="2" align="right">
 							<input type="button" value="수정"
-							style="height:30px; width:40px; vertical-align:middle; margin:2; border-radius:10px;">
+							style="height:30px; width:40px; vertical-align:middle; margin:2; border-radius:5px;">
 							<input type="button" value="삭제" onclick="deleteUser();"
-							style="height:30px; width:40px; vertical-align:middle; margin:2; background-color:lightpink; border-radius:10px;">
+							style="height:30px; width:40px; vertical-align:middle; margin:2; background-color:lightpink; border-radius:5px;">
 							<input type="button" value="목록" onclick="location.href='${root}index?formpath=info/manage';"
-							style="height:30px; width:40px; vertical-align:middle; border-radius:10px;">
+							style="height:30px; width:40px; vertical-align:middle; border-radius:5px;">
 						</td>
 					</tr>
 				</tbody>

@@ -43,9 +43,9 @@ table {
 								<td>${pDto.zipcode }</td>
 								<td>${pDto.addr1 }</td>
 								<td>${pDto.addr2 }</td>
-								<td><input type="button" style="height:30px; width:40px; vertical-align:middle; margin:2; border-radius:10px;"
+								<td><input type="button" style="height:30px; width:40px; vertical-align:middle; margin:2; border-radius:5px;"
 											value="수정"></td>
-								<td><input type="button" style="height:30px; width:40px; vertical-align:middle; margin:2; background-color:lightpink; border-radius:10px;"
+								<td><input type="button" style="height:30px; width:40px; vertical-align:middle; margin:2; background-color:lightpink; border-radius:5px;"
 										value="삭제" onclick="deleteChk()"></td>
 							</tr>
 						</c:forEach>
