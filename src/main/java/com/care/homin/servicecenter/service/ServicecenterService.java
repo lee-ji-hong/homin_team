@@ -63,9 +63,8 @@ public class ServicecenterService {
 				dto.setFileName("파일 없음");
 			}
 		}
-		System.out.println(id);
 		dto.setInquiryType(inquiryType);
-		dto.setId("id");				dto.setTitle(title);
+		dto.setId(id);				dto.setTitle(title);
 		dto.setContent(content);	dto.setFileName(fname);
 		dto.setFileName(fname);		dto.setWriteDate(writeTime);
 		dto.setState("waiting");	dto.setAnswer("null");

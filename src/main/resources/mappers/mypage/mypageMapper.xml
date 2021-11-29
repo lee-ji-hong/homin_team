@@ -61,4 +61,12 @@
 		INSERT INTO postcode_homin VALUES(#{id}, #{zipcode}, #{addr1}, #{addr2})
 	</insert>
 	
+	<select  id="myInquiry" parameterType="String" resultType="com.care.homin.servicecenter.dto.InquiryDTO">
+		SELECT * FROM inquiry WHERE id = #{id}
+	</select>
+	
+	<select  id="myInquiryView" parameterType="String" resultType="com.care.homin.servicecenter.dto.InquiryDTO">
+		SELECT * FROM inquiry WHERE no = #{no}
+	</select>
+	
 </mapper>

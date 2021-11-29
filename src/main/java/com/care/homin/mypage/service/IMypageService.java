@@ -2,10 +2,13 @@ package com.care.homin.mypage.service;
 
 import java.util.ArrayList;
 
+import org.springframework.ui.Model;
+
 import com.care.homin.login.dto.LoginDTO;
 import com.care.homin.membership.dto.AllDTO;
 import com.care.homin.membership.dto.MemberDTO;
 import com.care.homin.membership.dto.PostcodeDTO;
+import com.care.homin.servicecenter.dto.InquiryDTO;
 
 public interface IMypageService {
 	public AllDTO infoMgmt(String id);
@@ -17,4 +20,6 @@ public interface IMypageService {
 	public String updateProc(MemberDTO memberDto);
 	public String updateAddrProc(PostcodeDTO postCode);
 	public String registerAdProc(PostcodeDTO postCode);
+	public ArrayList<InquiryDTO> myInquiry(String id);
+	public void myInquiryView(String no, Model model);
 }

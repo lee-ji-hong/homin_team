@@ -54,7 +54,8 @@ public class HomeController {
 		return "board/boardModifyForm";
 	}
 	@RequestMapping("/mypage")
-	public String mypage() {
+	public String mypage(Model model, String category) {
+		model.addAttribute("category", category);
 		return "mypage/mypageForm";
 	}
 	

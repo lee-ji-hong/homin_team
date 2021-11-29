@@ -4,18 +4,17 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
-import com.care.homin.login.LoginController;
 import com.care.homin.login.dto.LoginDTO;
 import com.care.homin.membership.dto.AllDTO;
 import com.care.homin.membership.dto.MemberDTO;
 import com.care.homin.membership.dto.PostcodeDTO;
 import com.care.homin.mypage.repository.IMypageDAO;
+import com.care.homin.servicecenter.dto.InquiryDTO;
 
 @Service
 public class MypageServiceImpl implements IMypageService{
@@ -122,6 +121,22 @@ public class MypageServiceImpl implements IMypageService{
 		else
 			result = "주소지 등록 실패";
 		return result;
+	}
+	@Override
+	public ArrayList<InquiryDTO> myInquiry(String id) {
+		ArrayList<InquiryDTO> dto = mypageDao.myInquiry(id);
+		return dto;
+	}
+	@Override
+	public void myInquiryView(String no, Model model) {
+		InquiryDTO dto = mypageDao.myInquiryView(no);
+		String img = dto.getFileName();
+		String[] imgs = null;
+		if(img != null) {
+			imgs = img.split(",");
+		}
+		model.addAttribute("inquiryView", dto);
+		model.addAttribute("inquiryImg", imgs);
 	}
 
 	
