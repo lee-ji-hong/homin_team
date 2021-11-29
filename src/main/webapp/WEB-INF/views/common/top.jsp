@@ -79,9 +79,9 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
       <ul class="info_list">
         <li>
           <a href="">
-            <img
-              src="${pageContext.request.contextPath}/resources/image/search2.png"
-            />
+<!--             <img -->
+<%--               src="${pageContext.request.contextPath}/resources/image/search2.png" --%>
+<!--             /> -->
           </a>
         </li>
       </ul>
