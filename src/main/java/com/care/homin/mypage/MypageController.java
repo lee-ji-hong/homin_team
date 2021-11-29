@@ -171,5 +171,16 @@ public class MypageController {
 			return "index";
 		}
 	}
+	@RequestMapping(value = "myinquiry")
+	public String myinquiry(Model model, HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		model.addAttribute("myinquiry",mypageSvc.myInquiry(id));
+		return "mypage/myinquiryForm";
+	}
+	@RequestMapping(value = "myinquiryView")
+	public String myinquiryView(Model model, String no) {
+		mypageSvc.myInquiryView(no,model);
+		return "mypage/myinquiryViewForm";
+	}
 	
 }

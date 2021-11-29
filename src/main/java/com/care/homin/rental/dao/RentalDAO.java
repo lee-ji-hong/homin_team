@@ -10,7 +10,13 @@ public interface RentalDAO {
 	ArrayList<RentalDTO> selectCategory(String category);
 	// 제품 상세
 	RentalDTO selectProduct(String prodNo);
-	
+	// 주문내역 db 저장
 	void orderHistoryProc(orderDTO dto);
+	// db에 저장된 주문내역 가져오기
+	orderDTO selectOrderHistory(String no);
+	// 제품 이미지 가져오기
+	String selectProductImg(String productName);
+	// 제품 분류 가져오기
+	String selectClassification(String productName);
 
 }

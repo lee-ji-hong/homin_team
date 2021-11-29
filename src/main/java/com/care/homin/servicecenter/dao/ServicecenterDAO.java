@@ -24,5 +24,5 @@ public interface ServicecenterDAO {
 	// 1:1문의 View
 	public InquiryDTO selectInquiry(int no);
 	// 1:1문의 답변 등록
-	public void inquiryAnswerProc(InquiryDTO dto); 
+	public void inquiryAnswerProc(InquiryDTO dto);
 }
