@@ -8,4 +8,8 @@
 	<select id="selectProduct" parameterType="String" resultType="com.care.homin.rental.dto.RentalDTO">
 		SELECT * FROM homin_product WHERE product_no=#{prodNo}
 	</select>
+	
+	<insert id="orderHistoryProc" parameterType="com.care.homin.rental.dto.orderDTO">
+		INSERT INTO homin_order VALUES(#{uid},#{name},#{email},#{tell},#{addr},#{postcode},#{productName},#{amount})
+	</insert>
 </mapper>

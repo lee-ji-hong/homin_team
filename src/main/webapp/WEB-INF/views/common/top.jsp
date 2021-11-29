@@ -4,56 +4,66 @@
 <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
-    />
+/>
 <c:url var="root" value="/" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board2.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />
 
+<script>
+	function loginForm() {
+		alert('먼저 로그인해주세요');
+		location.href='${root}index?formpath=login';
+	}
+</script>
 <div id="wrap" style="width:1200px">
+
 	<section class="info_section">
+	
         <div>
 	        <ul class="info_list">
-	          <li>
-	            <a href="${root}index?formpath=servicecenter&list=faq">고객센터</a>
-	          </li>
-	          <li>
-	            <a href=""> | </a>
-	          </li>
-	          <c:choose>
-	            <c:when test="${empty sessionScope.id }">
-	              <li>
-	                <a href="${root}index?formpath=login "> 로그인 </a>
-	              </li>
-	            </c:when>
-	            <c:otherwise>
-	              <li>
-	              	<a href="${root }index?formpath=mypage">${sessionScope.nickname }님의 마이 | </a>
-	                <a href="${root}logout ">로그아웃</a>
-	              </li>
-	            </c:otherwise>
-	          </c:choose>
-	        </ul>
-	      </div>
+	        <c:choose>
+			<c:when test="${empty sessionScope.id }">
+				<li>
+            		<img src="${pageContext.request.contextPath}/resources/image/cart2.png" onclick="loginForm()"/>
+          		</li>
+	       		<li>
+	            	<a  href="${root}index?formpath=login "> 로그인 </a>
+	          	</li>
+          	</c:when>
+			<c:otherwise>
+				<li>
+            		<a href="${root}index?formpath=basket"><img src="${pageContext.request.contextPath}/resources/image/cart2.png" />  </a>
+          		</li>
+				<li>
+					<a href="${root }index?formpath=mypage">${sessionScope.nickname }님의 마이 | </a>
+				</li>
+				<li>
+					<a  href="${root}logout ">로그아웃</a>
+				</li>
+			</c:otherwise>
+			</c:choose>
+	    	</ul>
+	    </div>
+	      
 	      <div>
 	        <ul class="info_list">
-	          <li>
-	            <a href="">
-	              <img
-	                src="${pageContext.request.contextPath}/resources/image/search2.png"
-	              />
-	            </a>
-	          </li>
-	          <li>
-	            <a href="">
-	              <img
-	                src="${pageContext.request.contextPath}/resources/image/cart2.png"
-	              />
-	            </a>
-	          </li>
-	        </ul>	
+	         <li>
+            	<a href=""> | </a>
+          	</li>
+          	<li>
+            	<a href="${root}index?formpath=servicecenter&list=faq">고객센터</a>
+          	</li>
+          	<li>
+            	<a href="">
+              		<img src="${pageContext.request.contextPath}/resources/image/search2.png" />
+            	</a>
+          	</li>
+	       </ul>	
 	      </div> 
+
       </section>
+      
   	<header class="header" >
       
         <h1 class="logo">
