@@ -6,7 +6,23 @@ public class RentalDTO {
 	private String product_filename;
 	private String classification;
 	private String price;
+	private int hit;
+	private int orderCount;
 	
+	
+	
+	public int getHit() {
+		return hit;
+	}
+	public void setHit(int hit) {
+		this.hit = hit;
+	}
+	public int getOrderCount() {
+		return orderCount;
+	}
+	public void setOrderCount(int orderCount) {
+		this.orderCount = orderCount;
+	}
 	public String getPrice() {
 		return price;
 	}

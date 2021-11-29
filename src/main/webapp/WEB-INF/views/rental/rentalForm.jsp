@@ -144,7 +144,7 @@
 
 <section class="container-home-section">
 <c:forEach var="pr" items="${product }">
-	<div  class="main-product-list" onclick="location.href='${root}index?formpath=product&prodNo=${pr.product_no }'">
+	<div  class="main-product-list" onclick="location.href='${root}index?formpath=product&category=${category }&prodNo=${pr.product_no }'">
 		<div class="main-product-list-in">
 			<ul>
 				<li>
@@ -157,7 +157,7 @@
 							<div class="pro-name">${pr.product_name }</div>
 							<div class="pro-price">
 								<div>
-									<span>월</span> <span>가격</span> <span>원</span>
+									<span>월</span> <span>${pr.price }</span> <span>원</span>
 								</div>
 							</div>
 						</div>

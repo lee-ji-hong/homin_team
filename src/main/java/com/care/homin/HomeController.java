@@ -29,7 +29,10 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/home")
-	public void home() {}
+	public void home(Model model) {
+		model.addAttribute("orderCount",service.selectOrderCount());
+		model.addAttribute("top",service.selectTopViews()); 
+	}
 	
 	@RequestMapping(value = "/servicecenter")
 	public String serviceCenter(Model model,@RequestParam String list) {
@@ -66,8 +69,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/product")
-	public String product(Model model,@RequestParam String prodNo) {
+	public String product(Model model,@RequestParam String prodNo, String category) {
 		model.addAttribute("product",service.selectProduct(prodNo));
+		model.addAttribute("category",category);
 		return "/rental/productForm";
 	}
 }

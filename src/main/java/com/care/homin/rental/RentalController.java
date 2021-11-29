@@ -106,8 +106,9 @@ public class RentalController {
 	}
 	
 	@RequestMapping(value = "/orderfinish")
-	public String orderFinish(Model model, String no) {
+	public String orderFinish(Model model, String no, String prodNo) {
 		service.selectOrderHistory(no, model);
+		service.upOrderCount(prodNo);
 		return "rental/orderfinishForm";
 	}
 }

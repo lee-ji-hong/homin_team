@@ -21,6 +21,7 @@ public class RentalService {
 	}
 
 	public RentalDTO selectProduct(String prodNo) {
+		dao.productUpHit(prodNo);
 		return dao.selectProduct(prodNo);
 	}
 	
@@ -40,5 +41,17 @@ public class RentalService {
 		model.addAttribute("orderHistory",dto);
 		model.addAttribute("productImg",dao.selectProductImg(dto.getProductName()));
 		model.addAttribute("classification", dao.selectClassification(dto.getProductName()));
+	}
+
+	public ArrayList<RentalDTO> selectTopViews() {
+		return dao.selectTopViews();
+	}
+
+	public void upOrderCount(String no) {
+		dao.upOrderCount(no);
+	}
+
+	public ArrayList<RentalDTO> selectOrderCount() {
+		return dao.selectOrderCount();
 	}
 }

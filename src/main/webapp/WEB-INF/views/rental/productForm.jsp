@@ -36,22 +36,22 @@
 <c:choose>
 
 	<c:when test="${category eq 'dryer' }">	
-		<li ><a>건조기</a></li>
+		<li ><a href = "${root }index?formpath=rental&category=${category}">건조기</a></li>
 	</c:when>
 	<c:when test="${category eq 'waterpurifier' }">
-		<li ><a>정수기</a></li>
+		<li ><a href = "${root }index?formpath=rental&category=${category}">정수기</a></li>
 	</c:when>
 	<c:when test="${category eq 'aircleaner' }">
-		<li ><a>공기청정기</a></li>
+		<li ><a href = "${root }index?formpath=rental&category=${category}">공기청정기</a></li>
 	</c:when>
 	<c:when test="${category eq 'washmachine' }">
-		<li ><a>식기세척기</a></li>
+		<li ><a href = "${root }index?formpath=rental&category=${category}">식기세척기</a></li>
 	</c:when>
 	<c:when test="${category eq 'microwave' }">
-		<li ><a>전기레인지</a></li>
+		<li ><a href = "${root }index?formpath=rental&category=${category}">전기레인지</a></li>
 	</c:when>
 	<c:otherwise>
-		<li class="rental-header-text"><a>얼음정수기 냉장고</a></li>
+		<li class="rental-header-text"><a href = "${root }index?formpath=rental&category=${category}">얼음정수기 냉장고</a></li>
 	</c:otherwise>
 
 </c:choose>
