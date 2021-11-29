@@ -27,9 +27,9 @@
 </style>
 </head>
 <body>
-	<div>
-		<div style="width: 1200px; margin-top: 50px;">
-			<div class="swiper-container" style="width: 100%;">
+	<div style="margin-top: 50px;">
+		<div style="width: 1200px; margin: 0 50px;">
+			<div class="swiper-container" style="width: 98%;">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<img src="${root }resources/image/test1.jpg" style="width: 100%;">

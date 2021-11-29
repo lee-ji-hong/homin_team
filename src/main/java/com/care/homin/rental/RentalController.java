@@ -77,7 +77,7 @@ public class RentalController {
 	
 	@RequestMapping(value = "/cancle")
 	public void testCancelPaymentAlreadyCancelledImpUid() {
-		String test_already_cancelled_imp_uid = "imp_464228130994";
+		String test_already_cancelled_imp_uid = "imp_073219792073";
 		CancelData cancel_data = new CancelData(test_already_cancelled_imp_uid, true); //imp_uid를 통한 전액취소
 		
 		try {

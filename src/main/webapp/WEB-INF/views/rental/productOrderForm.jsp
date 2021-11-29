@@ -15,6 +15,7 @@
 	#modal1,#modal2,#modal3:hover {cursor: pointer;}
 	.agr:disabled {background:#8C8C8C;}
 	#all,#box1,#box2,#box3{vertical-align: -1px;margin-right: 5px; margin-left: 10px;}
+	.agr{clear:both; margin: 0px auto; border-radius: 150px; width: 300px; height: 65px;}
 </style>
     <script>
 	    function allCheck() {
