@@ -42,7 +42,7 @@
 <center style="margin: 50 0px;">
 <div style="margin: 10 0px;">
     	<h1>
-    		<img style="width: 150" src="https://static.mylgid.com/userweb/1.0.28/images/logo.svg" alt="MY LG ID" />
+    		<img style="width: 150" src="https://static.mylgid.com/userweb/1.0.32/images/logo.svg" alt="MY LG ID" />
     	</h1>
     	<br>
 	    <p id="testAlert">하나의 ID로 LG의 다양한 서비스를 이용해보세요.</p>
