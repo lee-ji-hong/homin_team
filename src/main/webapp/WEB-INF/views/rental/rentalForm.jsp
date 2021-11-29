@@ -44,7 +44,6 @@
 }
 </style>
 
->>>>>>> refs/heads/seojun2
 <c:choose>
 
 	<c:when test="${category eq 'dryer' }">
