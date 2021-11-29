@@ -19,7 +19,7 @@
 	}
 </script>
 <body>
-	<section class="sub_header_section">
+	<section class="sub_header_section" style="margin-top: 50px;">
         <h2>고객센터</h2>
 		<br><br>
 		<div class="sub_header_section_article">

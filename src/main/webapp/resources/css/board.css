@@ -6,7 +6,6 @@
 /* 기본 CSS */
 
 #wrap {
-<<<<<<< HEAD
   	display: flex;
  	margin: 0 auto;
     max-width: 1200px;
@@ -16,20 +15,13 @@
     background-color: #fff;
     width: 100%;
     height: 100%;
-    padding: 0 10px;
+    padding: 0 25px;
     align-items: flex-start;
     margin-bottom: 30px;
     border-radius: 4px;
-    box-shadow: 0 3px 10px 0 rgb(234 235 239 / 80%);
+    box-shadow: 0 5px 12px 0 rgb(234 235 239 / 80%);
    
   
-=======
-  display: flex;
-  flex-flow: column nowrap;
-  width: 80%;
-  margin: 0 auto;
-  max-width: 1200px;
->>>>>>> parent of 87670af (Merge branch 'main' into hawon)
 }
 
 #wrap section {
@@ -46,11 +38,11 @@
 
 .info_list {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .info_list li {
-  width: 25%;
+  width: 20%;
   text-align: center;
 }
 
@@ -365,11 +357,11 @@
   }
 
   .logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 15.625%;
+/*     position: absolute; */
+/*     top: 0; */
+/*     left: 0; */
+/*     z-index: 10; */
+/*     width: 15.625%; */
     /* 120px ÷ 768px */
     padding: 0;
   }
@@ -502,22 +494,27 @@
 /* PC용 CSS */
 @media all and (min-width: 960px) {
   /* 기본 CSS */
-  #wrap {
-    position: relative;
-    width: 90%;
-  }
+/*   #wrap { */
+/*     position: relative; */
+/*     width: 90%; */
+/*   } */
+
+
+
 
   /* 인포메이션 영역 CSS */
+  
+  
   .info_section {
     order: 0;
-    position: absolute;
-    top: 30px;
-    top: 1.875rem;
-    right: 30px;
-    right: 1.875rem;
+    position: relative;
     z-index: 30;
     width: auto;
     border-bottom: 0;
+    display: flex;
+    width: 97%;
+    margin: 10 0 10 0px;
+    justify-content: right;
   }
 
   .info_list li {
@@ -535,33 +532,34 @@
     order: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: left;
     position: static;
+    width: 0;
     
    
   }
 
-  .logo {
-    width: 12.5%;
-    height: 80px;
+/*   .logo { */
+/*     width: 12.5%; */
+/*     height: 80px; */
     /* 120px ÷ 960px */
   }
 
-  .nav {
-    display: flex;
-    align-items: center;
-    position: static;
-    width: 87.5%;
-    /* 840px ÷ 960px */
-  }
+/*   .nav { */
+/*     display: flex; */
+/*     align-items: center; */
+/*     position: static; */
+/*     width: 87.5%; */
+/*     840px ÷ 960px */
+/*   }
 
-  .gnb {
-    display: flex !important;
-    flex-direction: row;
-    position: static;
-    width: 100%;
+/*   .gnb { */
+/*     display: flex !important; */
+/*     flex-direction: row; */
+/*     position: static; */
+/*     width: 100%; */
    
-  }
+/*   } */
 
   .gnb li {
     display: block;
@@ -655,4 +653,4 @@
     text-align: left;
   }
 
-}
+
