@@ -16,7 +16,6 @@ import com.care.homin.rental.service.RentalService;
 public class HomeController {
 	@Autowired RentalService service;
 	
-	
 	@RequestMapping(value = "/")
 	public String index(Model model) {
 		model.addAttribute("formpath", "home");

@@ -19,7 +19,7 @@
 	}
 </script>
 <body>
-	<section class="sub_header_section">
+	<section class="sub_header_section" style="margin-top: 50px;">
         <h2>고객센터</h2>
 		<br><br>
 		<div class="sub_header_section_article">
@@ -37,7 +37,7 @@
 					<a href="tel:1670-0876" style="text-decoration: underline; color: rgb(73, 10, 133);">1544-0099</a>
 				</address>
 
-				<button class="contact_btn" type="button">1:1 채팅 상담하기</button>
+<!-- 				<button class="contact_btn" type="button">1:1 채팅 상담하기</button> -->
 			</article>
 			<article class="sub_header_section_article_faq">
 				<ul class="sub_header_section_faq_list">

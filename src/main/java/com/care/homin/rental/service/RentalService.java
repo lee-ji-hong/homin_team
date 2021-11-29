@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import com.care.homin.membership.dao.IMemberDAO;
 import com.care.homin.rental.dao.RentalDAO;
 import com.care.homin.rental.dto.RentalDTO;
+import com.care.homin.rental.dto.orderDTO;
 
 @Service
 public class RentalService {
@@ -28,5 +29,9 @@ public class RentalService {
 		model.addAttribute("productInfo",dao.selectProduct(prodNo));
 		model.addAttribute("memberInfo",mDao.memberProc(id));
 		model.addAttribute("memberPostcode",mDao.selectPost(id));
+	}
+
+	public void orderHistory(orderDTO dto) {
+		dao.orderHistoryProc(dto);
 	}
 }
