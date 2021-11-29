@@ -5,6 +5,47 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/index.css" />
 <c:url var="root" value="/" />
 <div class="rental-header">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	function basketProduct(no) {
+		checkLogin();
+		
+		var d = {noTemp : no}
+		$.ajax({
+			url : "basketProduct",
+			type : "POST",
+			data : JSON.stringify(d),
+			contentType : "application/json; charset=utf-8",
+			dataType : 'json',
+			success : function(result) {
+				alert(result.msg);
+			},
+			error : function() {
+				alert("장바구니 추가 오류");
+			}
+		})
+	}
+	
+	function checkLogin() {
+		var id = '${sessionScope.id}';
+		if (id == "") {
+			alert('먼저 로그인해주세요');
+			location.href='${root}index?formpath=login';
+		} else {
+			return;
+		}
+		
+	}
+	
+</script>
+
+<style>
+#product {
+	float: left;
+}
+</style>
+
 		<!-- 배너 -->
 		<c:choose>
 
@@ -71,6 +112,9 @@
 		
 		</div>	
 		
+
+
+
 <c:choose>
 
 	<c:when test="${category eq 'dryer' }">	
@@ -96,6 +140,7 @@
 </div>
 
 <%-- <c:import url="/${category }" /> --%>
+
 
 <section class="container-home-section">
 <c:forEach var="pr" items="${product }">
@@ -123,3 +168,4 @@
 	</div>
 </c:forEach>
 </section>
+
