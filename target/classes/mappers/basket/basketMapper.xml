@@ -6,7 +6,7 @@
 	</select>
 	
 	<insert id="putProduct" parameterType="com.care.homin.basket.dto.BasketDTO">
-		INSERT INTO homin_basket VALUES(#{product_no}, #{product_name}, #{classification}, #{price}, #{id} )
+		INSERT INTO homin_basket VALUES(#{id}, #{product_no}, #{product_name}, #{classification}, #{price},#{product_img})
 	</insert>
 	
 	<select id="getBasket" parameterType="String" resultType="com.care.homin.basket.dto.BasketDTO">

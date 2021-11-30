@@ -116,7 +116,6 @@
 
 
 <c:choose>
-
 	<c:when test="${category eq 'dryer' }">	
 		<div class="rental-header-text">건조기</div>
 	</c:when>
@@ -135,7 +134,6 @@
 	<c:otherwise>
 		<div class="rental-header-text">얼음정수기 냉장고</div>
 	</c:otherwise>
-
 </c:choose>
 </div>
 
@@ -162,6 +160,9 @@
 							</div>
 						</div>
 					</div>	
+					<div>
+						<input type="button" value="장바구니에 담기" onclick="basketProduct('${pr.product_no }' );">
+					</div>
 				</li>	
 			</ul>
 		</div>

@@ -5,10 +5,37 @@
 <link rel="stylesheet" href="${root }resources/swiper/swiper.min.css">  
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/rental.css" />
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.8.js"></script>
-
-
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	function basketProduct(no) {
+		checkLogin();
+		
+		var d = {noTemp : no}
+		$.ajax({
+			url : "basketProduct",
+			type : "POST",
+			data : JSON.stringify(d),
+			contentType : "application/json; charset=utf-8",
+			dataType : 'json',
+			success : function(result) {
+				alert(result.msg);
+			},
+			error : function() {
+				alert("장바구니 추가 오류");
+			}
+		})
+	}
+	function checkLogin() {
+		var id = '${sessionScope.id}';
+		if (id == "") {
+			alert('먼저 로그인해주세요');
+			location.href='${root}index?formpath=login';
+		} else {
+			return;
+		}
+		
+	}
+</script>
 <style>
 
 .swiper-button-next {
@@ -108,7 +135,7 @@
 						<button   class="product_selling_text_btn_bt1" id="check_module" type="button" onclick = "location.href='${root}index?formpath=productOrder&prodNo=${product.product_no }'">이용 신청</button>
 					</div>
 					<div class="product_selling_text_btn_b">
-						<button  class="product_selling_text_btn_bt2" type="button">장바구니 담기</button>
+						<button  class="product_selling_text_btn_bt2" type="button" onclick="basketProduct('${product.product_no }' );">장바구니 담기</button>
 					</div>
 				</div>
 				

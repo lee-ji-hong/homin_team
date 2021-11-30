@@ -65,7 +65,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="${root }index?formpath=basket">
                 <img
                   src="${pageContext.request.contextPath}/resources/image/cart2.png"
                 />

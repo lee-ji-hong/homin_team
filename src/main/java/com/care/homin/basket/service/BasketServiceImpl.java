@@ -26,6 +26,7 @@ public class BasketServiceImpl implements IBasketService{
 				basketDto.setProduct_name(dto.getProduct_name());
 				basketDto.setClassification(dto.getClassification());
 				basketDto.setPrice(dto.getPrice());
+				basketDto.setProduct_img(dto.getProduct_filename());
 				boolean chk2 = basketDao.putProduct(basketDto);
 				if (chk2) {
 					result = "장바구니에 추가되었습니다";
