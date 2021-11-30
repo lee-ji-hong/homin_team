@@ -42,7 +42,7 @@ p {
 				</c:choose>
 				<li><a href="">>간편결제 설정</a></li>
 				<li><a href="${root }index?formpath=mypage&category=myinquiry">>1:1 문의 내역</a></li>
-				<li><a href="">>주문 내역</a></li>
+				<li><a href="${root }index?formpath=mypage&category=orderHistory">>주문 내역</a></li>
 				<li><a href="${root}index?formpath=basket">장바구니</a></li>
 				<li><a href="">간편결제 설정</a></li>
 			</ul>

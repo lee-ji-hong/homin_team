@@ -8,6 +8,7 @@ import com.care.homin.login.dto.LoginDTO;
 import com.care.homin.membership.dto.AllDTO;
 import com.care.homin.membership.dto.MemberDTO;
 import com.care.homin.membership.dto.PostcodeDTO;
+import com.care.homin.rental.dto.orderDTO;
 import com.care.homin.servicecenter.dto.InquiryDTO;
 
 public interface IMypageService {
@@ -22,4 +23,5 @@ public interface IMypageService {
 	public String registerAdProc(PostcodeDTO postCode);
 	public ArrayList<InquiryDTO> myInquiry(String id);
 	public void myInquiryView(String no, Model model);
+	public ArrayList<orderDTO> myOrder(String id);
 }

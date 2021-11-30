@@ -14,6 +14,9 @@
 				<c:when test="${category eq 'myinquiryView' }">
 					<c:import url="${root }myinquiryView"></c:import>
 				</c:when>
+				<c:when test="${category eq 'orderHistory' }">
+					<c:import url="${root }orderHistory"></c:import>
+				</c:when>
 				<c:otherwise>
 					<h3>안녕하세요. ${sessionScope.nickname }님</h3>
 				</c:otherwise>

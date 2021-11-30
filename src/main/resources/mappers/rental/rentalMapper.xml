@@ -10,7 +10,7 @@
 	</select>
 	
 	<insert id="orderHistoryProc" parameterType="com.care.homin.rental.dto.orderDTO">
-		INSERT INTO homin_order VALUES(#{uid},#{name},#{email},#{tell},#{addr},#{postcode},#{productName},#{amount})
+		INSERT INTO homin_order VALUES(#{uid},#{name},#{email},#{tell},#{addr},#{postcode},#{productName},#{amount},#{buyer_id},#{productImg},#{classification})
 	</insert>
 	
 	<select id="selectOrderHistory" parameterType="String" resultMap="order">
@@ -34,6 +34,8 @@
 		<result property="tell" column="BUYER_TELL"/>
 		<result property="amount" column="PRODUCT_AMOUNT"/>
 		<result property="productName" column="PRODUCT_NAME"/>
+		<result property="buyer_id" column="BUYER_ID"/>
+		<result property="productImg" column="PRODUCTIMG"/>
 	</resultMap>
 	
 	<update id="productUpHit" parameterType="String" >
@@ -51,5 +53,9 @@
 	<select id="selectOrderCount" parameterType="String" resultType = "com.care.homin.rental.dto.RentalDTO">
 		SELECT * FROM (SELECT * FROM homin_product order by ordercount desc) <![CDATA[ WHERE ROWNUM <= 4]]> 
 	</select>
+	
+	<delete id="cancleOrder" parameterType="String">
+		DELETE FROM homin_order WHERE IMP_UID=#{uid}
+	</delete>
 	
 </mapper>

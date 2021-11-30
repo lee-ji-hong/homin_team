@@ -26,5 +26,7 @@ public interface RentalDAO {
 	void upOrderCount(String no);
 	// 구매수 Top4 상품 정보 가져오기
 	ArrayList<RentalDTO> selectOrderCount();
+	// db 주문 정보 삭제
+	void cancleOrder(String uid);
 
 }

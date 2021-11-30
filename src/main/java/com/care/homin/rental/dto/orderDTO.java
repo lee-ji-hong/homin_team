@@ -9,7 +9,32 @@ public class orderDTO {
 	private String tell;
 	private String amount;
 	private String productName;
+	private String buyer_id;
+	private String productImg;
+	private String classification;
 	
+	
+	
+	
+	
+	public String getClassification() {
+		return classification;
+	}
+	public void setClassification(String classification) {
+		this.classification = classification;
+	}
+	public String getProductImg() {
+		return productImg;
+	}
+	public void setProductImg(String productImg) {
+		this.productImg = productImg;
+	}
+	public String getBuyer_id() {
+		return buyer_id;
+	}
+	public void setBuyer_id(String buyer_id) {
+		this.buyer_id = buyer_id;
+	}
 	public String getProductName() {
 		return productName;
 	}

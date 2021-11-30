@@ -31,6 +31,10 @@ public class RentalService {
 		model.addAttribute("memberInfo",mDao.memberProc(id));
 		model.addAttribute("memberPostcode",mDao.selectPost(id));
 	}
+	
+	public String selectProductImg(String productName){
+		return dao.selectProductImg(productName);
+	}
 
 	public void orderHistory(orderDTO dto) {
 		dao.orderHistoryProc(dto);
@@ -41,6 +45,9 @@ public class RentalService {
 		model.addAttribute("orderHistory",dto);
 		model.addAttribute("productImg",dao.selectProductImg(dto.getProductName()));
 		model.addAttribute("classification", dao.selectClassification(dto.getProductName()));
+	}
+	public String selectClassification(String productName) {
+		return dao.selectClassification(productName);
 	}
 
 	public ArrayList<RentalDTO> selectTopViews() {
@@ -53,5 +60,9 @@ public class RentalService {
 
 	public ArrayList<RentalDTO> selectOrderCount() {
 		return dao.selectOrderCount();
+	}
+
+	public void cancleOrder(String uid) {
+		dao.cancleOrder(uid);
 	}
 }

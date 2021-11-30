@@ -14,6 +14,7 @@ import com.care.homin.membership.dto.AllDTO;
 import com.care.homin.membership.dto.MemberDTO;
 import com.care.homin.membership.dto.PostcodeDTO;
 import com.care.homin.mypage.repository.IMypageDAO;
+import com.care.homin.rental.dto.orderDTO;
 import com.care.homin.servicecenter.dto.InquiryDTO;
 
 @Service
@@ -137,6 +138,10 @@ public class MypageServiceImpl implements IMypageService{
 		}
 		model.addAttribute("inquiryView", dto);
 		model.addAttribute("inquiryImg", imgs);
+	}
+	@Override
+	public ArrayList<orderDTO> myOrder(String buyer_id) {
+		return mypageDao.myOrder(buyer_id);
 	}
 
 	
