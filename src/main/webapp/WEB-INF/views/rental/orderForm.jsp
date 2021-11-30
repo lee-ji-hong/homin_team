@@ -71,12 +71,17 @@ function iamport(){
         	   		}
 	        	alert("결제 및 결제검증완료");
 	        	$.ajax({
-	            	url : "${root}orderDB",
+	            	url : "orderDB?prNo=${productInfo.product_no}",
 	        		type : "POST",
 	    			contentType : "application/json; charset=utf-8",
 	            	data : JSON.stringify(d),
-	        	}); 
-	        	location.href = "${root}index?formpath=orderfinish&no="+data.response.impUid+"&prodNo=${productInfo.product_no}";
+	            	success : function(){
+	        			location.href = "${root}index?formpath=orderfinish&no="+data.response.impUid+"&prodNo=${productInfo.product_no}";
+					},
+					error : function(){
+						alert("문제")
+					}
+	        	});
         	} else {
         		alert("결제 실패");
         	}

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.care.homin.basket.dto.BasketDTO;
 import com.care.homin.basket.service.IBasketService;
+import com.care.homin.rental.service.RentalService;
 
 @Controller
 public class BasketController {
@@ -29,7 +30,6 @@ public class BasketController {
 		String id = (String)session.getAttribute("id");
 		ArrayList<BasketDTO> basket = basketSvc.getBasket(id);
 //		logger.warn("basket : " + basket);
-		
 		if (basket.size() == 0) {
 			model.addAttribute("msg", "장바구니가 비었습니다");
 		} else {

@@ -115,7 +115,9 @@
 <center>
 <section class="write_wrap">
 <form action="${root }writeProc" method="post" enctype="multipart/form-data" id = "f">
-
+<input type = "hidden" value = "${product_img }" name = "product_img">
+<input type = "hidden" value = "${category }" name = "category">
+<input type = "hidden" value = "${order_no }" name = "order_no">
 <div class="write_wrap_bottom">
 
 	<div class="write_wrap_bottom_ch1">

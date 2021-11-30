@@ -39,9 +39,10 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
             </li>
             <li>|</li>
             <li>
-              <a href="${root}index?formpath=servicecenter&list=faq" >고객센터</a>
+              <a href="${root}index?formpath=servicecenter&list=faq"
+                >고객센터</a
+              >
             </li>
-            
           </c:when>
           <c:otherwise>
             <li>
@@ -49,17 +50,24 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
             </li>
             <li>|</li>
             <li>
-              <a href="${root}index?formpath=servicecenter&list=faq">고객센터</a >
+              <a href="${root}index?formpath=servicecenter&list=faq"
+                >고객센터</a
+              >
             </li>
             <li>|</li>
             <li>
-              <a href="${root }index?formpath=mypage"  >${sessionScope.nickname }님
-                <img src="${pageContext.request.contextPath}/resources/image/account_circle.png"/>
+              <a href="${root }index?formpath=mypage"
+                >${sessionScope.nickname }님
+                <img
+                  src="${pageContext.request.contextPath}/resources/image/account_circle.png"
+                />
               </a>
             </li>
             <li>
-              <a href="">
-                <img src="${pageContext.request.contextPath}/resources/image/cart2.png"/>
+              <a href="${root }index?formpath=basket">
+                <img
+                  src="${pageContext.request.contextPath}/resources/image/cart2.png"
+                />
               </a>
             </li>
           </c:otherwise>
@@ -70,9 +78,11 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
       <ul class="info_list">
         <li>
           <a href="">
-<!--             <img -->
-<%--               src="${pageContext.request.contextPath}/resources/image/search2.png" --%>
-<!--             /> -->
+            <!--             <img -->
+            <%--
+            src="${pageContext.request.contextPath}/resources/image/search2.png"
+            --%>
+            <!--             /> -->
           </a>
         </li>
       </ul>
