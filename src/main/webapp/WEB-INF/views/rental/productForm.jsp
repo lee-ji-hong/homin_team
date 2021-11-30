@@ -32,7 +32,7 @@
  		<li>
  		<a href="${root}index?formpath=home ">홈</a>
  		</li>
- 		<li> > </li>
+ 		<li class="rental-detail-headernext_btn"> > </li>
 <c:choose>
 
 	<c:when test="${category eq 'dryer' }">	
@@ -51,11 +51,11 @@
 		<li ><a>전기레인지</a></li>
 	</c:when>
 	<c:otherwise>
-		<li class="rental-header-text"><a>얼음정수기 냉장고</a></li>
+		<li class="rental-header-text-detail"><a>얼음정수기 냉장고</a></li>
 	</c:otherwise>
 
 </c:choose>
-	<li> > </li>
+	<li class="rental-detail-headernext_btn"> > </li>
 	<li><a href="">현재 상품</a></li>
 	</ul>
 </div>
@@ -93,13 +93,23 @@
 		 
 			<div class="product_selling_text_comment">
 				<div class="selling_text_comment_1">
-					<p>계약 기간</p><p>2년</p>
+					<div class="selling_text_comment_name">혜택</div>
+					<div class="selling_text_comment_cm">822P 적립 (WELCOME 0.3% 적립)</div>
 				</div>
 				<div class="selling_text_comment_1">
-					<p>방문 주기</p><p>6개월마다 1회</p>
+					
+					<div class="selling_text_comment_name">배송</div>
+					
+					<div class="selling_text_comment_cm">
+					<div>무료배송</div>
+					<div>화물택배</div>
+					<div>제주도/도서산간 지역 50,000원</div>
+					</div>
+					
 				</div>
 				<div class="selling_text_comment_1">
-					<p style="margin-right: 75px;">월 이용 요금</p><p>${product.price }</p>
+					<div class="selling_text_comment_name">요금</div>
+					<div class="selling_text_comment_cm">${product.price }(한달 기준)</div>
 				</div>
 			
 			</div>
@@ -122,8 +132,8 @@
 <div class="product_detailpg_contents">
 	<ul>
 	<li>상품정보</li>
-	<li>리뷰</li>
-	<li>배송환불</li>
+<!-- 	<li>리뷰</li> -->
+<!-- 	<li>배송환불</li> -->
 	</ul>
 	</div>	
 

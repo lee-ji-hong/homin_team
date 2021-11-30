@@ -24,7 +24,7 @@
 		<br><br>
 		<div class="sub_header_section_article">
 			<article class="sub_header_section_article_contact">
-				<address>
+				<address style="line-height: 47px;">
 					"운영시간 : 평일 08:00 ~ 19:00 (주말 &amp; 공휴일 제외)"
 					<br>
 					"점심시간 : 12:00 ~ 13:00"

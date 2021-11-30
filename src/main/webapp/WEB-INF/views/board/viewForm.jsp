@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/faq.css" />
+
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/view.css" />   
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
@@ -67,7 +67,7 @@
         <strong>review</strong> 
         <hr style="width : 50px;">
         <p>상품 사용 후기입니다.</p>
-      </div>
+     	 </div>
       
       
         <div class="board_view_wrap">

@@ -143,18 +143,24 @@
     color: #444;
     font-weight: inherit;
 }
+
+.selling_text_comment_name{
+	 margin: 10 40 10 0px;
+}
+
+.selling_text_comment_cm{
+	 margin: 10 0px;
+	
+}
+
 .selling_text_comment_1 {
 	display: flex;
     justify-content: left;
-    align-items: center;
-}
-
-.selling_text_comment_1 p{
-	margin-right: 100px;
+    align-items: flex-start;
 }
 
 .product_selling_text_btn{
-	margin: 30px 0px 100px 0px;
+	margin: 50px 0px 70px 0px;
     text-align: center;
     font-size: 0;
     display: flex;
@@ -225,3 +231,13 @@
     font-weight: bold;
     font-size: 1.3rem;
 }
+
+.rental-header-text-detail{
+	margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.rental-detail-headernext_btn{
+	margin: 0 6px;
+}
+
