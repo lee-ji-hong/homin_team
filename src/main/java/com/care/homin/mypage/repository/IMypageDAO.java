@@ -1,10 +1,14 @@
 package com.care.homin.mypage.repository;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Repository;
 
 import com.care.homin.login.dto.LoginDTO;
 import com.care.homin.membership.dto.MemberDTO;
 import com.care.homin.membership.dto.PostcodeDTO;
+import com.care.homin.rental.dto.orderDTO;
+import com.care.homin.servicecenter.dto.InquiryDTO;
 
 @Repository
 public interface IMypageDAO {
@@ -21,4 +25,7 @@ public interface IMypageDAO {
 	boolean updateAddrProc(PostcodeDTO postCode);
 	
 	boolean registerAdProc(PostcodeDTO postCode);
+	ArrayList<InquiryDTO> myInquiry(String id);
+	InquiryDTO myInquiryView(String no);
+	ArrayList<orderDTO> myOrder(String buyer_id);
 }

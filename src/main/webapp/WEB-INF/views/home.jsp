@@ -80,122 +80,82 @@
 		</div>
 		
 		<section class="container-home-section" >
-			<div class="main-product-title"><strong>지금 가장 핫한 상품. </strong></div>
+			<div class="main-product-title"><strong>조회수 Top4</strong></div>
 			<div class="main-product-list">
+			<c:forEach var="to" items="${top }">
 				<div class="main-product-list-in">
 					<ul>
 						<li>
-							<div class="main-product-text " >
+							<div class="main-product-text " onclick = "location.href='${root}/index?formpath=product&category=${to.classification }&prodNo=${to.product_no }'">
 								<div class="main-product-tex-in ">
-									<img src = "${root }resources/image/test.png"></div>
-									<div class="pro-category" >카테고리 들어갈곳.</div>
-									<div class="pro-name">제품명 들어갈곳.</div>
-									<div class="pro-price">가격 들어갈곳.</div>
+									<img src = "${root }resources/image/${to.classification}/${to.product_filename}"></div>
+									<c:choose>
+										<c:when test="${to.classification eq 'aircleaner'}">
+											<div class="pro-category" >공기청정기</div>
+										</c:when>
+										<c:when test="${to.classification eq 'dryer'}">
+											<div class="pro-category" >건조기</div>
+										</c:when>
+										<c:when test="${to.classification eq 'microwave'}">
+											<div class="pro-category" >전기레인지</div>
+										</c:when>
+										<c:when test="${to.classification eq 'refrigerator'}">
+											<div class="pro-category" >얼음정수기/냉장고</div>
+										</c:when>
+										<c:when test="${to.classification eq 'washmachine'}">
+											<div class="pro-category" >식기세척기</div>
+										</c:when>
+										<c:when test="${to.classification eq 'waterpurifier'}">
+											<div class="pro-category" >정수기</div>
+										</c:when>
+									</c:choose>
+									<div class="pro-name">${to.product_name }</div>
+									<div class="pro-price">${to.price }</div>
 							</div>
 						</li>
 					</ul>
 				</div>
-				<div class="main-product-list-in">
-					<ul>
-						<li>
-							<div class="main-product-text " >
-								<div class="main-product-tex-in ">
-									<img src = "${root }resources/image/test.png"></div>
-									<div class="pro-category" >카테고리 들어갈곳.</div>
-									<div class="pro-name">제품명 들어갈곳.</div>
-									<div class="pro-price">가격 들어갈곳.</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="main-product-list-in">
-					<ul>
-						<li>
-							<div class="main-product-text " >
-								<div class="main-product-tex-in ">
-									<img src = "${root }resources/image/test.png"></div>
-									<div class="pro-category" >카테고리 들어갈곳.</div>
-									<div class="pro-name">제품명 들어갈곳.</div>
-									<div class="pro-price">가격 들어갈곳.</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="main-product-list-in">
-					<ul>
-						<li>
-							<div class="main-product-text " >
-								<div class="main-product-tex-in ">
-									<img src = "${root }resources/image/test.png"></div>
-									<div class="pro-category" >카테고리 들어갈곳.</div>
-									<div class="pro-name">제품명 들어갈곳.</div>
-									<div class="pro-price">가격 들어갈곳.</div>
-							</div>
-						</li>
-					</ul>
-				</div>
+			</c:forEach>
 			</div>
-			
-			
 		</section>
 		
 		<section class="container-home-section" >
-			<div class="main-product-title"><strong>렌탈/케어 추천 상품 </strong></div>
+			<div class="main-product-title"><strong>판매 Top4</strong></div>
 			<div class="main-product-list">
+			<c:forEach var="oc" items="${orderCount }">
 				<div class="main-product-list-in">
 					<ul>
 						<li>
-							<div class="main-product-text " >
+							<div class="main-product-text " onclick = "location.href='${root}/index?formpath=product&category=${oc.classification }&prodNo=${oc.product_no }'">
 								<div class="main-product-tex-in ">
-									<img src = "${root }resources/image/test.png"></div>
-<!-- 									<div class="pro-num">제품번호 들어갈곳.</div> -->
-									<div class="pro-category" >카테고리 들어갈곳.</div>
-									<div class="pro-name">제품명 들어갈곳.</div>
-									<div class="pro-price">가격 들어갈곳.</div>
+									<img src = "${root }resources/image/${oc.classification}/${oc.product_filename}"></div>
+									<c:choose>
+										<c:when test="${oc.classification eq 'aircleaner'}">
+											<div class="pro-category" >공기청정기</div>
+										</c:when>
+										<c:when test="${oc.classification eq 'dryer'}">
+											<div class="pro-category" >건조기</div>
+										</c:when>
+										<c:when test="${oc.classification eq 'microwave'}">
+											<div class="pro-category" >전기레인지</div>
+										</c:when>
+										<c:when test="${oc.classification eq 'refrigerator'}">
+											<div class="pro-category" >얼음정수기/냉장고</div>
+										</c:when>
+										<c:when test="${oc.classification eq 'washmachine'}">
+											<div class="pro-category" >식기세척기</div>
+										</c:when>
+										<c:when test="${oc.classification eq 'waterpurifier'}">
+											<div class="pro-category" >정수기</div>
+										</c:when>
+									</c:choose>
+									<div class="pro-name">${oc.product_name }</div>
+									<div class="pro-price">${oc.price }</div>
 							</div>
 						</li>
 					</ul>
 				</div>
-				<div class="main-product-list-in">
-					<ul>
-						<li>
-							<div class="main-product-text " >
-								<div class="main-product-tex-in ">
-									<img src = "${root }resources/image/test.png"></div>
-									<div class="pro-category" >카테고리 들어갈곳.</div>
-									<div class="pro-name">제품명 들어갈곳.</div>
-									<div class="pro-price">가격 들어갈곳.</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="main-product-list-in">
-					<ul>
-						<li>
-							<div class="main-product-text " >
-								<div class="main-product-tex-in ">
-									<img src = "${root }resources/image/test.png"></div>
-									<div class="pro-category" >카테고리 들어갈곳.</div>
-									<div class="pro-name">제품명 들어갈곳.</div>
-									<div class="pro-price">가격 들어갈곳.</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="main-product-list-in">
-					<ul>
-						<li>
-							<div class="main-product-text " >
-								<div class="main-product-tex-in ">
-									<img src = "${root }resources/image/test.png"></div>
-<!-- 									<div class="pro-num">제품번호 들어갈곳.</div> -->
-									<div class="pro-category" >카테고리 들어갈곳.</div>
-									<div class="pro-name">제품명 들어갈곳.</div>
-									<div class="pro-price">가격 들어갈곳.</div>
-							</div>
-						</li>
-					</ul>
-				</div>
+			</c:forEach>
 			</div>
 			
 			

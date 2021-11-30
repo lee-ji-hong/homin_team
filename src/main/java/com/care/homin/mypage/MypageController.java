@@ -1,5 +1,6 @@
 package com.care.homin.mypage;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -12,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.request.SessionScope;
 
 import com.care.homin.login.dto.LoginDTO;
 import com.care.homin.login.service.ILoginService;
@@ -20,6 +20,8 @@ import com.care.homin.membership.dto.AllDTO;
 import com.care.homin.membership.dto.MemberDTO;
 import com.care.homin.membership.dto.PostcodeDTO;
 import com.care.homin.mypage.service.IMypageService;
+import com.care.homin.rental.dto.orderDTO;
+import com.care.homin.rental.service.RentalService;
 
 @Controller
 public class MypageController {
@@ -170,6 +172,26 @@ public class MypageController {
 			model.addAttribute("formpath", "addr/registerAdForm");
 			return "index";
 		}
+	}
+	@RequestMapping(value = "myinquiry")
+	public String myinquiry(Model model, HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		model.addAttribute("myinquiry",mypageSvc.myInquiry(id));
+		return "mypage/myinquiryForm";
+	}
+	
+	@RequestMapping(value = "myinquiryView")
+	public String myinquiryView(Model model, String no) {
+		mypageSvc.myInquiryView(no,model);
+		return "mypage/myinquiryViewForm";
+	}
+	
+	@RequestMapping(value = "orderHistory")
+	public String orderHistory(Model model, HttpSession session) {
+		String id = (String)session.getAttribute("id");
+		ArrayList<orderDTO> dto = mypageSvc.myOrder(id);
+		model.addAttribute("myOrder",dto);
+		return "mypage/orderHistoryForm";
 	}
 	
 }

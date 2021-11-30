@@ -4,22 +4,35 @@
 <c:url var="root" value="/" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.8.js"></script>
-<div>
-	<div><h1>가입 예정 상품</h1></div>
-	<hr/>
-	<div>
-		<img src = "${root }resources/image/${productInfo.classification }/${productInfo.product_filename}">
-	</div>
-	<div>${productInfo.product_no }</div>
-	<div>${productInfo.product_name }</div>
-	<div></div>
-	<div>${productInfo.price }원</div>
-	<div>계약기간</div>
-	<div>방문주기</div>
-	<div>
-		<input type = "button" id = "orderBtn" onclick = "iamport()" value = "신청하기">
+<style>
+	.mainText{font-size: 40px; margin-bottom: 30px; margin-top: 15px;}
+	.itemImg{width: 300px; height: 300px;}
+	.item_area{display: flex; flex-direction: row;}
+	.orderItem{width: 800px; margin: 0 auto; border: 1px solid #EAEAEA; border-radius: 15px; margin-top: 15px;}
+	.order_Btn{width: 100%; margin: 50px auto; display: flex; justify-content: space-around; 
+				background:purple;  border:0; font-size:25px;
+				border-radius: 150px; width: 300px; height: 65px; color: white;}
+	.item_info{margin-top: 20px;}
+	.item_price{color: #D9418C;}
+	.item_no, .item_name, .item_price{margin-bottom: 15px;}
+</style>
+<div class = "mainText">가입 예정 상품</div>
+<hr/>
+<div class = "orderItem">
+	<div class = "item_area">
+		<div class = "itemImg">
+			<img class = "itemImg" src = "${root }resources/image/${productInfo.classification }/${productInfo.product_filename}">
+		</div>
+		<div class = "item_info">
+			<div class = "item_no">${productInfo.product_no }</div>
+			<div class = "item_name"><strong>${productInfo.product_name }</strong></div>
+			<div class = "item_price"><strong>${productInfo.price }원</strong></div>
+		</div>
 	</div>
 </div>
+	<div>
+		<input type = "button" class = "order_Btn" onclick = "iamport()" value = "신청하기">
+	</div>
 
 <script>
 function iamport(){
@@ -63,6 +76,7 @@ function iamport(){
 	    			contentType : "application/json; charset=utf-8",
 	            	data : JSON.stringify(d),
 	        	}); 
+	        	location.href = "${root}index?formpath=orderfinish&no="+data.response.impUid+"&prodNo=${productInfo.product_no}";
         	} else {
         		alert("결제 실패");
         	}

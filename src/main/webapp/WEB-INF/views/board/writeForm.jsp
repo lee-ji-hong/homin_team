@@ -196,8 +196,9 @@
 		<div class="write_button_wrap">
 			<div>
 				<div class="write_filebtn">
-				
+
 					<input value='파일선택' type="file" name="uploadFile" id="uploadFile" multiple> 	
+
 				</div>
 			</div>
 			
