@@ -57,5 +57,5 @@
 	<delete id="cancleOrder" parameterType="String">
 		DELETE FROM homin_order WHERE IMP_UID=#{uid}
 	</delete>
-	
+
 </mapper>

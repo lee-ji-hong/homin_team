@@ -156,7 +156,7 @@ prefix="c"%>
           </button>
         </div>
         <div class="product_selling_text_btn_b">
-          <button class="product_selling_text_btn_bt2" type="button">
+          <button class="product_selling_text_btn_bt2" type="button" onclick="basketProduct('${pr.product_no }');">
             장바구니 담기
           </button>
         </div>

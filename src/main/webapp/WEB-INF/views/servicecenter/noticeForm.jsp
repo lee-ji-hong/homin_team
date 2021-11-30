@@ -30,13 +30,13 @@
           </table>
         </div>
         
-        <div class="content_row_3">
-          <span class="list_prev_btn">문의사항 이전 버튼</span>
-          <a href="#">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <span class="list_next_btn">문의사항 다음 버튼</span>
-        </div>
+<!--         <div class="content_row_3"> -->
+<!--           <span class="list_prev_btn">문의사항 이전 버튼</span> -->
+<!--           <a href="#">1</a> -->
+<!--           <a href="#">2</a> -->
+<!--           <a href="#">3</a> -->
+<!--           <span class="list_next_btn">문의사항 다음 버튼</span> -->
+<!--         </div> -->
       </section>
       
       
