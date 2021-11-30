@@ -2,6 +2,7 @@
 pageEncoding="UTF-8"%> <%@ taglib uri="http://java.sun.com/jsp/jstl/core"
 prefix="c"%>
 <c:url var="root" value="/" />
+
 <link rel="stylesheet" href="${root }resources/swiper/swiper.min.css" />
 <link
   rel="stylesheet"
@@ -9,14 +10,36 @@ prefix="c"%>
   href="${pageContext.request.contextPath}/resources/css/rental.css"
 />
 
-<script
-  type="text/javascript"
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-></script>
-<script
-  type="text/javascript"
-  src="https://service.iamport.kr/js/iamport.payment-1.1.8.js"
-></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  function basketProduct(no) {
+    checkLogin();
+
+    var d = { noTemp: no };
+    $.ajax({
+      url: "basketProduct",
+      type: "POST",
+      data: JSON.stringify(d),
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      success: function (result) {
+        alert(result.msg);
+      },
+      error: function () {
+        alert("장바구니 추가 오류");
+      },
+    });
+  }
+  function checkLogin() {
+    var id = "${sessionScope.id}";
+    if (id == "") {
+      alert("먼저 로그인해주세요");
+      location.href = "${root}index?formpath=login";
+    } else {
+      return;
+    }
+  }
+</script>
 
 <style>
   .swiper-button-next {
@@ -163,30 +186,32 @@ prefix="c"%>
       </div>
     </div>
   </div>
-</section>
+ 
+  </section>
 
-<div class="product_detailpg_contents">
-  <ul>
-    <li>상품정보</li>
-    <!-- 	<li>리뷰</li> -->
-    <!-- 	<li>배송환불</li> -->
-  </ul>
-</div>
+  <div class="product_detailpg_contents">
+    <ul>
+      <li>상품정보</li>
+      <!-- 	<li>리뷰</li> -->
+      <!-- 	<li>배송환불</li> -->
+    </ul>
+  </div>
 
-<script>
-  var mySwiper = new Swiper(".swiper-container", {
-    navigation: {
-      prevEl: ".swiper-button-prev",
-      nextEl: ".swiper-button-next",
-    },
-    /* autoplay : {
+  <script>
+    var mySwiper = new Swiper(".swiper-container", {
+      navigation: {
+        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+      },
+      /* autoplay : {
 			delay : 2000,
 			disableOnInteraction: false,
 		}, */
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-  });
-</script>
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+        clickable: true,
+      },
+    });
+  </script>
+</section>

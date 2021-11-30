@@ -9,7 +9,31 @@ public class BoardDTO{
 	private String writeTime;
 	private String fileName;
 	private int review_star;
+	private String product_img;
+	private String classification;
+	private String order_no;
 	
+	
+	
+	
+	public String getOrder_no() {
+		return order_no;
+	}
+	public void setOrder_no(String order_no) {
+		this.order_no = order_no;
+	}
+	public String getProduct_img() {
+		return product_img;
+	}
+	public void setProduct_img(String product_img) {
+		this.product_img = product_img;
+	}
+	public String getClassification() {
+		return classification;
+	}
+	public void setClassification(String classification) {
+		this.classification = classification;
+	}
 	public int getReview_star() {
 		return review_star;
 	}

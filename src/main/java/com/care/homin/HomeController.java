@@ -44,7 +44,10 @@ public class HomeController {
 		return "/board/boardForm";
 	}
 	@RequestMapping(value = "/write")
-	public String write() {
+	public String write(Model model, String product_img, String category, String order_no) {
+		model.addAttribute("category",category);
+		model.addAttribute("product_img",product_img);
+		model.addAttribute("order_no",order_no);
 		return "/board/writeForm";
 	}
 	@RequestMapping(value = "/view")
