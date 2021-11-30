@@ -32,6 +32,10 @@ public class BoardService {
 	public void writeProc(MultipartHttpServletRequest req) {
 		String title = req.getParameter("title");
 		String content= req.getParameter("content");
+		String category = req.getParameter("category");
+		String product_img = req.getParameter("product_img");
+		String order_no = req.getParameter("order_no");
+		System.out.println(req.getParameter(order_no));
 		BoardDTO dto = new BoardDTO();
 		UUID uuid = UUID.randomUUID();
 		int review_star = Integer.parseInt(req.getParameter("review_star"));
@@ -65,6 +69,9 @@ public class BoardService {
 		dto.setFileName(fname);
 		dto.setWriteTime(writeTime);
 		dto.setReview_star(review_star);
+		dto.setProduct_img(product_img);
+		dto.setClassification(category);
+		dto.setOrder_no(order_no);
 		dao.writeProc(dto);
 		
 	}

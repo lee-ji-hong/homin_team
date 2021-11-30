@@ -47,9 +47,9 @@ public class RentalController {
 	{	
 			return api.paymentByImpUid(imp_uid);
 	}
-	
+	@ResponseBody
 	@RequestMapping(value="/orderDB")
-	public void orderDB(@RequestBody Map<String,String> d) {
+	public void orderDB(@RequestBody Map<String,String> d,String prNo) {
 		orderDTO dto = new orderDTO();
 		dto.setUid(d.get("uid"));
 		dto.setEmail(d.get("email"));
@@ -64,7 +64,7 @@ public class RentalController {
 		dto.setProductImg(productImg);
 		String category = service.selectClassification(d.get("name"));
 		dto.setClassification(category);
-		
+		dto.setProduct_no(prNo);
 		service.orderHistory(dto);
 	}
 	

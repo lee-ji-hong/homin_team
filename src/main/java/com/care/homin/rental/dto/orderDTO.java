@@ -12,11 +12,15 @@ public class orderDTO {
 	private String buyer_id;
 	private String productImg;
 	private String classification;
+	private String product_no;
 	
 	
-	
-	
-	
+	public String getProduct_no() {
+		return product_no;
+	}
+	public void setProduct_no(String product_no) {
+		this.product_no = product_no;
+	}
 	public String getClassification() {
 		return classification;
 	}

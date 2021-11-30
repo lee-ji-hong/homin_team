@@ -6,7 +6,7 @@
 		<selectKey keyProperty="no" resultType="int" order="BEFORE">
 			SELECT nvl(max(no), 0)+1 FROM homin_board
 		</selectKey>					
-		INSERT INTO homin_board VALUES(#{no}, #{id}, #{title}, #{content}, #{hit}, #{writeTime}, #{fileName}, #{review_star})
+		INSERT INTO homin_board VALUES(#{no}, #{id}, #{title}, #{content}, #{hit}, #{writeTime}, #{fileName}, #{review_star},#{product_img},#{classification},#{order_no})
 	</insert>
 	
 	<select id="boardCount" resultType="int" parameterType="HashMap">
