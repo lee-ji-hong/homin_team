@@ -11,9 +11,9 @@
 	</resultMap>
 	
 	<select id = "allNotice"  resultMap="notice">
-		SELECT * FROM homin_notice
+		SELECT * FROM notice
 	</select>
 	<select id = "selectNotice"   resultMap="notice" parameterType="int">
-		SELECT * FROM homin_notice WHERE no=#{no}
+		SELECT * FROM notice WHERE no=#{no}
 	</select>
 </mapper>

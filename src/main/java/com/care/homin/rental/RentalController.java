@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,6 +59,11 @@ public class RentalController {
 		dto.setTell(d.get("tell"));
 		dto.setAmount(d.get("amount"));
 		dto.setProductName(d.get("name"));
+		dto.setBuyer_id((String)session.getAttribute("id"));
+		String productImg = service.selectProductImg(d.get("name"));
+		dto.setProductImg(productImg);
+		String category = service.selectClassification(d.get("name"));
+		dto.setClassification(category);
 		
 		service.orderHistory(dto);
 	}
@@ -75,39 +81,26 @@ public class RentalController {
 		return "rental/orderForm";
 	}
 	
+	@ResponseBody
 	@RequestMapping(value = "/cancle")
-	public void testCancelPaymentAlreadyCancelledImpUid() {
-		String test_already_cancelled_imp_uid = "imp_073219792073";
+	public void testCancelPaymentAlreadyCancelledImpUid(@RequestBody String uid) {
+		String uuid = uid.substring(0,uid.length()-1);
+		String test_already_cancelled_imp_uid = uuid;
 		CancelData cancel_data = new CancelData(test_already_cancelled_imp_uid, true); //imp_uid를 통한 전액취소
-		
+		service.cancleOrder(uuid);
 		try {
 			IamportResponse<Payment> payment_response = api.cancelPaymentByImpUid(cancel_data);
-			
 		} catch (IamportResponseException e) {
 			System.out.println(e.getMessage());
-			
-			switch(e.getHttpStatusCode()) {
-			case 401 :
-				//TODO
-				break;
-			case 500 :
-				//TODO
-				break;
-			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	@RequestMapping(value = "/cancleProc")
-	public String cancleProc() {
-		return "rental/ordercancleForm";
-	}
-	
 	@RequestMapping(value = "/orderfinish")
-	public String orderFinish(Model model, String no) {
+	public String orderFinish(Model model, String no, String prodNo) {
 		service.selectOrderHistory(no, model);
+		service.upOrderCount(prodNo);
 		return "rental/orderfinishForm";
 	}
 }

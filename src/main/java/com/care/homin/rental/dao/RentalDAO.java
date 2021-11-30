@@ -18,5 +18,15 @@ public interface RentalDAO {
 	String selectProductImg(String productName);
 	// 제품 분류 가져오기
 	String selectClassification(String productName);
+	// 제품 조회수 증가
+	void productUpHit(String product_no);
+	// 조회수 Top4 상품 정보 가져오기
+	ArrayList<RentalDTO> selectTopViews();
+	// 주문 수
+	void upOrderCount(String no);
+	// 구매수 Top4 상품 정보 가져오기
+	ArrayList<RentalDTO> selectOrderCount();
+	// db 주문 정보 삭제
+	void cancleOrder(String uid);
 
 }

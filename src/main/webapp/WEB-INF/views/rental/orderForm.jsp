@@ -76,7 +76,7 @@ function iamport(){
 	    			contentType : "application/json; charset=utf-8",
 	            	data : JSON.stringify(d),
 	        	}); 
-	        	location.href = "${root}index?formpath=orderfinish&no="+data.response.impUid;
+	        	location.href = "${root}index?formpath=orderfinish&no="+data.response.impUid+"&prodNo=${productInfo.product_no}";
         	} else {
         		alert("결제 실패");
         	}
