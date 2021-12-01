@@ -66,21 +66,21 @@
 					<h1 class="servicecenter_main_title">1:1문의</h1>
 				</c:when>
 				<c:when test="${list eq 'notice' || list eq 'noticeView'}">
-					<h1 class="servicecenter_main_title">공지사항</h1>
+					<h1 class="servicecenter_main_title"style="display:none">공지사항</h1>
 				</c:when>
 				<c:otherwise>
 				
 					<h1 class="servicecenter_main_title">FAQ</h1>
 					<div class="content_row_1">
-					<div class = "search">
-					<div>
-					<input class="search_qbox" type = "text" placeholder = "궁금한점을검색해보세요" >
-					</div>
-					<div>
-					<img src="${pageContext.request.contextPath}/resources/image/search2.png" alt="" />
-					</div>
+<!-- 					<div class = "search"> -->
+<!-- 					<div> -->
+<!-- 					<input class="search_qbox" type = "text" placeholder = "궁금한점을검색해보세요" > -->
+<!-- 					</div> -->
+<!-- 					<div> -->
+<%-- 					<img src="${pageContext.request.contextPath}/resources/image/search2.png" alt="" /> --%>
+<!-- 					</div> -->
 						
-					</div>
+<!-- 					</div> -->
 					 
 					<div class = "faq_button">
 						<button class = "bt" onclick = "location.href = '${root}index?formpath=servicecenter&list=faq'">회원</button>

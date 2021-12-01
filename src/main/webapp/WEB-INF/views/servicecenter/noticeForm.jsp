@@ -5,8 +5,8 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />   
 
- <section class="content_section">
-        <div class="content_row_1">
+ <section class="content_section" style="padding: 20 0px;">
+        <div class="content_row_1" style="width: auto;">
           <table class="board_table">
             <caption>
               문의사항 게시판

@@ -43,6 +43,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
                 >고객센터</a
               >
             </li>
+           
           </c:when>
           <c:otherwise>
             <li>
@@ -65,8 +66,8 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
             </li>
             <li>
               <a href="${root }index?formpath=basket">
-                <img
-                  src="${pageContext.request.contextPath}/resources/image/cart2.png"
+                <img style="height:25px"
+                  src="${pageContext.request.contextPath}/resources/image/cart3.png"
                 />
               </a>
             </li>

@@ -162,7 +162,7 @@
             
             <div class="bt_wrap">
              <div>
-             <input type=button style="width: 60px; " value='후기작성' onclick="location.href='${root}index?formpath=write'"/> 
+<%--              <input type=button style="width: 60px; " value='후기작성' onclick="location.href='${root}index?formpath=write'"/>  --%>
 			<c:if test = "${sessionScope.id eq view.id }">
 				<button formaction="${root }index?formpath=boardModifyCheck" style="width: 60px; ">수정</button>
 				<button formaction="${root }index?formpath=boardDelete" style="width: 60px; ">삭제</button>

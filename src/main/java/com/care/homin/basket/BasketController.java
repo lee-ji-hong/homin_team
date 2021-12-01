@@ -27,7 +27,8 @@ public class BasketController {
 	@RequestMapping("/basket")
 	public String basket(Model model, HttpSession session) {
 //		logger.warn("session.getAttribute(\"id\") : "+session.getAttribute("id"));
-		String id = (String)session.getAttribute("id");
+//		String id = (String)session.getAttribute("id");
+		String id = "test";
 		ArrayList<BasketDTO> basket = basketSvc.getBasket(id);
 //		logger.warn("basket : " + basket);
 		if (basket.size() == 0) {
@@ -43,8 +44,9 @@ public class BasketController {
 	@RequestMapping("basketProduct")
 	public HashMap<String, String> basketProduct(@RequestBody HashMap<String, String> map, HttpSession session){
 //		logger.warn(map.get("no"));
+		String id = "test";
 		String no = map.get("noTemp");
-		String id = (String) session.getAttribute("id");
+//		String id = (String) session.getAttribute("id");
 //		logger.warn("ctl no_ : " + no_);
 		
 		String msg = basketSvc.basketProduct(no, id);

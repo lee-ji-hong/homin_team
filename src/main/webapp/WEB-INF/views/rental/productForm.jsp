@@ -196,7 +196,27 @@ prefix="c"%>
       <!-- 	<li>배송환불</li> -->
     </ul>
   </div>
-
+  <div class="detail_img_wrap">
+	  <div class="detail_1">
+	  <img  class="main-product-tex-in-cart" src="https://allcenter.speedgabia.com/homin/common/intro_homin_care.jpg">
+	  </div>
+	  <div class="detail_1">
+	  <img  class="main-product-tex-in-cart" src="http://allcenter.speedgabia.com/homin/gift/gift_top.jpg">
+	  </div>
+	  <div class="detail_1">
+	  <img  class="main-product-tex-in-cart" src="https://allcenter.speedgabia.com/homin/gift/online.jpg" alt="온라인 상품권 증정">
+	  </div>
+	  <div class="detail_1">
+	  <img  class="main-product-tex-in-cart" src="https://allcenter.speedgabia.com/homin/common/card_top.jpg" alt="제휴카드">
+	  </div>
+	  <div class="detail_1">
+	  <img  class="main-product-tex-in-cart" src="https://allcenter.speedgabia.com/homin/common/card.jpg" alt="카드">
+	  </div>
+	  <div class="detail_1">
+	  <img  class="main-product-tex-in-cart" src="https://allcenter.speedgabia.com/homin/common/benefit.jpg" alt="케어솔루션 고객혜택">
+	  </div>
+	  
+  </div>
   <script>
     var mySwiper = new Swiper(".swiper-container", {
       navigation: {

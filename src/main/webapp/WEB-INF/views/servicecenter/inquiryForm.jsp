@@ -170,7 +170,7 @@
 				</div>
 				<div id = "msg1" style = "display: none;">필수 사항입니다.</div>
 			</div>
-			<div style="display: flex; flex-direction: row;">
+			<div style="display: flex; flex-direction: row; margin-top: 50px;">
 				<div class="inquiry_test_type_p">
 					<p>문의 내용</p>
 				</div>

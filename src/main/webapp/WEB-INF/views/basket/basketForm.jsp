@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url var="root" value="/" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css" /> 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <c:url var="root" value="/" />
 <c:if test="${not empty msg }">
@@ -10,7 +13,7 @@
 		location.href='${root}index?formpath=rental&category=dryer'
 	</script>
 </c:if>
-<div>
+<div class="bascket_test">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 
 	<section>

@@ -126,6 +126,8 @@
 }
 
 .inquiry_test_head{
+	font-size: 22px;
+    margin-bottom: 20px;
 	display : flex;
 	justify-content: space-between;
 	align-items : flex-end;
@@ -144,7 +146,7 @@
 
 
 .inquiry_test_type{
-	
+	margin-top: 50px;
 	display: flex; 
 	flex-direction: row;
 	justify-content: left;
@@ -170,6 +172,7 @@
 	flex-direction: row;
 	justify-content: left;
 	align-items: center;
+	margin-top: 50px;
 }
 
 
@@ -208,6 +211,7 @@
 }
 
 .main_inquirytype_photo{
+	margin-top: 50px;
 	display: flex; 
 	flex-direction: row;
 	justify-content: left;
@@ -225,6 +229,7 @@
 }
 
 .cus_under_box { 
+	margin-top: 50px;
 	width: 100%;
 	background: #effbff;
 	padding-top: 20px;
@@ -263,4 +268,6 @@
     font-weight: bold;
     box-sizing: border-box;
 }
+
+
 

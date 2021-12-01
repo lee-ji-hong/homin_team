@@ -245,3 +245,9 @@
 	margin: 0 6px;
 }
 
+.detail_img_wrap {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

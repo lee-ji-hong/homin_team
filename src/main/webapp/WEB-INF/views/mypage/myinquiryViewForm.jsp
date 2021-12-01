@@ -8,6 +8,8 @@
 	href="${pageContext.request.contextPath}/resources/css/reset.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/board.css" />
+
+
 <div class="inquiry_test" style="width: 800px; margin-left: 200px; margin-top: 15px;">
 	<div class="inquiry_test_head">
 		<div>

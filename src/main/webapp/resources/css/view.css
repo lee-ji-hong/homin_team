@@ -182,7 +182,7 @@ a {
 
 .board_view_sub {
 	
-  padding: 60 25 60 25px;
+  padding: 10 25 60 25px;
 }
 
 .board_view .title {
@@ -629,4 +629,17 @@ td a:link {
     margin-left: 10px;
     border-radius: 6px;
     font-weight: bold;
+}
+
+
+/*noticeview form*/
+
+.notice_title{
+    font-weight: bold;
+	padding: 10 25 60 25px;
+	padding: 20px 15px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }

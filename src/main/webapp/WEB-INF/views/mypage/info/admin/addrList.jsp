@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css" /> 
 <script>
 	function deleteChk() {
 		var dt = confirm('${allDto.id } 의 주소지를 정말 삭제하겠습니까?');
@@ -20,10 +23,13 @@ table {
 /* 	width: 400; height: 200; */
 }
 </style>
-<div>
+<div style="
+    margin-top: 50px;
+">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
 		
-	<div>
+	<divstyle="
+   >
 		<div>
 			<h3>주소지 목록</h3>
 		</div>
