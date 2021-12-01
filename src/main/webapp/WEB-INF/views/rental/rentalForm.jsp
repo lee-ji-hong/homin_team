@@ -9,7 +9,11 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 	function basketProduct(no) {
+<<<<<<< HEAD
 		//checkLogin();
+=======
+// 		checkLogin();
+>>>>>>> refs/remotes/origin/main
 		
 		var d = {noTemp : no}
 		$.ajax({
@@ -83,9 +87,12 @@
 		</c:choose>
 		
 		<!-- 카테고리 -->
-		<div class="lent_option-wrap" style="padding:0;">
+		
+		<div class="lent_option-wrap" style="padding:0; display:none" >
+		<!-- 카테고리 임시로 안보이게 해놓음 -->
 		
 			<div class="lent_option_box">
+			
 				<div><a href = "${root }index?formpath=rental&category=dryer"><img src = "${root }resources/image/1.png"></a></div>
 				<div><p>건조기</p></div>
 			</div>
@@ -148,6 +155,18 @@
 				<li>
 					<div class="main-product-text ">
 						<div class="main-product-tex-in ">
+						<img  class="main-product-tex-in-cart" src="${pageContext.request.contextPath}/resources/image/cart3.png"
+						style="border: none;
+							    right: 20px;
+							    width: 30px;
+							    height: 30px;
+							    cursor: hand;
+							    filter: alpha(opacity=1);
+							    position: absolute;
+							    bottom: 20px;
+							    border-radius: none;
+							    z-index: 100;"		 >
+						<button name="test" type="button" onclick="basketProduct('${pr.product_no }' );"></button>
 							<img src="${root }resources/image/${pr.classification }/${pr.product_filename}" >
 						</div>
 						<div>
@@ -159,10 +178,8 @@
 								</div>
 							</div>
 						</div>
-					</div>	
-					<div>
-						<input type="button" value="장바구니에 담기" onclick="basketProduct('${pr.product_no }' );">
-					</div>
+					</div>						
+					
 				</li>	
 			</ul>
 		</div>

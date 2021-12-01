@@ -5,8 +5,8 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />   
 
- <section class="content_section">
-        <div class="content_row_1">
+ <section class="content_section" style="padding: 20 0px;">
+        <div class="content_row_1" style="width: auto;">
           <table class="board_table">
             <caption>
               문의사항 게시판
@@ -30,13 +30,13 @@
           </table>
         </div>
         
-        <div class="content_row_3">
-          <span class="list_prev_btn">문의사항 이전 버튼</span>
-          <a href="#">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <span class="list_next_btn">문의사항 다음 버튼</span>
-        </div>
+<!--         <div class="content_row_3"> -->
+<!--           <span class="list_prev_btn">문의사항 이전 버튼</span> -->
+<!--           <a href="#">1</a> -->
+<!--           <a href="#">2</a> -->
+<!--           <a href="#">3</a> -->
+<!--           <span class="list_next_btn">문의사항 다음 버튼</span> -->
+<!--         </div> -->
       </section>
       
       

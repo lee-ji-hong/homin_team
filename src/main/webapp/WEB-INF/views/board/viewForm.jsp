@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/faq.css" />
+
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/view.css" />   
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />
@@ -67,7 +67,7 @@
         <strong>review</strong> 
         <hr style="width : 50px;">
         <p>상품 사용 후기입니다.</p>
-      </div>
+     	 </div>
       
       
         <div class="board_view_wrap">
@@ -162,7 +162,7 @@
             
             <div class="bt_wrap">
              <div>
-             <input type=button style="width: 60px; " value='후기작성' onclick="location.href='${root}index?formpath=write'"/> 
+<%--              <input type=button style="width: 60px; " value='후기작성' onclick="location.href='${root}index?formpath=write'"/>  --%>
 			<c:if test = "${sessionScope.id eq view.id }">
 				<button formaction="${root }index?formpath=boardModifyCheck" style="width: 60px; ">수정</button>
 				<button formaction="${root }index?formpath=boardDelete" style="width: 60px; ">삭제</button>

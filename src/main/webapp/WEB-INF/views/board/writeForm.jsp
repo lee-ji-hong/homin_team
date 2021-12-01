@@ -197,9 +197,31 @@
 		</div>
 		<div class="write_button_wrap">
 			<div>
-				<div class="write_filebtn">
-				파일선택
-					<input type = "file"  name="uploadFile" id="uploadFile" multiple> 
+				<div class="write_filebtn" style="    
+				cursor: hand;
+			    /* position: absolute; */
+			    bottom: 12px;
+			    /* border-radius: 50px; */
+			    border: none;
+			    right: 12px;
+			    z-index: 100;
+			    width: 60px;
+			    height: 30px;">
+					파일선택
+					<button value='파일선택' type="file" name="uploadFile" id="uploadFile" multiple style="
+					cursor: hand;
+				    /* position: absolute; */
+				    bottom: 20px;
+				    /* border-radius: 50px; */
+/* 				    border: 1px solid; */
+					border:none;
+				    right: 20;
+				    z-index: 90;
+				    width: 70px;
+				    height: 40;
+				    background: none;
+				    margin-bottom: 30px;"></button>
+
 				</div>
 			</div>
 			

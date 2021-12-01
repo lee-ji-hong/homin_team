@@ -19,21 +19,21 @@
 	}
 </script>
 <body>
-	<section class="sub_header_section" style="margin-top: 50px;">
+	<section class="sub_header_section" style="margin-top: 20px;">
         <h2>고객센터</h2>
 		<br><br>
 		<div class="sub_header_section_article">
 			<article class="sub_header_section_article_contact">
-				<address>
-					"운영시간 : 평일 08:00 ~ 19:00 (주말 &amp; 공휴일 제외)"
+				<address style="line-height: 57px;">
+					운영시간 : 평일 08:00 ~ 19:00 (주말 &amp; 공휴일 제외)
 					<br>
-					"점심시간 : 12:00 ~ 13:00"
+					점심시간 : 12:00 ~ 13:00
 					<br>
-					"이메일 : &nbsp;"
+					이메일 : 
 					<a href="contact/new##" style="text-decoration : underline;">이메일 문의하기</a>
 					
 					<br>
-					"전화 :&nbsp;"
+					전화 :
 					<a href="tel:1670-0876" style="text-decoration: underline; color: rgb(73, 10, 133);">1544-0099</a>
 				</address>
 
@@ -63,24 +63,24 @@
 		<div class = "under_wrap">
 			<c:choose>
 				<c:when test="${list eq 'inquiry' || list eq 'inquiryAnswer' || list eq 'inquiryViewProc'}">
-					<h1>1:1문의</h1><br><br>
+					<h1 class="servicecenter_main_title">1:1문의</h1>
 				</c:when>
 				<c:when test="${list eq 'notice' || list eq 'noticeView'}">
-					<h1>공지사항</h1>
+					<h1 class="servicecenter_main_title"style="display:none">공지사항</h1>
 				</c:when>
 				<c:otherwise>
 				
-					<h1>FAQ</h1>
+					<h1 class="servicecenter_main_title">FAQ</h1>
 					<div class="content_row_1">
-					<div class = "search">
-					<div>
-					<input class="search_qbox" type = "text" placeholder = "궁금한점을검색해보세요" >
-					</div>
-					<div>
-					<img src="${pageContext.request.contextPath}/resources/image/search2.png" alt="" />
-					</div>
+<!-- 					<div class = "search"> -->
+<!-- 					<div> -->
+<!-- 					<input class="search_qbox" type = "text" placeholder = "궁금한점을검색해보세요" > -->
+<!-- 					</div> -->
+<!-- 					<div> -->
+<%-- 					<img src="${pageContext.request.contextPath}/resources/image/search2.png" alt="" /> --%>
+<!-- 					</div> -->
 						
-					</div>
+<!-- 					</div> -->
 					 
 					<div class = "faq_button">
 						<button class = "bt" onclick = "location.href = '${root}index?formpath=servicecenter&list=faq'">회원</button>

@@ -18,6 +18,7 @@
     padding: 0 25px;
     align-items: flex-start;
     margin-bottom: 30px;
+    margin-top: 10px;
     border-radius: 4px;
     box-shadow: 0 5px 12px 0 rgb(234 235 239 / 80%);
    
@@ -143,8 +144,7 @@
 .sub_header_section h2 {
   margin-bottom: 12px;
   margin-bottom: 0.75rem;
-  font-size: 1.313em;
-  font-size: 1.313rem;
+  font-size: 30px;
  
 }
 
@@ -208,6 +208,7 @@
 }
 
 .board_table thead {
+  font-size: 17px;
   color: #fff;
   background: #2c3e50;
 }
@@ -280,7 +281,7 @@
 }
 
 .content_row_3 {
-  display: flex;
+  display: none;
   justify-content: center;
   margin :50px;
 }
@@ -592,6 +593,8 @@
     padding-right: 96px;
     padding-top: 70px;
     padding-bottom: 66px;
+    margin-top: 20px;
+    font-size: 19px;
   }
 
   .sub_header_section h2 {
@@ -637,8 +640,8 @@
   /* 콘텐츠 영역 CSS */
   .content_section {
     order: 3;
-    padding: 60px;
-    padding: 3.75rem;
+    padding: 50 0px;
+  
   }
 
 

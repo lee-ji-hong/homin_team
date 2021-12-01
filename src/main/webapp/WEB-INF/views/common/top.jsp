@@ -43,7 +43,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
                 >고객센터</a
               >
             </li>
-            <li>|</li>
+           
           </c:when>
           <c:otherwise>
             <li>
@@ -66,8 +66,8 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
             </li>
             <li>
               <a href="${root }index?formpath=basket">
-                <img
-                  src="${pageContext.request.contextPath}/resources/image/cart2.png"
+                <img style="height:25px"
+                  src="${pageContext.request.contextPath}/resources/image/cart3.png"
                 />
               </a>
             </li>
@@ -79,9 +79,11 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
       <ul class="info_list">
         <li>
           <a href="">
-<!--             <img -->
-<%--               src="${pageContext.request.contextPath}/resources/image/search2.png" --%>
-<!--             /> -->
+            <!--             <img -->
+            <%--
+            src="${pageContext.request.contextPath}/resources/image/search2.png"
+            --%>
+            <!--             /> -->
           </a>
         </li>
       </ul>

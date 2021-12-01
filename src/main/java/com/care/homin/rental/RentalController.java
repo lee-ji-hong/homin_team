@@ -71,13 +71,13 @@ public class RentalController {
 	@RequestMapping(value = "/productOrder")
 	public String productOrder(Model model, @RequestParam String prodNo) {
 		String id = (String)session.getAttribute("id");
-		service.info(model, id, prodNo);
+//		service.info(model, id, prodNo);
 		return "rental/productOrderForm";
 	}
 	@RequestMapping(value = "/order")
 	public String order(Model model, @RequestParam String prodNo) {
 		String id = (String)session.getAttribute("id");
-		service.info(model, id, prodNo);
+//		service.info(model, id, prodNo);
 		return "rental/orderForm";
 	}
 	

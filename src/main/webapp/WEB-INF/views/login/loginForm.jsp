@@ -1,6 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<<<<<<< HEAD
 <c:url var="root" value="/"/>
+=======
+<c:set var = "root" value = "/"></c:set>
+>>>>>>> refs/remotes/origin/main
 <c:if test="${not empty sessionScope.id }">
 	<script>
 		location.href='/homin/';
@@ -87,7 +91,11 @@
 		</tr>
 		<tr>
 			<td colspan=2 align='center'><br>
+<<<<<<< HEAD
 				<a href="${root }member">회원가입</a> |
+=======
+				<a href="${root}/member">회원가입</a> |
+>>>>>>> refs/remotes/origin/main
 				<a href="">아이디 찾기</a> |
 				<a href="">비밀번호 찾기</a>
 			</td>

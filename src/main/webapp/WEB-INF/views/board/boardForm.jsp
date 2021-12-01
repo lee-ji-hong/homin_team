@@ -81,24 +81,24 @@
 		<table>
 			<tr>
 				<td>
-					<select  name="select">
+					<select  class="review_underbar_1" name="select">
 						<option value="title">제목</option>
 						<option value="content">내용</option>
 						<option value="id">작성자</option>
 					</select>
-					<input type=text name='search'/>
-					<input type=submit name='searchBtn' value='검색' style="width: 80px; "/>
+					<input class="review_underbar_2" type=text name='search'/>
+					<input class="review_underbar_3" type=submit name='searchBtn' value='검색' style="width: 80px; "/>
 				</td>
 			</tr>
 		</table>
 		</form>
 		
 		<!-- 글쓰기버튼 -->
-	    <div class="write_box">
-	    	<c:if test="${sessionScope.id ne null }">
-	       		<input type="button" value='후기작성'  onclick="location.href='${root }index?formpath=write'" />
-	        </c:if>
-	    </div>
+<!-- 	    <div class="write_box"> -->
+<%-- 	    	<c:if test="${sessionScope.id ne null }"> --%>
+<%-- 	       		<input type="button" value='후기작성'  onclick="location.href='${root }index?formpath=write'" /> --%>
+<%-- 	        </c:if> --%>
+<!-- 	    </div> -->
 	    
 	</div>
 

@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reset.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />   
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css" /> 
 <c:url var="root" value="/" />
 <style>
 aside {
 	float: left;
-	width: 180;
+	
 }
 span {
 	font-size: 18;
@@ -20,12 +23,20 @@ p {
 	font-size: 18; margin:0 0 10 0px;
 }
 </style>
-<aside>
+
+<aside class="mypage_aside_wrap">
+		<div style="margin-top:20px">
 		<div>
 			<span>MY PAGE</span>
 			<h2>마이페이지</h2>
 		</div>
-		<nav>
+		<div>
+		<img src="${pageContext.request.contextPath}/resources/image/basket_my.png">	
+		</div>
+		
+			
+		</div>
+		<nav class="mypage_aside_nav" >
 			<br>
 			<p>나의 정보 관리</p>
 			<ul>
