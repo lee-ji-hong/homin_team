@@ -9,11 +9,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 	function basketProduct(no) {
-<<<<<<< HEAD
-		//checkLogin();
-=======
-// 		checkLogin();
->>>>>>> refs/remotes/origin/main
+		checkLogin();
 		
 		var d = {noTemp : no}
 		$.ajax({

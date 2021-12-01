@@ -138,11 +138,7 @@ prefix="c"%>
       </h2>
     </div>
     <div class="product_selling_text_body">
-      <p style="margin-top: 20px">대충 여기에 제품 설명.</p>
 
-      <div class="product_selling_text_body_ch1">
-        <span>#연관 태그</span>
-      </div>
 
       <div class="product_selling_text_comment">
         <div class="selling_text_comment_1">
