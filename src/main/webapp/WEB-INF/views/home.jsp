@@ -162,6 +162,16 @@
 		</section>
 		
 </div>		
+<form action = 'tlqkfproc'>
+	<input type ="text" name = "product_no">
+	<input type ="text" name = "product_name">
+	<input type ="text" name = "product_filename">
+	<input type ="text" name = "classification">
+	<input type ="text" name = "price">
+	<input type ="text" name = "hit">
+	<input type ="text" name = "ordercount">
+		<input type ="submit" value = "시발">
+</form>
 </body>
 
 <script>
