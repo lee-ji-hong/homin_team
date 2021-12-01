@@ -143,6 +143,10 @@ public class MypageServiceImpl implements IMypageService{
 	public ArrayList<orderDTO> myOrder(String buyer_id) {
 		return mypageDao.myOrder(buyer_id);
 	}
+	@Override
+	public void deleteInquiry(String inquiryNo) {
+		mypageDao.deleteInquiry(inquiryNo);
+	}
 
 	
 }

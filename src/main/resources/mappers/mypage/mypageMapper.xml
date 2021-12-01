@@ -85,4 +85,9 @@
 		<result property="buyer_id" column="BUYER_ID"/>
 	</resultMap>
 	
+	<delete id="deleteInquiry" parameterType="String">
+		DELETE FROM inquiry WHERE no=#{prodNo}
+	</delete>
+	
+	
 </mapper>

@@ -3,6 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="root" value="/"></c:set>
 <table>
+	<c:choose>
+		<c:when test="${myinquiry eq '[]' }">
+			문의 내역이 없습니다.
+		</c:when>
+	</c:choose>
 	<c:forEach var="list" items="${myinquiry }">
 		<tr>
 			<td><a href = "/homin/index?formpath=mypage&category=myinquiryView&no=${list.no }">${list.title }</a></td>

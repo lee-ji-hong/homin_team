@@ -28,4 +28,6 @@ public interface IMypageDAO {
 	ArrayList<InquiryDTO> myInquiry(String id);
 	InquiryDTO myInquiryView(String no);
 	ArrayList<orderDTO> myOrder(String buyer_id);
+	// 1:1 문의 삭제
+	void deleteInquiry(String inquiryNo);
 }

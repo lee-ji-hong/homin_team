@@ -193,5 +193,10 @@ public class MypageController {
 		model.addAttribute("myOrder",dto);
 		return "mypage/orderHistoryForm";
 	}
+	@RequestMapping(value = "deleteInquiry")
+	public String inquiryDelete(String inquiryNo) {
+		mypageSvc.deleteInquiry(inquiryNo);
+		return "forward:index?formpath=mypage&category=myinquiry";
+	}
 	
 }

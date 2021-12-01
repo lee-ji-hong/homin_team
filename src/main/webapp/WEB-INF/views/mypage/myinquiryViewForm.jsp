@@ -8,10 +8,21 @@
 	href="${pageContext.request.contextPath}/resources/css/reset.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/board.css" />
+<script>
+	function deleteInquiry() {
+		if(confirm("정말 삭제하시겠습니까?") == true){
+			location.href='/homin/deleteInquiry?inquiryNo=${inquiryView.no}';
+		}else{
+			return false;
+		}
+	}
+</script>
+
 <div class="inquiry_test" style="width: 800px; margin-left: 200px; margin-top: 15px;">
 	<div class="inquiry_test_head">
 		<div>
 			<h3>문의 내용</h3>
+			<input type = button value = "X" style="width: 50px; height: 20px;" onclick = "deleteInquiry();">
 		</div>
 	</div>
 	<hr>
