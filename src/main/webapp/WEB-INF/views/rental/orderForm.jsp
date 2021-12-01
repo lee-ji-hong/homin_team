@@ -21,7 +21,7 @@
 <div class = "orderItem">
 	<div class = "item_area">
 		<div class = "itemImg">
-			<img class = "itemImg" src = "${root }resources/image/${productInfo.classification }${productInfo.product_filename}">
+			<img class = "itemImg" src = "${root }resources/image/${productInfo.classification }/${productInfo.product_filename}">
 		</div>
 		<div class = "item_info">
 			<div class = "item_no">${productInfo.product_no }</div>

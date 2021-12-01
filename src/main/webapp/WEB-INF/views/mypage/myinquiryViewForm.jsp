@@ -8,7 +8,6 @@
 	href="${pageContext.request.contextPath}/resources/css/reset.css" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/board.css" />
-<<<<<<< HEAD
 <script>
 	function deleteInquiry() {
 		if(confirm("정말 삭제하시겠습니까?") == true){
@@ -18,9 +17,6 @@
 		}
 	}
 </script>
-=======
-
->>>>>>> refs/remotes/origin/main
 
 <div class="inquiry_test" style="width: 800px; margin-left: 200px; margin-top: 15px;">
 	<div class="inquiry_test_head">

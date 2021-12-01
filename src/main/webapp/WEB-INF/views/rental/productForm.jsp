@@ -159,7 +159,7 @@ prefix="c"%>
         <div class="selling_text_comment_1">
           <div class="selling_text_comment_name">요금</div>
           <div class="selling_text_comment_cm">
-            ${product.price }(한달 기준)
+            ${product.price }
           </div>
         </div>
       </div>
@@ -175,7 +175,7 @@ prefix="c"%>
           </button>
         </div>
         <div class="product_selling_text_btn_b">
-          <button class="product_selling_text_btn_bt2" type="button" onclick="basketProduct('${pr.product_no }');">
+          <button class="product_selling_text_btn_bt2" type="button" onclick="basketProduct('${product.product_no }');">
             장바구니 담기
           </button>
         </div>

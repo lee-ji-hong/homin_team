@@ -208,7 +208,7 @@
 			    width: 60px;
 			    height: 30px;">
 					파일선택
-					<button value='파일선택' type="file" name="uploadFile" id="uploadFile" multiple style="
+					<input value='파일선택' type="file" name="uploadFile" id="uploadFile" multiple style="
 					cursor: hand;
 				    /* position: absolute; */
 				    bottom: 20px;
@@ -220,7 +220,7 @@
 				    width: 70px;
 				    height: 40;
 				    background: none;
-				    margin-bottom: 30px;"></button>
+				    margin-bottom: 30px;"></input>
 
 				</div>
 			</div>
