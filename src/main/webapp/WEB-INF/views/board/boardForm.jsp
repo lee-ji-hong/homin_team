@@ -27,7 +27,7 @@
             <div class="photo" >사진</div>
             <div class="title">제목</div>
             <div class="star">별점</div>
-            <div class="writer">제품명</div>
+            <div class="writer">카테고리</div>
             <div class="date">작성일</div>
             <div class="count">조회</div>
           </div>
@@ -62,7 +62,27 @@
 					<div class="star"><img src = "${root }resources/image/ico_point5.png"></div>
 				</c:otherwise>
 			</c:choose>
-            <div class="writer">캣타워</div>
+			<c:choose>
+				<c:when test="${list.classification eq 'dryer' }">
+           			<div class="writer">건조기</div>
+           		</c:when>
+           		<c:when test="${list.classification eq 'aircleaner' }">
+           			<div class="writer">공기청정기</div>
+           		</c:when>
+           		<c:when test="${list.classification eq 'refrigerator' }">
+           			<div class="writer">얼음정수기/냉장고</div>
+           		</c:when>
+           		<c:when test="${list.classification eq 'washmachine' }">
+           			<div class="writer">식기세척기</div>
+           		</c:when>
+           		<c:when test="${list.classification eq 'waterpurifier' }">
+           			<div class="writer">정수기</div>
+           		</c:when>
+           		<c:when test="${list.classification eq 'microwave' }">
+           			<div class="writer">전기레인지</div>
+           		</c:when>
+           		
+            </c:choose>
             <div class="date">${list.writeTime }</div>
             <div class="count">${list.hit }</div>
           </div>

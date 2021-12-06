@@ -69,7 +69,6 @@ function iamport(){
         	    		amount : data.response.amount,
         	    		name : data.response.name
         	   		}
-	        	alert("결제 및 결제검증완료");
 	        	$.ajax({
 	            	url : "orderDB?prNo=${productInfo.product_no}",
 	        		type : "POST",
