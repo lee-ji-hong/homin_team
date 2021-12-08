@@ -197,7 +197,8 @@
 		</div>
 		<div class="write_button_wrap">
 			<div>
-				<div class="write_filebtn" style="    
+					<input value='파일선택' type="file" name="uploadFile" id="uploadFile" multiple>
+				<%-- <div class="write_filebtn" style="    
 				cursor: hand;
 			    /* position: absolute; */
 			    bottom: 12px;
@@ -208,7 +209,6 @@
 			    width: 60px;
 			    height: 30px;">
 					파일선택
-					<input value='파일선택' type="file" name="uploadFile" id="uploadFile" multiple style="
 					cursor: hand;
 				    /* position: absolute; */
 				    bottom: 20px;
@@ -222,7 +222,7 @@
 				    background: none;
 				    margin-bottom: 30px;"></input>
 
-				</div>
+				</div> --%>
 			</div>
 			
 			<div>
