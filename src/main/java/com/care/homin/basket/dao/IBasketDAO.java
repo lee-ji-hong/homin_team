@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import com.care.homin.TlqkfDTO;
 import com.care.homin.basket.dto.BasketDTO;
 import com.care.homin.rental.dto.RentalDTO;
 
@@ -21,5 +20,4 @@ public interface IBasketDAO {
 	BasketDTO isExisted(@Param("no") String no, @Param("id") String id);
 	boolean deleteBasket(@Param("no") String no, @Param("id") String id);
 	
-	void tlqkf(TlqkfDTO dto);
 }

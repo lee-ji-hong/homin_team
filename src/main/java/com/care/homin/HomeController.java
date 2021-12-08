@@ -17,10 +17,6 @@ import com.care.homin.rental.service.RentalService;
 public class HomeController {
 	@Autowired RentalService service;
 	@Autowired IBasketDAO tlqkf;
-	@RequestMapping(value="tlqkfproc")
-	public void tlqkfrj(TlqkfDTO dto) {
-		tlqkf.tlqkf(dto);
-	}
 	
 	@RequestMapping(value = "/")
 	public String index(Model model) {
