@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />   
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css" /> 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 <c:if test="${not empty msg }">
 	<script>
 		alert('${msg}');
@@ -15,34 +16,99 @@
 	</script>
 </c:if>
 <script>
+function iamport(){
+	//가맹점 식별코드
+	IMP.init('imp15192515');
+	IMP.request_pay({
+	    pg : 'inicis',
+	    pay_method : 'card',
+	    merchant_uid : 'merchant_' + new Date().getTime(),
+	    name : '여러개' , 		// 결제창에서 보여질 이름
+	    amount : 100, 									// 실제 결제되는 가격
+	    buyer_email : '${memberInfo.email}',			// 구매자 이메일
+	    buyer_name : '${memberInfo.nickname}',			// 구매자 이름
+	    buyer_tel : '${memberInfo.phone}',				// 구매자 번호
+	    buyer_addr : '${memberPostcode.addr1}',			// 구매자 주소
+	    buyer_postcode : '${memberPostcode.zipcode}'	// 구매자 우편번호
+	}, function(rsp) {		// 콜백
+		console.log(rsp);
+		// 결제검증
+		$.ajax({
+        	type : "POST",
+        	url : "${root}check/" + rsp.imp_uid 
+        }).done(function(data) {
+        	console.log(data);
+        	// 위의 rsp.paid_amount 와 data.response.amount를 비교한후 로직 실행 (import 서버검증)
+        	if(rsp.paid_amount == data.response.amount){
+        		var d = {
+        	    		uid : data.response.impUid,
+        	    		buyerpostcode : data.response.buyerPostcode,
+        	    		buyername : data.response.buyerName,
+        	    		email : data.response.buyerEmail,
+        	    		addr : data.response.buyerAddr,
+        	    		tell : data.response.buyerTel,
+        	    		amount : data.response.amount,
+        	    		name : data.response.name
+        	   		}
+	        	$.ajax({
+	            	url : "orderDB?prNo=${productInfo.product_no}",
+	        		type : "POST",
+	    			contentType : "application/json; charset=utf-8",
+	            	data : JSON.stringify(d),
+	            	success : function(){
+	        			location.href = "${root}index?formpath=orderfinish&no="+data.response.impUid+"&prodNo=${productInfo.product_no}";
+					},
+					error : function(){
+						alert("문제")
+					}
+	        	});
+        	} else {
+        		alert("결제 실패");
+        	}
+        });
+	});
+}
+	
+
+	var result = 0;
 	function allCheck(){
 		var len = document.getElementsByName("box");
-		if(document.getElementById("all").checked==true){ 
-	    	for(var i=0;i<len.length;i++) 
+		if(document.getElementById("all").checked==true){
+			result = 0;
+	    	for(var i=0; i < len.length;i++) {
 	    		len[i].checked=true;  
+	    		result += Number(document.getElementById("pr"+i).value);
+	    		document.getElementById('price').innerText = result;
 	    		document.getElementById('result').innerText = len.length;
+	    	}
 	    }
 		if(document.getElementById("all").checked==false){
-	    	for(var i=0;i<len.length;i++) 
-	   			len[i].checked=false;  
+	    	for(var i=0;i<len.length;i++) {
+	   			len[i].checked=false; 
+	   			result = 0;
+	    		document.getElementById('price').innerText = 0;
 	    		document.getElementById('result').innerText = 0;
+	    	}
 	    }
 	}
 	
-	function sumCheck(){
+	function sumCheck(no){
+		var len = document.getElementsByName("box").length;
+		if(document.getElementsByName("box")[no].checked == false){
+			$("input:checkbox[id='all']").prop("checked", false);
+		}
 		getCheckedCnt();
-		getCheckedPrice();
+		getCheckedPrice(no);
 	}
 	
-	function getCheckedPrice(){
-		var len = document.getElementsByName("box").length;
-        for (var i=0; i<len; i++) {
-            if (document.getElementsByName("box")[i].checked == true) {
-            	if(document.getElementById('price').value != ''){
-	                document.getElementById('price').innerText
-	    		    = document.getElementsByName("box")[i].value;
-            	}
-            }
+	function getCheckedPrice(no){
+		var len = document.getElementsByName("box");
+        if (document.getElementsByName("box")[no].checked == true) {
+        	result += Number(document.getElementById("pr"+no).value);
+	    	document.getElementById('price').innerText = result;
+        }else{
+        	result -= Number(document.getElementById("pr"+no).value);
+           	document.getElementById('price').innerText = result;
         }
 	}
 	
@@ -76,7 +142,7 @@
 				<c:forEach var="bDto" items="${basket }">
 				<tbody>
 					<tr>
-						<td><input type = "checkbox" id = "pr${prNo }" name = "box"  onclick='sumCheck()' value = "${bDto.price }"></td>
+						<td><input type = "checkbox" id = "pr${prNo }" name = "box"  onclick='sumCheck(${prNo})' value = "${bDto.price }"></td>
 						<c:choose>
 							<c:when test="${bDto.classification eq 'dryer' }">	
 								<td>건조기</td>
