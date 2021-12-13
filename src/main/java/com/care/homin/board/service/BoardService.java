@@ -214,4 +214,16 @@ public class BoardService {
 		dao.deleteComment(no);
 		
 	}
+	public void deleteBoard(String no) {
+		String fileName = dao.getFileName(Integer.parseInt(no));
+		if(fileName != null && fileName != "") {
+			String[] fileNames = fileName.split(",");
+			for(String name : fileNames) {
+				File deleteFile = new File("C:\\java_folder\\upload\\" + name);
+				deleteFile.delete();
+			}
+		}
+		dao.deleteBoard(Integer.parseInt(no));
+		
+	}
 }

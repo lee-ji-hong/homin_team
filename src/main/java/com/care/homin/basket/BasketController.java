@@ -2,6 +2,7 @@ package com.care.homin.basket;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.care.homin.basket.dto.BasketDTO;
@@ -37,6 +39,11 @@ public class BasketController {
 		}
 		
 		return "basket/basketForm";
+	}
+	@RequestMapping("/basketOrder")
+	public String basketOrder(Model model, @RequestParam List<String> prNo) {
+		
+		return "basket/basketOrderForm";
 	}
 	
 	@ResponseBody

@@ -25,4 +25,10 @@ public interface ServicecenterDAO {
 	public InquiryDTO selectInquiry(int no);
 	// 1:1문의 답변 등록
 	public void inquiryAnswerProc(InquiryDTO dto);
+	// 공지사항 등록
+	public void writeNotice(NoticeDTO dto);
+	// 공지사항 삭제
+	public int deleteNotice(String no);
+	// 공지사항 수정
+	public void modifyNotice(NoticeDTO dto);
 }

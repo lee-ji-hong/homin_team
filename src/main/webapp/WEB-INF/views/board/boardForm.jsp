@@ -9,6 +9,17 @@
 
 
 <c:url var="root" value="/" />
+
+<script>
+	function boardDeleteCheck(no){
+		if(confirm("정말 삭제하시겠습니까?") == true){
+			location.href = '${root}deleteBoard?no='+no;
+		}else{
+			return;
+		}
+	}
+</script>
+
 <center>
 <section class="content_section">
 
@@ -30,6 +41,9 @@
             <div class="writer">카테고리</div>
             <div class="date">작성일</div>
             <div class="count">조회</div>
+            <c:if test="${sessionScope.id eq 'admin' }">
+            	<div>삭제</div>
+            </c:if>
           </div>
           
           
@@ -85,6 +99,9 @@
             </c:choose>
             <div class="date">${list.writeTime }</div>
             <div class="count">${list.hit }</div>
+            <c:if test="${sessionScope.id eq 'admin' }">
+            	<input type = "button" value = "삭제" onclick = "boardDeleteCheck(${list.no})">
+            </c:if>
           </div>
           </c:forEach>
      </div>
@@ -113,12 +130,6 @@
 		</table>
 		</form>
 		
-		<!-- 글쓰기버튼 -->
-<!-- 	    <div class="write_box"> -->
-<%-- 	    	<c:if test="${sessionScope.id ne null }"> --%>
-<%-- 	       		<input type="button" value='후기작성'  onclick="location.href='${root }index?formpath=write'" /> --%>
-<%-- 	        </c:if> --%>
-<!-- 	    </div> -->
 	    
 	</div>
 

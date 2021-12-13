@@ -28,6 +28,7 @@ public class MypageController {
 	private static final Logger logger = LoggerFactory.getLogger(MypageController.class);
 	@Autowired IMypageService mypageSvc;
 	@Autowired ILoginService loginSvc;
+	@Autowired RentalService service;
 	
 	@RequestMapping("mypageProc")
 	public String mypage() {
@@ -173,6 +174,7 @@ public class MypageController {
 			return "index";
 		}
 	}
+	// 나의 문의내역
 	@RequestMapping(value = "myinquiry")
 	public String myinquiry(Model model, HttpSession session) {
 		String id = (String)session.getAttribute("id");
@@ -180,12 +182,14 @@ public class MypageController {
 		return "mypage/myinquiryForm";
 	}
 	
+	// 나의 문의내역 상세
 	@RequestMapping(value = "myinquiryView")
 	public String myinquiryView(Model model, String no) {
 		mypageSvc.myInquiryView(no,model);
 		return "mypage/myinquiryViewForm";
 	}
 	
+	// 주문내역
 	@RequestMapping(value = "orderHistory")
 	public String orderHistory(Model model, HttpSession session) {
 		String id = (String)session.getAttribute("id");
@@ -193,10 +197,64 @@ public class MypageController {
 		model.addAttribute("myOrder",dto);
 		return "mypage/orderHistoryForm";
 	}
+	// 1:1문의 삭제
 	@RequestMapping(value = "deleteInquiry")
 	public String inquiryDelete(String inquiryNo) {
 		mypageSvc.deleteInquiry(inquiryNo);
 		return "forward:index?formpath=mypage&category=myinquiry";
 	}
+	
+	// 관리자 회원관리
+	@RequestMapping(value="memberManagement")
+	public String memberManagement(Model model) {
+		ArrayList<AllDTO> dto = mypageSvc.allMember();
+		model.addAttribute("member",dto);
+		return "mypage/info/admin/memberManagementForm";
+	}
+	// 회원관리 상세페이지
+	@RequestMapping(value = "memberView")
+	public String memberView(Model model, String id) {
+		mypageSvc.memberView(id,model);
+		return "mypage/info/admin/memberViewForm";
+	}
+	
+	// 관리자 제품관리
+	@RequestMapping(value="productManagement")
+	public String productManagement(Model model, String category) {
+		model.addAttribute("product",service.selectCategory(category));
+		return "mypage/info/admin/productManagementForm";
+	}
+	
+	// 관리자 회원관리 회원삭제
+	@RequestMapping(value = "deleteMember")
+	public String deleteMember(String id, Model model) {
+		if(mypageSvc.deleteProc(id) == true) {
+			model.addAttribute("msg","삭제 완료.");
+		}else {
+			model.addAttribute("msg","문제 발생");
+		}
+		return "forward:index?formpath=memberManagement";
+	}
+	
+	// 관리자 회원관리 회원정보수정
+		@RequestMapping(value = "modifyMember")
+		public String modifyMember(MemberDTO mDto, PostcodeDTO pDto, Model model) {
+			String check = mypageSvc.updateProc(mDto);
+			String check2 = mypageSvc.updateAddrProc(pDto);
+			if(check.equals("t") && check2.equals("t")) {
+				model.addAttribute("msg","수정 완료.");
+			}else {
+				model.addAttribute("msg","문제 발생.");
+			}
+			
+			return "forward:index?formpath=memberManagement";
+		}
+	
+	// 관리자 제품 삭제
+		@RequestMapping(value = "deleteProduct")
+		public String deleteProduct(String no) {
+			service.deleteProduct(no);
+			return "forward:index?formpath=productManagement&category=dryer";
+		}
 	
 }

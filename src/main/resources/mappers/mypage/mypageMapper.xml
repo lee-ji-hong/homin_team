@@ -89,5 +89,9 @@
 		DELETE FROM inquiry WHERE no=#{prodNo}
 	</delete>
 	
+	<select  id="selectAllMember" parameterType="String" resultType="com.care.homin.membership.dto.MemberDTO">
+		SELECT * FROM member_homin
+	</select>
+	
 	
 </mapper>

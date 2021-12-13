@@ -1,5 +1,6 @@
 package com.care.homin.rental.service;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,5 +65,15 @@ public class RentalService {
 
 	public void cancleOrder(String uid) {
 		dao.cancleOrder(uid);
+	}
+
+	public void deleteProduct(String no) {
+		RentalDTO dto = dao.selectProduct(no);
+		String fileName = dao.selectProductImg(dto.getProduct_name());
+		File deleteFile = new File("/homin/resources/image/"+dto.getClassification()+"/"+fileName);
+		deleteFile.delete();
+		
+		dao.deleteProduct(no);
+		
 	}
 }

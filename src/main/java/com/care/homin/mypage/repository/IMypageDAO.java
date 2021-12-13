@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Repository;
 
 import com.care.homin.login.dto.LoginDTO;
+import com.care.homin.membership.dto.AllDTO;
 import com.care.homin.membership.dto.MemberDTO;
 import com.care.homin.membership.dto.PostcodeDTO;
 import com.care.homin.rental.dto.orderDTO;
@@ -30,4 +31,6 @@ public interface IMypageDAO {
 	ArrayList<orderDTO> myOrder(String buyer_id);
 	// 1:1 문의 삭제
 	void deleteInquiry(String inquiryNo);
+	// 모든 회원 조회
+	ArrayList<AllDTO> selectAllMember();
 }

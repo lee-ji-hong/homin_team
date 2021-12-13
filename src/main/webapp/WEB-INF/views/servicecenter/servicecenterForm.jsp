@@ -37,16 +37,24 @@
 					<a href="tel:1670-0876" style="text-decoration: underline; color: rgb(73, 10, 133);">1544-0099</a>
 				</address>
 
-<!-- 				<button class="contact_btn" type="button">1:1 채팅 상담하기</button> -->
 			</article>
 			<article class="sub_header_section_article_faq">
 				<ul class="sub_header_section_faq_list">
 					<li>
 						<a class="sub_header_section_faq_item" href = '${root}index?formpath=servicecenter&list=faq'  >FAQ</a>
 					</li>
-					<li>
-						<a class="sub_header_section_faq_item" href='${root}index?formpath=servicecenter&list=inquiry'>1:1 문의</a>
-					</li>
+					<c:choose>
+						<c:when test="${sessionScope.id eq 'admin' }">
+							<li>
+								<a class="sub_header_section_faq_item" href='${root}index?formpath=servicecenter&list=inquiryAnswer'>1:1 문의</a>
+							</li>
+						</c:when>
+						<c:otherwise>
+							<li>
+								<a class="sub_header_section_faq_item" href='${root}index?formpath=servicecenter&list=inquiry'>1:1 문의</a>
+							</li>
+						</c:otherwise>
+					</c:choose>
 					<li>
 						<a class="sub_header_section_faq_item" href='${root}index?formpath=servicecenter&list=notice'>공지사항</a>
 					</li>
@@ -65,23 +73,13 @@
 				<c:when test="${list eq 'inquiry' || list eq 'inquiryAnswer' || list eq 'inquiryViewProc'}">
 					<h1 class="servicecenter_main_title">1:1문의</h1>
 				</c:when>
-				<c:when test="${list eq 'notice' || list eq 'noticeView'}">
+				<c:when test="${list eq 'notice' || list eq 'noticeView' || list eq 'noticeWrite' || list eq 'modifyNotice'}">
 					<h1 class="servicecenter_main_title"style="display:none">공지사항</h1>
 				</c:when>
 				<c:otherwise>
 				
 					<h1 class="servicecenter_main_title">FAQ</h1>
 					<div class="content_row_1">
-<!-- 					<div class = "search"> -->
-<!-- 					<div> -->
-<!-- 					<input class="search_qbox" type = "text" placeholder = "궁금한점을검색해보세요" > -->
-<!-- 					</div> -->
-<!-- 					<div> -->
-<%-- 					<img src="${pageContext.request.contextPath}/resources/image/search2.png" alt="" /> --%>
-<!-- 					</div> -->
-						
-<!-- 					</div> -->
-					 
 					<div class = "faq_button">
 						<button class = "bt" onclick = "location.href = '${root}index?formpath=servicecenter&list=faq'">회원</button>
 						<button class = "bt" onclick = "location.href = '${root}index?formpath=servicecenter&list=faqOrder'">주문/신청</button>

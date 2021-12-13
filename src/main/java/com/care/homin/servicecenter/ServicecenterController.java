@@ -3,6 +3,7 @@ package com.care.homin.servicecenter;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,7 @@ import com.care.homin.servicecenter.service.ServicecenterService;
 @Controller
 public class ServicecenterController {
 	@Autowired ServicecenterService service;
+	@Autowired HttpSession session;
 	
 	@RequestMapping(value = "/faq")
 	public String faq() {
@@ -91,4 +93,41 @@ public class ServicecenterController {
 		service.selectNotice(num, model);
 		return "/servicecenter/noticeViewForm";
 	}
+	
+	@RequestMapping(value = "/noticeWrite")
+	public String noticeWrite() {
+		return "/servicecenter/noticeWriteForm";
+	}
+	
+	
+	@RequestMapping(value = "/noticeWriteProc")
+	public String noticeWriteProc(NoticeDTO dto) {
+		service.writeNotice(dto);
+		return "forward:index?formpath=servicecenter&list=notice";
+	}
+	
+	@RequestMapping(value = "/deleteNotice")
+	public String deleteNotice(String no, Model model) {
+		if(service.deleteNotice(no) == 1) {
+			model.addAttribute("msg","삭제 완료.");
+		}else {
+			model.addAttribute("msg","문제 발생.");
+		}
+		return "forward:index?formpath=servicecenter&list=notice";
+	}
+	
+	@RequestMapping(value = "/modifyNotice")
+	public String modifyNotice(String no, Model model) {
+		service.selectNotice(no, model);
+		return "/servicecenter/modifyNoticeForm";
+	}
+	
+	@RequestMapping(value = "/noticeModifyProc")
+	public String noticeModifyProc(Model model, NoticeDTO dto, String num) {
+		int no = Integer.parseInt(num);
+		dto.setNo(no);
+		service.modifyNotice(dto);
+		return "forward:index?formpath=servicecenter&list=notice";
+	}
+	
 }

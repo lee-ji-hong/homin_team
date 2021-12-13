@@ -137,7 +137,7 @@
 						<div class="comment-log_review_bottom_wrap">
 							<div>${com.writetime }</div>
 							
-						<c:if test = "${sessionScope.id eq com.id}">
+						<c:if test = "${sessionScope.id eq com.id || sessionScope.id eq 'admin'}">
 							<div  onclick = "commentDelete(${com.comment_no})">삭제</div>
 
 						</c:if>

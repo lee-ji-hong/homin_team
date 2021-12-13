@@ -16,4 +16,19 @@
 	<select id = "selectNotice"   resultMap="notice" parameterType="int">
 		SELECT * FROM notice WHERE no=#{no}
 	</select>
+	
+	<insert id="writeNotice" parameterType="com.care.homin.servicecenter.dto.NoticeDTO">
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			SELECT nvl(max(no), 0)+1 FROM notice
+		</selectKey>					
+		INSERT INTO notice VALUES(#{division}, #{title}, #{writedate}, #{no}, #{content})
+	</insert>
+	
+	<delete id="deleteNotice" parameterType="String">
+		DELETE FROM notice WHERE no=#{no}
+	</delete>
+	
+	<update id="modifyNotice" parameterType="com.care.homin.servicecenter.dto.NoticeDTO">
+		UPDATE notice SET division=#{division}, title=#{title}, content=#{content}, writedate=#{writedate} WHERE no=#{no}	
+	</update>
 </mapper>
