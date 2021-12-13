@@ -111,4 +111,25 @@ public class ServicecenterService {
 		dao.inquiryAnswerProc(dto);
 		
 	}
+	public void writeNotice(NoticeDTO dto) {
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String writeDate = sdf.format(cal.getTime());
+		dto.setWritedate(writeDate);
+		dao.writeNotice(dto);
+	}
+	public int deleteNotice(String no) {
+		if(dao.deleteNotice(no) == 1) {
+			return 1;
+		}else {
+			return 0;
+		}
+	}
+	public void modifyNotice(NoticeDTO dto) {
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String writeDate = sdf.format(cal.getTime());
+		dto.setWritedate(writeDate);
+		dao.modifyNotice(dto);
+	}
 }

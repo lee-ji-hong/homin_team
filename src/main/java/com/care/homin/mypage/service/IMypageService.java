@@ -26,4 +26,7 @@ public interface IMypageService {
 	public ArrayList<orderDTO> myOrder(String id);
 	// 1:1 문의 삭제
 	public void deleteInquiry(String inquiryNo);
+	
+	public ArrayList<AllDTO> allMember();
+	public void memberView(String id, Model model);
 }

@@ -85,19 +85,15 @@ public class MypageServiceImpl implements IMypageService{
 	@Autowired HttpSession session;
 	@Override
 	public String updateProc(MemberDTO memberDto) {
-		Boolean check = (Boolean)session.getAttribute("authState");
-		
-		if(check == null) {
-			return "이메일 인증 후 가입 할 수 있습니다.";
-		}
-		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String securePw = encoder.encode(memberDto.getPw());
 		memberDto.setPw(securePw);
 		
-		boolean chk_login = mypageDao.updateLogin(memberDto);
+		if(memberDto.getPw() != null || memberDto.getPw() != "") {
+			mypageDao.updateLogin(memberDto);
+		}
 		boolean chk_member = mypageDao.updateMember(memberDto);
-		if (chk_login && chk_member)
+		if (chk_member)
 			return "t";
 		else
 			return "f";
@@ -105,12 +101,10 @@ public class MypageServiceImpl implements IMypageService{
 	@Override
 	public String updateAddrProc(PostcodeDTO postCode) {
 		boolean chk = mypageDao.updateAddrProc(postCode);
-		String result = "";
 		if (chk)
-			result = "주소지가 변경되었습니다";
+			return "t";
 		else
-			result = "주소지 변경 실패";
-		return result;
+			return "f";
 		
 	}
 	@Override
@@ -146,6 +140,19 @@ public class MypageServiceImpl implements IMypageService{
 	@Override
 	public void deleteInquiry(String inquiryNo) {
 		mypageDao.deleteInquiry(inquiryNo);
+	}
+	@Override
+	public ArrayList<AllDTO> allMember() {
+		ArrayList<AllDTO> dto = mypageDao.selectAllMember();
+		return dto;
+	}
+	
+	@Override
+	public void memberView(String id, Model model) {
+		MemberDTO dto = mypageDao.infoMember(id);
+		PostcodeDTO pDto = mypageDao.infoAddr(id);
+		model.addAttribute("member",dto);
+		model.addAttribute("addr",pDto);
 	}
 
 	

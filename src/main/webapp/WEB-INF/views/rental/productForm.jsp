@@ -36,7 +36,7 @@ prefix="c"%>
       alert("먼저 로그인해주세요");
       location.href = "${root}index?formpath=login";
     } else {
-      return;
+    	location.href='${root}index?formpath=productOrder&prodNo=${product.product_no }'
     }
   }
 </script>
@@ -169,7 +169,7 @@ prefix="c"%>
             class="product_selling_text_btn_bt1"
             id="check_module"
             type="button"
-            onclick="location.href='${root}index?formpath=productOrder&prodNo=${product.product_no }'"
+            onclick="checkLogin()"
           >
             이용 신청
           </button>

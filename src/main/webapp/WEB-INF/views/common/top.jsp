@@ -21,12 +21,28 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
   type="text/css"
   href="${pageContext.request.contextPath}/resources/css/reset.css"
 />
-
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
   function loginForm() {
     alert("먼저 로그인해주세요");
     location.href = "${root}index?formpath=login";
   }
+
+  
+
+	$(document).ready(function() {
+
+		$('.info_list .sub_li').hide();
+
+		$('.menu_li').mouseover(function() {
+			$('.sub_li').slideDown();
+
+		});
+		$('.menu_li').mouseleave(function() {
+			//$('.sub_li').hide();
+		});
+	});
+	
 </script>
 <div id="wrap" style="width: 1200px">
   <section class="info_section">
@@ -56,14 +72,24 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
               >
             </li>
             <li>|</li>
-            <li>
-              <a href="${root }index?formpath=mypage"
-                >${sessionScope.nickname }님
-                <img
-                  src="${pageContext.request.contextPath}/resources/image/account_circle.png"
-                />
-              </a>
-            </li>
+            <c:if test="${sessionScope.id ne 'admin' }">
+	            <li>
+	              <a href="${root }index?formpath=mypage">${sessionScope.nickname }님
+	                <img src="${pageContext.request.contextPath}/resources/image/account_circle.png"/>
+	              </a>
+	            </li>
+            </c:if>
+            <c:if test="${sessionScope.id eq 'admin' }">
+            	<li>
+	            	<a href = "#"><label class = "menu_li">${sessionScope.nickname }님</label>
+	            		 <img src="${pageContext.request.contextPath}/resources/image/account_circle.png"/>
+	            	</a>
+	            	<ul class = "sub_li">
+	            		<li><a href = "${root }index?formpath=memberManagement">회원관리</a></li>
+	            		<li><a href = "${root }index?formpath=productManagement&category=dryer">제품관리</a></li>
+	            	</ul>
+            	</li>
+            </c:if>
             <li>
               <a href="${root }index?formpath=basket">
                 <img style="height:25px"

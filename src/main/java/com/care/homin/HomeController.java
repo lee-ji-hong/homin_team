@@ -9,14 +9,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.care.homin.basket.dao.IBasketDAO;
 import com.care.homin.rental.service.RentalService;
 
 
 @Controller
 public class HomeController {
 	@Autowired RentalService service;
-	@Autowired IBasketDAO tlqkf;
 	
 	@RequestMapping(value = "/")
 	public String index(Model model) {

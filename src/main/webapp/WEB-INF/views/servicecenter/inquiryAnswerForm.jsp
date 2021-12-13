@@ -2,7 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url var="root" value="/" />
-
+<c:if test = "${sessionScope.id ne 'admin' }">
+	<script>
+		alert('잘못된 접근입니다.');
+		location.href = '${root}index?formpath=servicecenter&list=faq';
+	</script>
+</c:if>
 <center>
 	
 <table style="width: 800px; ">

@@ -8,7 +8,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css" />   
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/mypage.css" /> 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 <c:if test="${not empty msg }">
 	<script>
 		alert('${msg}');
@@ -16,59 +15,6 @@
 	</script>
 </c:if>
 <script>
-function iamport(){
-	//가맹점 식별코드
-	IMP.init('imp15192515');
-	IMP.request_pay({
-	    pg : 'inicis',
-	    pay_method : 'card',
-	    merchant_uid : 'merchant_' + new Date().getTime(),
-	    name : '여러개' , 		// 결제창에서 보여질 이름
-	    amount : 100, 									// 실제 결제되는 가격
-	    buyer_email : '${memberInfo.email}',			// 구매자 이메일
-	    buyer_name : '${memberInfo.nickname}',			// 구매자 이름
-	    buyer_tel : '${memberInfo.phone}',				// 구매자 번호
-	    buyer_addr : '${memberPostcode.addr1}',			// 구매자 주소
-	    buyer_postcode : '${memberPostcode.zipcode}'	// 구매자 우편번호
-	}, function(rsp) {		// 콜백
-		console.log(rsp);
-		// 결제검증
-		$.ajax({
-        	type : "POST",
-        	url : "${root}check/" + rsp.imp_uid 
-        }).done(function(data) {
-        	console.log(data);
-        	// 위의 rsp.paid_amount 와 data.response.amount를 비교한후 로직 실행 (import 서버검증)
-        	if(rsp.paid_amount == data.response.amount){
-        		var d = {
-        	    		uid : data.response.impUid,
-        	    		buyerpostcode : data.response.buyerPostcode,
-        	    		buyername : data.response.buyerName,
-        	    		email : data.response.buyerEmail,
-        	    		addr : data.response.buyerAddr,
-        	    		tell : data.response.buyerTel,
-        	    		amount : data.response.amount,
-        	    		name : data.response.name
-        	   		}
-	        	$.ajax({
-	            	url : "orderDB?prNo=${productInfo.product_no}",
-	        		type : "POST",
-	    			contentType : "application/json; charset=utf-8",
-	            	data : JSON.stringify(d),
-	            	success : function(){
-	        			location.href = "${root}index?formpath=orderfinish&no="+data.response.impUid+"&prodNo=${productInfo.product_no}";
-					},
-					error : function(){
-						alert("문제")
-					}
-	        	});
-        	} else {
-        		alert("결제 실패");
-        	}
-        });
-	});
-}
-	
 
 	var result = 0;
 	function allCheck(){
@@ -124,6 +70,25 @@ function iamport(){
 		  document.getElementById('result').innerText
 		    = selectedElementsCnt;
 		}
+	function check(){
+		const query = 'input[name="box"]:checked';
+		  const selectedElements = 
+		      document.querySelectorAll(query);
+		  const selectedElementsCnt =
+		        selectedElements.length;
+		  if(selectedElementsCnt == 0 || selectedElementsCnt == ''){
+			  alert('하나 이상 선택해주세요.');
+		  }else{
+			  var prNo = [];
+			  var len = document.getElementsByName("box");
+			  for(var i = 0; i < len.lengh; i ++){
+				  if(document.getElementsByName("box")[i].checked == true){
+					  prNo[i] = document.getElementsByName("box")[i].value;
+				  }
+			  }
+			  location.href="${root}index?formpath=basketOrder&no="+prNo;
+		  }
+	}
 </script>
 <div class="bascket_test">
 	<c:import url="mypage/mypageNav.jsp"></c:import>
@@ -179,7 +144,7 @@ function iamport(){
 							<td colspan="3" align="right">총 개수 : </td><td><label id = "result"></label></td>
 						</tr>
 						<tr>
-							<td colspan="3" align="right">총 금액 : </td><td><label id = "price"></label></td><td><input type="button" value="신청하기" onclick = "iamport()"></td>
+							<td colspan="3" align="right">총 금액 : </td><td><label id = "price"></label></td><td><input type="button" value="신청하기" onclick = "check()"></td>
 						</tr>
 				</tbody>
 		</table>

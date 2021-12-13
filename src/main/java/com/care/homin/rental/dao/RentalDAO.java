@@ -28,5 +28,7 @@ public interface RentalDAO {
 	ArrayList<RentalDTO> selectOrderCount();
 	// db 주문 정보 삭제
 	void cancleOrder(String uid);
+	// 제품 삭제
+	void deleteProduct(String no);
 
 }

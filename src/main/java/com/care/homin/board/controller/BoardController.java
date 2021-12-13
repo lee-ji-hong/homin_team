@@ -61,6 +61,13 @@ public class BoardController {
 		return "forward:boardProc";
 	}
 	
+	// 관리자권한 게시글 삭제
+	@RequestMapping(value = "/deleteBoard")
+	public String deleteBoard(String no) {
+		service.deleteBoard(no);
+		return "forward:boardProc";
+	}
+	
 	@RequestMapping(value = "/boardModifyCheck")
 	public String boardModifyCheck(String no, Model model) {
 		model.addAttribute("no",no);
