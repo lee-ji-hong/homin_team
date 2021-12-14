@@ -62,5 +62,13 @@
 	<delete id="deleteProduct" parameterType="String">
 		DELETE FROM homin_product WHERE product_no=#{no}
 	</delete>
+	
+	<insert id="productInsert" parameterType="com.care.homin.rental.dto.RentalDTO">
+		INSERT INTO homin_product VALUES(#{product_no}, #{product_name}, #{product_filename}, #{classification}, #{price}, #{hit}, #{orderCount})
+	</insert>
+	
+	<update id="productModify" parameterType="com.care.homin.rental.dto.RentalDTO" >
+		UPDATE homin_product SET product_name=#{product_name}, classification=#{classification}, price=#{price} WHERE product_no=#{product_no}
+	</update>
 
 </mapper>
